@@ -13,7 +13,7 @@ are met.
 */
 
 // you can start the session in the calling page too
-session_start();
+@session_start();
 
 
 function set_timezone($offset) {

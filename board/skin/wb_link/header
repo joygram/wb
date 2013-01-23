@@ -39,23 +39,23 @@
 function checkForm(form)
 {
 	
-	<?=$hide['/*password']?>
+	<?@=$hide['/*password']?>
 	if(form.password.value.length == 0)
 	{
 		alert('鞠龋甫 持绢林技夸.') ;
 		form.password.focus() ;
 		return false ;
 	}	
-	<?=$hide['password*/']?>	
+	<?@=$hide['password*/']?>	
 
-	<?=$hide['/*reply_writing']?>
+	<?@=$hide['/*reply_writing']?>
 	if(form.subject.value.length == 0)
 	{
 		alert('力格阑 持绢林技夸.') ;
 		form.subject.focus() ;
 		return false ;
 	}	
-	<?=$hide['reply_writing*/']?>
+	<?@=$hide['reply_writing*/']?>
 
 	if(form.comment.value.length == 0)
 	{
@@ -74,11 +74,11 @@ function checkForm(form)
 <body topmargin='0' leftmargin='0' marginwidth='0' marginheight='0' class="wBody">
 <table cellpadding=0 cellspacing=0 width='<?=$Row[table_size] ?>'  align="<?=$Row[table_align]?>" border="0">
 <br>
-<?=$hide['board_title']?>
+<?@=$hide['board_title']?>
 <tr>
 <td class="wDefault" align="left"><?=$Row[board_title] ?>
 </td>
 </tr>
-<?=$hide['/board_title']?>
+<?@=$hide['/board_title']?>
 <tr>
 <td>

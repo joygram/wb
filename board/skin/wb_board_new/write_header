@@ -34,14 +34,14 @@ function checkForm(form)
 		return false ;
 	}	
 
-	<?=$hide['/*main_writing']?>
+	<?@=$hide['/*main_writing']?>
 	if(form.subject.value.length == 0)
 	{
 		alert('力格阑 持绢林技夸.') ;
 		form.subject.focus() ;
 		return false ;
 	}	
-	<?=$hide['main_writing*/']?>
+	<?@=$hide['main_writing*/']?>
 
 	if(form.comment.value.length == 0)
 	{
@@ -50,7 +50,7 @@ function checkForm(form)
 		return false ;
 	}
 
-	<?=$hide['/*password']?>
+	<?@=$hide['/*password']?>
 	if(form.password.value.length == 0 && form.passwd_exist.value != '1' )
 	{
 		alert('鞠龋甫 持绢林技夸.') ;
@@ -65,14 +65,14 @@ function checkForm(form)
             return false ;
         }
     }
-	<?=$hide['password*/']?>
+	<?@=$hide['password*/']?>
 
 	form.submit() ;
 }
 </script>
 
 
-<?=$hide['reply_writing']?>
+<?@=$hide['reply_writing']?>
 <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center" class="wVer7">
 
 <tr> 
@@ -90,4 +90,4 @@ function checkForm(form)
 </td>
 </tr>
 </table>
-<?=$hide['/reply_writing']?>
+<?@=$hide['/reply_writing']?>

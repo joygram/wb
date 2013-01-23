@@ -12,23 +12,23 @@
 	</td>
 	<td align="right" class="wDefault">
 	
-		<?=$hide['avatar']?><img src="<?=$URL[avatar]?>" border="0"><?=$hide['/avatar']?><?=$Row[name]?>	
+		<?@=$hide['avatar']?><img src="<?=$URL[avatar]?>" border="0"><?@=$hide['/avatar']?><?=$Row[name]?>	
 		
 		<span class="wVer7">
-		<?=$hide['home']?>
+		<?@=$hide['home']?>
 		&nbsp;&nbsp;<a href='<?=$Row[homepage] ?>' target=_blank title="홈페이지">Home</a>
-		<?=$hide['/home']?>
+		<?@=$hide['/home']?>
 		
-		<?=$hide['email']?>
+		<?@=$hide['email']?>
 		&nbsp;&nbsp;<a href="javascript:window_open('<?=$URL['sendmail']?>',300,250,'');">Mail</a>
-		<?=$hide['/email']?>
+		<?@=$hide['/email']?>
 		</span>
-	<?=$hide['/write_perm']?>
+	<?@=$hide['/write_perm']?>
 	
 	</td>
 	</tr>
 	<!-- 이미지 출력 -->
-	<?=$hide['attach']?>	
+	<?@=$hide['attach']?>	
 	<tr>
 	<td align='center' colspan="2">
 	<br>
@@ -36,7 +36,7 @@
 	<br>
 	</td>
 	</tr>
-	<?=$hide['/attach']?>
+	<?@=$hide['/attach']?>
 	<!-- 이미지 출력 -->
 	<tr>
 	<td class="wDefault" colspan="2">
@@ -54,8 +54,8 @@
 	</tr>
 	<tr>
 	<td align=right colspan="2">
-		<?=$hide['reply_perm']?>
-		<?=$hide['reply']?>
+		<?@=$hide['reply_perm']?>
+		<?@=$hide['reply']?>
 		<table border=0 cellpadding=0 cellspacing=0 width="100%" align="center">
 		<tr>
 		<td>
@@ -69,23 +69,23 @@
 				<tr align="right"> 
 				<td class=wTah7>
 				
-				<?=$hide['admin']//관리자 권한//?>
+				<?@=$hide['admin']//관리자 권한//?>
 				<font class='wDefault'><?=$Row[alias]?> : </font>
 				<input type=hidden name=name value='<?=$Row[alias]?>'>
-				<?=$hide['/admin']//관리자 권한 끝//?>
+				<?@=$hide['/admin']//관리자 권한 끝//?>
 				
-				<?=$hide['member']//회원권한//?>
+				<?@=$hide['member']//회원권한//?>
 				<font class='wDefault'><?=$Row[alias]?> : </font>
 				<input type=hidden name=name value='<?=$Row[alias]?>'>
-				<?=$hide['/member']//회원권한 끝//?>
+				<?@=$hide['/member']//회원권한 끝//?>
 				
-				<?=$hide['anonymous']//무명씨권한//?>
+				<?@=$hide['anonymous']//무명씨권한//?>
 				Name:
 				<input type=text name=name value='<?=$Row[cookie_name]?>' size=6 maxlength=10 class=wSearch>
 				Pass:
 				<input type=password name=password size=5 maxlength=20 class=wSearch >
 				Comment:
-				<?=$hide['/anonymous']//무명씨권한 끝//?>		
+				<?@=$hide['/anonymous']//무명씨권한 끝//?>		
 				<input type=text   name=comment size=25 maxlength=100 class=wSearch>
 				<input type=submit value=SavE class=wButton>
 				</td>
@@ -95,8 +95,8 @@
 		</tr>
 		</table>
 		<br>
-		<?=$hide['/reply']?>
-		<?=$hide['/reply_perm']?>		  	  
+		<?@=$hide['/reply']?>
+		<?@=$hide['/reply_perm']?>		  	  
 	</td>
   	</tr>
 	<tr> 

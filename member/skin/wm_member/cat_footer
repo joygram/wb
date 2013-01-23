@@ -4,10 +4,10 @@
 List</a>
 </td>
 <td align=right width=50% class="wVer7" colspan="3">
-<?=$hide['reply_perm']?>
+<?@=$hide['reply_perm']?>
 <a href='<?=$URL["reply"]?>'>
 Reply</a>
-<?=$hide['/reply_perm']?>
+<?@=$hide['/reply_perm']?>
 </td>
 </tr>
 </table>

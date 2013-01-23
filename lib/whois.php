@@ -4,7 +4,7 @@ else return ;
 function whois_query($server, $host) 
 {
 	$port = 43; 
-	$fp = fsockopen($server, $port, &$errno, &$errstr, 30); 
+	$fp = fsockopen($server, $port, $errno, $errstr, 30); 
 	fputs($fp, "$host\n"); 
 	
 	$list = "" ;

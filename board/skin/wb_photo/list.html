@@ -8,13 +8,13 @@
 	<a href="#"><img src="<?=$URL["img"]?>" border=0 width="100" height="80" onClick="open_win_resize('<?=$URL["cat"]?>','scrollbars=no,resizable=no,width=<?=$Row[img_width]?>,height=<?=$Row[img_height]?>', <?=$Row[img_width]+17?>, <?=$Row[img_height]+34?>);"  onMouseOver="dcc('<?=$Row[subject]?>','',20);" onMouseOut="nd()"><br>	
 	</td>
 	</tr>
-	<?=$hide['exec_perm']?>
+	<?@=$hide['exec_perm']?>
 	<tr>
 	<td align=right>
 	<a href='javascript:onClick=Confirm("<?=$URL["delete"]?>");' title="삭제"><font class="wB">-</font></a>&nbsp;&nbsp;<a href='<?=$URL["edit"]?>' title="수정"><font class="wB">＋</font></a>&nbsp;
 	</td>
 	</tr>
-	<?=$hide['/exec_perm']?>
+	<?@=$hide['/exec_perm']?>
 	</table>
 </td>
 </tr>

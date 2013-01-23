@@ -2,13 +2,13 @@
 
 <tr align="right">
 <td colspan=2 align="left" class="wDefault" nowrap>
-<?=$hide['exec_perm']//자신의 글에 대해 수정/삭제권한이 있는경우//?><a href='javascript:onClick=Confirm("<?=$URL["delete"]?>");' title="삭제"><?=$hide['/exec_perm']?>
+<?@=$hide['exec_perm']//자신의 글에 대해 수정/삭제권한이 있는경우//?><a href='javascript:onClick=Confirm("<?=$URL["delete"]?>");' title="삭제"><?@=$hide['/exec_perm']?>
 <font class="wVer7">*</font>
-<?=$hide['exec_perm']//자신의 글에 대해 수정/삭제권한이 있는경우//?></a><?=$hide['/exec_perm']?>
+<?@=$hide['exec_perm']//자신의 글에 대해 수정/삭제권한이 있는경우//?></a><?@=$hide['/exec_perm']?>
 
-<?=$hide['exec_perm']//자신의 글에 대해 수정/삭제권한이 있는경우//?><a href='<?=$URL["edit"]?>' title="수정"><?=$hide['/exec_perm']?>
+<?@=$hide['exec_perm']//자신의 글에 대해 수정/삭제권한이 있는경우//?><a href='<?=$URL["edit"]?>' title="수정"><?@=$hide['/exec_perm']?>
 <b><?=$Row[subject]?></b>
-<?=$hide['exec_perm']//자신의 글에 대해 수정/삭제권한이 있는경우//?></a><?=$hide['/exec_perm']?>
+<?@=$hide['exec_perm']//자신의 글에 대해 수정/삭제권한이 있는경우//?></a><?@=$hide['/exec_perm']?>
 </td>
 <td class="wTah7">
 <?=$Row[cnt_homepage]?>
@@ -17,7 +17,7 @@
 
 <tr>
 <td width="30%" colspan=2 valign="top">
-<?=$hide['home']?><a href='<?=$URL["homepage"]?>' target="_blank"><?=$hide['/home']?><img src='<?=$URL["img"]?>' border=0  width="<?=$Row[img_width]?>" height="<?=$Row[img_height]?>"><?=$hide['home']?></a><?=$hide['/home']?>
+<?@=$hide['home']?><a href='<?=$URL["homepage"]?>' target="_blank"><?@=$hide['/home']?><img src='<?=$URL["img"]?>' border=0  width="<?=$Row[img_width]?>" height="<?=$Row[img_height]?>"><?@=$hide['home']?></a><?@=$hide['/home']?>
 </td>
 
 <td width="70%" align="right" class="wDefault">

@@ -35,13 +35,13 @@
 <td align='center' valign='bottom'>
 <input type='button' value='바뀌어라' onClick='parent.main.enable_func(parent.main.save_form); parent.main.save_form.submit();' class='wButton'>
 
-<?=$hide["preview"]?>
+<?@=$hide["preview"]?>
 <input type='button' value='미리보기' onClick="window.open('../../counter/counter.php?data=<?=$data?>','preview','menubar=yes,toolbar=yes,location=yes,resizable=yes,scrollbars=yes,status=yes');return false; " class='wButton'>
-<?=$hide["/preview"]?>
+<?@=$hide["/preview"]?>
 
-<?=$hide["close"]?>
+<?@=$hide["close"]?>
 <input type='button' value='창 닫 기' onClick='parent.close();' class='wButton'>
-<?=$hide["/close"]?>
+<?@=$hide["/close"]?>
 </td>
 </tr>
 </form>

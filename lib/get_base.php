@@ -21,10 +21,9 @@ get_base가 가장 처음에 호출하는 함수 이므로 위치를 이곳에 두었음.
 @param  세션에 등록 하기 위해  사용하는 전역변수목록 을 넣어주기 위해서. 반드시  맨 끝에 , 를 넣어준다. 1
 */
 
-
 function prepare_server_vars( $cmd = "GET", $global_param = "" )
 {
-	session_start() ;
+	@session_start() ;
 	$_debug = 0 ;
 	global $__SERVER, $__GET, $__POST, $__COOKIE, $__FILES, $__ENV, $__SESSION ;
 	global $_SERVER ; //서버변수가 존재하는지 확인하기 위해서 global = off인경우...
@@ -254,6 +253,20 @@ function get_base($depth_level=0, $update="off")
 		$base_dir = $C_base["dir"] ;
 	}
 
+	$C_use_board = "";
+	$C_use_counter  = "";
+	$C_use_member = "";
+	$C_use_mail = "";
+	$C_language = "";
+	$C_timezone = "";
+	$C_lang = "";
+	$C_uniq_num = "";
+    $C_board_db_type = "";
+    $C_member_db_type = "";
+    $C_db_type = "";
+    $C_member = "";
+    $C_mail = ""; 
+    
 	$system_conf = "{$base_dir}/system.ini.php" ;
 	@include($system_conf) ;
 	$ini['use_board'] = $C_use_board    ;

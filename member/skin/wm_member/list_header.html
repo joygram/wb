@@ -7,14 +7,14 @@
 <td align=right class="wVer7" width="57%">
 total <?=$Row[nTotal]?> page <?=$Row[cur_page]?> / <?=$Row[tot_page]?>
 &nbsp;&nbsp;
-<?=$hide['login']?>
+<?@=$hide['login']?>
 <a href='<?=$URL[login]?>'>Login</a>
-<?=$hide['/login']?>
+<?@=$hide['/login']?>
 
-<?=$hide['logout']?>
+<?@=$hide['logout']?>
 <a href='<?=$URL[logout]?>'>Logout</a>
 <a href='javascript:onClick=window_open("<?=$URL['config']?>",460,480,"")'><img src="skin/<?=$C_skin?>/images/config.gif"  border="0"></a>
-<?=$hide['/logout']?>
+<?@=$hide['/logout']?>
 
 </td>
 </tr>

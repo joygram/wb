@@ -1,21 +1,6 @@
 <?php
-	// 2002/11/02
-	//기본 URL 오픈을 기준으로 생각한다.
-	if(empty($C_base_dir))
-	{
-		$C_base_dir = ".." ;
-		$depth = 1 ;
-		$_output = true ;
-	}
-	else
-	{
-		$depth = -1 ;
-		$_output = false ;
-	}
-	require_once("$C_base_dir/lib/system_ini.php") ;
-	require_once("$C_base_dir/lib/get_base.php") ;
-	$C_base = get_base($depth) ; //기준이 되는 주소 받아오기, lib.php에 있음.
-	require_once("$C_base_dir/lib/wb.inc.php") ;
+	// 2002/11/02	//기본 URL 오픈을 기준으로 생각한다.	if(empty($C_base_dir))	{		$C_base_dir = ".." ;		$depth = 1 ;		$_output = true ;	}	else	{		$depth = -1 ;		$_output = false ;	}
+	require_once("$C_base_dir/lib/system_ini.php") ;	require_once("$C_base_dir/lib/get_base.php") ;	$C_base = get_base($depth) ; //기준이 되는 주소 받아오기, lib.php에 있음.	require_once("$C_base_dir/lib/wb.inc.php") ;
 
 	prepare_server_vars() ;
 

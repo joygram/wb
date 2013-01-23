@@ -1,17 +1,17 @@
 <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center" >
 <tr>
 <td align="left" class="wVer7">
-<?=$hide['write_perm']?>
+<?@=$hide['write_perm']?>
 <a href='<?=$WRITE_URL?>' >Register</a>	| 
-<?=$hide['/write_perm']?>
-<?=$hide['login']?>
+<?@=$hide['/write_perm']?>
+<?@=$hide['login']?>
 <a href='<?=$URL[login]?>'>Login</a>
-<?=$hide['/login']?>
+<?@=$hide['/login']?>
 
-<?=$hide['logout']?>
+<?@=$hide['logout']?>
 <a href='<?=$URL[logout]?>'>Logout</a> | 
 <a href='javascript:onClick=window_open("<?=$URL['config']?>",460,480,"")'>Config</a>
-<?=$hide['/logout']?>
+<?@=$hide['/logout']?>
 </td>
 <td align="right">
 <?=$page_bar?>

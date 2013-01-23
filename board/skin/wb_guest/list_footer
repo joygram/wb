@@ -4,14 +4,14 @@
 	<?=$page_bar?>
 	</td>
 	<td  align="right" width='50%' class="wVer7">
-	<?=$hide['login']?>
+	<?@=$hide['login']?>
 	<a href='<?=$URL[login]?>'>Login</a>
-	<?=$hide['/login']?>
+	<?@=$hide['/login']?>
 	
-	<?=$hide['logout']?>
+	<?@=$hide['logout']?>
 	<a href='<?=$URL[logout]?>'>Logout</a> | 
 	<a href='javascript:onClick=window_open("<?=$URL['config']?>",460,480,"")'>Config</a>
-	<?=$hide['/logout']?>
+	<?@=$hide['/logout']?>
 	</td>
 	</tr>
 	</table> 

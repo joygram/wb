@@ -1050,7 +1050,7 @@ class auth
 	//@ini_set("session.cache_limiter", "private") ;
 	//@session_cache_limiter('private');
 
-	session_start() ;
+	@session_start() ;
     
     // 인증 모듈 초기화 및 생성
     if( empty($auth_param) )

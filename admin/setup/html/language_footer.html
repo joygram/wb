@@ -6,16 +6,16 @@
 	
 	<tr>
 	<td colspan=2>
-	<?=$hide['setup']?>
+	<?@=$hide['setup']?>
 	<input type="button" name="prev" value="<< <?=_L_BACK?>" class="wButton" onClick="javascript:document.location.href='<?=$URL['prev']?>';" disabled>
 	<input type="submit" name="next" value="<?=_L_NEXT?> >>" class="wButton" onClick="SubmitCheck(document.main_form); return false;">
 	&nbsp;&nbsp;
 	<input type="button" name="exit" value="<?=_L_CANCEL?>" class="wButton" onClick="javascript:document.location.href='../../setup.php?cmd=exit';" >
-	<?=$hide['/setup']?>
+	<?@=$hide['/setup']?>
 	
-	<?=$hide['admin_tool']?>
+	<?@=$hide['admin_tool']?>
 	<input type="submit" name="next" value="<?=_L_SAVE?>" class="wButton" onClick="SubmitCheck(document.main_form); return false;">
-	<?=$hide['/admin_tool']?>
+	<?@=$hide['/admin_tool']?>
 	</tr>
 	</td>
 	</table>

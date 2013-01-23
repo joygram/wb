@@ -7,7 +7,7 @@
 
 <td align=right width=50% class="wVer7">
 
-<?=$hide['write_perm']?><a href='<?=$URL["write"]?>'>Join</a><?=$hide['/write_perm']?>
+<?@=$hide['write_perm']?><a href='<?=$URL["write"]?>'>Join</a><?@=$hide['/write_perm']?>
 
 </td>
 

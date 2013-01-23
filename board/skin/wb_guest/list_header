@@ -1,5 +1,5 @@
 <!--list header-->
-<?=$hide['write_perm']?>
+<?@=$hide['write_perm']?>
 <br>
 <table border="0" cellspacing="0" cellpadding="1"  width="100%" align="center">
 <tr>
@@ -51,9 +51,9 @@
 </td>
 </tr>
 </table>
-<?=$hide['/write_perm']?>
+<?@=$hide['/write_perm']?>
 
-<?=$hide[board_title_start]?>
+<?@=$hide[board_title_start]?>
 <table border=0  cellspacing=0 cellpadding=10 align='center' class="wNotice">
 <tr>
 <td align="center" class="wDefault"><?=$Row[board_title] ?>
@@ -61,7 +61,7 @@
 </tr>
 </table>
 <br><br>
-<?=$hide[board_title_end]?>
+<?@=$hide[board_title_end]?>
 	
 <table border=0 width='98%' cellspacing=0 cellpadding=0 align='center' class="wVer7">
 <tr> 

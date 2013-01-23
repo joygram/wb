@@ -49,15 +49,15 @@ else
 if( file_exists("$C_base[dir]/member/admin.php") )
 {
 	include("$C_base[dir]/member/admin.php") ;
-	$Row[uid]   = $C_admin_id ;
-	$Row[alias] = $C_admin_alias ;
-	$Row[email] = $C_admin_email ;
-	$Row[homepage] = $C_admin_homepage ;
-	$Row[passwd_exist] = !empty($C_admin_password)?"1":"" ;
-	$Row[avatar] = $C_admin_avatar ;
+	$Row['uid']   = $C_admin_id ;
+	$Row['alias'] = $C_admin_alias ;
+	$Row['email'] = $C_admin_email ;
+	$Row['homepage'] = $C_admin_homepage ;
+	$Row['passwd_exist'] = !empty($C_admin_password)?"1":"" ;
+	$Row['avatar'] = $C_admin_avatar ;
 }
 
-switch($__GET["cmd"])
+switch($__GET['cmd'])
 {
 	case "next" :
 		if( empty($passwd) )

@@ -27,7 +27,7 @@ function checkForm(form)
 	}
 
 
-	<?=$hide['/*password']?>
+	<?@=$hide['/*password']?>
 	if(form.password.value.length < 6)
 	{
 		alert('암호는 6자리 이상 영,숫자를 섞어서 정해주세요.') ;
@@ -41,7 +41,7 @@ function checkForm(form)
 		form.password_again.focus() ;
 		return false ;
 	}	
-	<?=$hide['password*/']?>	
+	<?@=$hide['password*/']?>	
 
 
 	if(form.h_grad_year.value.length < 4)
@@ -125,7 +125,7 @@ function checkForm(form)
 -->
 </script>
 
-<?=$hide['reply_writing']?>
+<?@=$hide['reply_writing']?>
 <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center" class="wVer7">
 
 <tr> 
@@ -140,4 +140,4 @@ function checkForm(form)
 </td>
 </tr>
 </table>
-<?=$hide['/reply_writing']?>
+<?@=$hide['/reply_writing']?>

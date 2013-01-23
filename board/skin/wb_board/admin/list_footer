@@ -4,20 +4,20 @@
 <tr>
 <td align=left width=50% class="wVer7">
 <a href='<?=$URL["list"]?>'>List</a> | 
-<?=$hide['login']?>
+<?@=$hide['login']?>
 <a href='<?=$URL[login]?>'>Login</a>
-<?=$hide['/login']?>
+<?@=$hide['/login']?>
 
-<?=$hide['logout']?>
+<?@=$hide['logout']?>
 <a href='<?=$URL[logout]?>'>Logout</a> | 
 <a href='javascript:onClick=window_open("<?=$URL['config']?>",460,480,"")'>Config</a> |
 <a href='javascript:onClick=Manage(this.form)'>Manage</a> | 
 
-<?=$hide['/logout']?>
+<?@=$hide['/logout']?>
 </td>
 
 <td align=right width=50% class="wVer7">
-<?=$hide['write_perm']?><a href='<?=$URL["write"]?>'>Write</a><?=$hide['/write_perm']?>
+<?@=$hide['write_perm']?><a href='<?=$URL["write"]?>'>Write</a><?@=$hide['/write_perm']?>
 </td>
 
 </tr>

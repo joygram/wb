@@ -38,13 +38,13 @@
 <td align='center' valign='bottom'>
 <input type='button' value='<?=_L_BOARD_SAVE?>' onClick='parent.main.enable_func(parent.main.save_form); parent.main.save_form.submit();' class='wButton'>
 
-<?=$hide["preview"]?>
+<?@=$hide["preview"]?>
 <input type='button' value='<?=_L_BOARD_PREVIEW?>' onClick="window.open('../../board/list.php?data=<?=$data?>','preview','menubar=yes,toolbar=yes,location=yes,resizable=yes,scrollbars=yes,status=yes');return false; " class='wButton'>
-<?=$hide["/preview"]?>
+<?@=$hide["/preview"]?>
 
-<?=$hide["close"]?>
+<?@=$hide["close"]?>
 <input type='button' value='<?=_L_WINDOWCLOSE?>' onClick='parent.close();' class='wButton'>
-<?=$hide["/close"]?>
+<?@=$hide["/close"]?>
 </td>
 </tr>
 </form>

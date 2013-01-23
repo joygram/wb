@@ -294,6 +294,9 @@
     <Compile Include="lib\db_counter_pgsql.php">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="lib\db_define.php">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="lib\db_member_file.php">
       <SubType>Code</SubType>
     </Compile>
@@ -510,7 +513,7 @@
     <Compile Include="setup.php">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="system.ini.php">
+    <Compile Include="system.ini.php--">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="write.php">

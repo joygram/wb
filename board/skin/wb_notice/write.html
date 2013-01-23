@@ -32,7 +32,7 @@
 	</td>
 	</tr>
 	
-	<?=$hide['password']?>
+	<?@=$hide['password']?>
 	<tr> 
 	<td height=18 width=60 align=center class="wVer7"> 
 	Pass
@@ -41,7 +41,7 @@
 	<input type=password name='password' size=45 maxlength=40 class=wForm >
 	</td>
 	</tr>
-	<?=$hide['/password']?>
+	<?@=$hide['/password']?>
 	
 	<tr> 
 	<td colspan="2"> 
@@ -50,15 +50,15 @@
 	</tr>
 	
 		
-	<?=$hide['main_writing']?>
+	<?@=$hide['main_writing']?>
 	<tr> 
 	<td height=18 width=60 align=center valign="bottom" class="wVer7">Image</td>
 	<td height=18  class="wVer7" align="right"> 
 	<?=$Row[InputFile_name]?>&nbsp;&nbsp;
-	<?=$hide['attach']?>Del <input class='wDefault' type='checkbox' name='remove_attach1'><?=$hide['/attach']?><br>
+	<?@=$hide['attach']?>Del <input class='wDefault' type='checkbox' name='remove_attach1'><?@=$hide['/attach']?><br>
 	<input name='InputFile' type='file' size='25' class=wForm></td>
 	</tr>
-	<?=$hide['/main_writing']?>
+	<?@=$hide['/main_writing']?>
 	
 	<tr>
 	<td colspan="2" align=center> 

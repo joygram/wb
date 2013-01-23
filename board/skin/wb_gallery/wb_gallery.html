@@ -87,12 +87,12 @@ function checkForm(form)
 <table cellpadding=0 cellspacing=0 width='400' align="<?=$Row[table_align]?>" border="0">
 <br>
 
-<?=$hide['board_title']?>
+<?@=$hide['board_title']?>
 <tr>
 <td class="wDefault"><?=$Row[board_title] ?>
 </td>
 </tr>
-<?=$hide['/board_title']?>
+<?@=$hide['/board_title']?>
 
 <tr>
 <td>
@@ -127,24 +127,24 @@ function checkForm(form)
 	</td>
 	<td align="right" class="wDefault">
 	
-		<?=$hide['avatar']?><img src="<?=$URL[avatar]?>" border="0"><?=$hide['/avatar']?><?=$Row[name]?>	
+		<?@=$hide['avatar']?><img src="<?=$URL[avatar]?>" border="0"><?@=$hide['/avatar']?><?=$Row[name]?>	
 		
 		<span class="wVer7">
-		<?=$hide['home']?>
+		<?@=$hide['home']?>
 		&nbsp;&nbsp;<a href='<?=$Row[homepage] ?>' target=_blank title="홈페이지">Home</a>
-		<?=$hide['/home']?>
+		<?@=$hide['/home']?>
 		
-		<?=$hide['email']?>
+		<?@=$hide['email']?>
 		&nbsp;&nbsp;<a href="javascript:window_open('<?=$URL['sendmail']?>',300,250,'');">Mail</a>
-		<?=$hide['/email']?>
+		<?@=$hide['/email']?>
 		</span>
-	<?=$hide['/write_perm']?>
+	<?@=$hide['/write_perm']?>
 	
 	</td>
 	</tr>
 	<!-- 이미지 출력 -->
 	이미지가 들어가는 부분
-	<?=$hide['attach']?>	
+	<?@=$hide['attach']?>	
 	<tr>
 	<td align='center' colspan="2">
 	<br>
@@ -152,7 +152,7 @@ function checkForm(form)
 	<br>
 	</td>
 	</tr>
-	<?=$hide['/attach']?>
+	<?@=$hide['/attach']?>
 	<!-- 이미지 출력 -->
 	<tr>
 	<td class="wDefault" colspan="2">
@@ -173,8 +173,8 @@ function checkForm(form)
 	<tr>
 	<td align=right colspan="2">
 	짧은 코멘트 달기
-		<?=$hide['reply_perm']?>
-		<?=$hide['reply']?>
+		<?@=$hide['reply_perm']?>
+		<?@=$hide['reply']?>
 		<table border=0 cellpadding=0 cellspacing=0 width="100%" align="center">
 		<tr>
 		<td>
@@ -188,23 +188,23 @@ function checkForm(form)
 				<tr align="right"> 
 				<td class=wTah7>
 				
-				<?=$hide['admin']//관리자 권한//?>
+				<?@=$hide['admin']//관리자 권한//?>
 				<font class='wDefault'><?=$Row[alias]?> : </font>
 				<input type=hidden name=name value='<?=$Row[alias]?>'>
-				<?=$hide['/admin']//관리자 권한 끝//?>
+				<?@=$hide['/admin']//관리자 권한 끝//?>
 				
-				<?=$hide['member']//회원권한//?>
+				<?@=$hide['member']//회원권한//?>
 				<font class='wDefault'><?=$Row[alias]?> : </font>
 				<input type=hidden name=name value='<?=$Row[alias]?>'>
-				<?=$hide['/member']//회원권한 끝//?>
+				<?@=$hide['/member']//회원권한 끝//?>
 				
-				<?=$hide['anonymous']//무명씨권한//?>
+				<?@=$hide['anonymous']//무명씨권한//?>
 				Name:
 				<input type=text name=name value='<?=$Row[cookie_name]?>' size=6 maxlength=10 class=wSearch>
 				Pass:
 				<input type=password name=password size=5 maxlength=20 class=wSearch >
 				Comment:
-				<?=$hide['/anonymous']//무명씨권한 끝//?>		
+				<?@=$hide['/anonymous']//무명씨권한 끝//?>		
 				<input type=text   name=comment size=25 maxlength=100 class=wSearch>
 				<input type=submit value=SavE class=wButton>
 				</td>
@@ -214,8 +214,8 @@ function checkForm(form)
 		</tr>
 		</table>
 		<br>
-		<?=$hide['/reply']?>
-		<?=$hide['/reply_perm']?>		  	  
+		<?@=$hide['/reply']?>
+		<?@=$hide['/reply_perm']?>		  	  
 	</td>
   	</tr>
 	<tr> 
@@ -232,17 +232,17 @@ function checkForm(form)
   </tr>             
   <tr>
 	<td align="left" width="50%" class="wVer7">
-		<?=$hide['write_perm']?>
+		<?@=$hide['write_perm']?>
 		<a href='<?=$WRITE_URL?>' >Register</a> | 
-		<?=$hide['/write_perm']?>
-		<?=$hide['login']?>
+		<?@=$hide['/write_perm']?>
+		<?@=$hide['login']?>
 		<a href='<?=$URL[login]?>'>Login</a>
-		<?=$hide['/login']?>
+		<?@=$hide['/login']?>
 		
-		<?=$hide['logout']?>
+		<?@=$hide['logout']?>
 		<a href='<?=$URL[logout]?>'>Logout</a> | 
 		<a href='javascript:onClick=window_open("<?=$URL['config']?>",460,480,"")'>Config</a>
-		<?=$hide['/logout']?>
+		<?@=$hide['/logout']?>
 	</td>
 	<td align="right" class="wVer7">
 		<?=$page_bar?>

@@ -3,36 +3,36 @@
 <tr> 
 <td width="80%" height=22 class="wRepl">
 
-<?=$hide['admin_writing']//관리자의 글//?>
-<?=$hide['email']?><a href="javascript:window_open('<?=$URL['sendmail']?>',300,250,'');"><?=$hide['/email']?>
+<?@=$hide['admin_writing']//관리자의 글//?>
+<?@=$hide['email']?><a href="javascript:window_open('<?=$URL['sendmail']?>',300,250,'');"><?@=$hide['/email']?>
 <img src="./skin/<?=$C_skin?>/images/admin.gif" border="0"><?=$Row[name]?>
-<?=$hide['email']?></a><?=$hide['/email']?>
-<?=$hide['/admin_writing']//관리자의 글 끝//?>
+<?@=$hide['email']?></a><?@=$hide['/email']?>
+<?@=$hide['/admin_writing']//관리자의 글 끝//?>
 
-<?=$hide['member_writing']//회원의 글//?>
-<?=$hide['email']?><a href="javascript:window_open('<?=$URL['sendmail']?>',300,250,'');"><?=$hide['/email']?>
+<?@=$hide['member_writing']//회원의 글//?>
+<?@=$hide['email']?><a href="javascript:window_open('<?=$URL['sendmail']?>',300,250,'');"><?@=$hide['/email']?>
 <img src="./skin/<?=$C_skin?>/images/admin.gif" border="0"><?=$Row[name]?>
-<?=$hide['email']?></a><?=$hide['/email']?>
-<?=$hide['/member_writing']//회원의 글 끝//?>
+<?@=$hide['email']?></a><?@=$hide['/email']?>
+<?@=$hide['/member_writing']//회원의 글 끝//?>
 
-<?=$hide['anonymous_writing']//무명씨의 글//?>
-<?=$hide['email']?><a href="javascript:window_open('<?=$URL['sendmail']?>',300,250,'');"><?=$hide['/email']?>
+<?@=$hide['anonymous_writing']//무명씨의 글//?>
+<?@=$hide['email']?><a href="javascript:window_open('<?=$URL['sendmail']?>',300,250,'');"><?@=$hide['/email']?>
 <?=$Row[name]?>
-<?=$hide['email']?></a><?=$hide['/email']?>
-<?=$hide['/anonymous_writing']//무명씨의 글 끝//?>
+<?@=$hide['email']?></a><?@=$hide['/email']?>
+<?@=$hide['/anonymous_writing']//무명씨의 글 끝//?>
 
 <span class="wVer7">
-<?=$hide[home_start]?>
+<?@=$hide[home_start]?>
 <a href='<?=$Row[homepage]?>' target='_blank'>Home </a>
-<?=$hide[home_end]?>
+<?@=$hide[home_end]?>
 
 </span>
 </td>
 
 <td width="20%" height=22 class="wVer7" align="right"> 
-<?=$hide['exec_perm']//자신의 글에 대해 수정/삭제권한이 있는경우//?>
+<?@=$hide['exec_perm']//자신의 글에 대해 수정/삭제권한이 있는경우//?>
 <a href='<?=$URL["edit"]?>' title="수정하기"> Modify</a> <a href='javascript:onClick=Confirm("<?=$URL["delete"]?>");'>Delete</a>
-<?=$hide['/exec_perm']?>
+<?@=$hide['/exec_perm']?>
 </td>
 
 </tr>

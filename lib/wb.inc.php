@@ -50,13 +50,14 @@ require_once("$lib/zlib.php") ;
 require_once("$lib/config.php") ;
 require_once("$lib/spam.php") ;
 
+require_once("$lib/db_define.php") ;
 $_type = ($C_base["db_type"] == "old_type"||empty($C_base["db_type"]))?"file":$C_base["db_type"] ;
 require_once("$lib/db_board_{$_type}.php") ;
 require_once("$lib/db_counter_{$_type}.php") ;
 require_once("$lib/db_member_{$_type}.php") ;
 
-$C_base[language] = empty($C_base[language])?"ko":$C_base[language] ;
-require_once("$C_base[dir]/locale/{$C_base[language]}.php") ;
+$C_base['language'] = empty($C_base['language'])?"ko":$C_base['language'] ;
+require_once("$C_base[dir]/locale/{$C_base['language']}.php") ;
 
 define("HTML_NOTUSE", 0) ;
 define("HTML_USE", 1) ;

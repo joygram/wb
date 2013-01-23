@@ -23,28 +23,28 @@
 	</tr>
 	
 	<!-- 관리자의 글쓰기 시작-->
-	<?=$hide['admin']?>
+	<?@=$hide['admin']?>
 	<tr> 
 	<td colspan="2" class="wVer7">
 	<span class="wDefault"><?=$Row[alias]?></span>
 	<input type=hidden name=name value='<?=$Row[alias]?>' >
 	</td>
 	</tr>
-	<?=$hide['/admin']?>
+	<?@=$hide['/admin']?>
 	<!-- 관리자의 글쓰기 끝-->
 	
 	<!-- 회원 글쓰기 시작-->
-	<?=$hide['member']?>
+	<?@=$hide['member']?>
 	<tr> 
 	<td colspan="2" class="wVer7">
 	<span class="wDefault"><?=$Row[alias]?></span>
 	<input type=hidden name=name value='<?=$Row[alias]?>' >
 	</td>
 	</tr>
-	<?=$hide['/member']?>
+	<?@=$hide['/member']?>
 	<!-- 회원의 글쓰기 끝-->	
 	
-	<?=$hide['anonymous']//무명씨글쓰기 시작?>
+	<?@=$hide['anonymous']//무명씨글쓰기 시작?>
 	<tr> 
 	<td colspan="2">
 	<b>N</b>ame&nbsp;
@@ -63,7 +63,7 @@
 	<br><br>
 	</td>
 	</tr>
-	<?=$hide['/anonymous']//무명씨글쓰기 끝?>
+	<?@=$hide['/anonymous']//무명씨글쓰기 끝?>
 	
 	
 	<tr>

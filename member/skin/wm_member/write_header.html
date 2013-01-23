@@ -27,7 +27,7 @@ function checkForm(form)
 	}
 
 
-	<?=$hide['/*password']?>
+	<?@=$hide['/*password']?>
 	if(form.password.value.length < 6)
 	{
 		alert('암호는 6자리 이상 영,숫자를 섞어서 정해주세요.') ;
@@ -41,7 +41,7 @@ function checkForm(form)
 		form.password_again.focus() ;
 		return false ;
 	}	
-	<?=$hide['password*/']?>	
+	<?@=$hide['password*/']?>	
 
 
 	if(form.name.value.length < 1)

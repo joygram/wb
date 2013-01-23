@@ -13,11 +13,15 @@ require_once("../../lib/io.php") ;
 require_once("../../lib/system_ini.php") ;
 require_once("../../lib/get_base.php") ;
 $C_base = get_base(2) ;
-require_once($C_base['dir']+"/lib/wb.inc.php") ;
+require_once("$C_base[dir]/lib/wb.inc.php") ;
 
 // register_globals에 관계없이 변수사용과 호환성을 위해서
 prepare_server_vars() ;
 global $__SERVER, $__GET, $__POST, $__COOKIE, $__FILES, $__ENV, $__SESSION ;
+
+
+$upgrade = isset($__GET['upgrade'])?$__GET['upgrade']:"";
+$cmd = isset($__GET['cmd'])?$__GET['cmd']:"";
 
 $cont = file("$C_base[dir]/release_no") ;
 $installed_release_no = chop($cont[0]) ;
@@ -60,18 +64,18 @@ if (file_exists("$C_base[dir]/system.ini.php"))
 if($_debug) echo("cmd __GET[cmd]{$__GET["cmd"]}<br>") ;
 if($_debug) echo("cmd is [$cmd] upgrade[$upgrade]<br>") ;
 
-switch($__GET["cmd"])
+switch($cmd)
 {
 	case "next" :
 
 		$C_base = get_base(1) ;
-		$ini[language]  = $language ;
-		$ini[base_dir]  = $C_base[dir] ; 
+		$ini['language']  = $language ;
+		$ini['base_dir']  = $C_base['dir'] ; 
 
-		$ini[use_board]   = $C_use_board ;
-		$ini[use_counter] = $C_use_counter ;
-		$ini[use_member]  =	$C_use_member ;
-		$ini[use_mail]    = $C_use_mail ; 
+		$ini['use_board']   = $C_use_board ;
+		$ini['use_counter'] = $C_use_counter ;
+		$ini['use_member']  =	$C_use_member ;
+		$ini['use_mail']    = $C_use_mail ; 
 
 		save_system_ini("$C_base[dir]/system.ini.php", $ini) ;
 		$url = "db.php?upgrade=$upgrade" ;	
@@ -81,13 +85,13 @@ switch($__GET["cmd"])
 
 	case "save" :
 		$C_base = get_base(1) ;
-		$ini[language]  = $language ;
-		$ini[base_dir]  = $C_base[dir] ; 
+		$ini['language']  = $language ;
+		$ini['base_dir']  = $C_base['dir'] ; 
 
-		$ini[use_board]   = $C_use_board ;
-		$ini[use_counter] = $C_use_counter ;
-		$ini[use_member]  =	$C_use_member ;
-		$ini[use_mail]    = $C_use_mail ; 
+		$ini['use_board']   = $C_use_board ;
+		$ini['use_counter'] = $C_use_counter ;
+		$ini['use_member']  =	$C_use_member ;
+		$ini['use_mail']    = $C_use_mail ; 
 
 		save_system_ini("$C_base[dir]/system.ini.php", $ini) ;
 		$url = "language.php" ;	
@@ -101,16 +105,17 @@ switch($__GET["cmd"])
 
 include("./html/language_header.html") ;
 
-$Row[title] = "" ;
-$Row[func]  = "" ;
+$Row['title'] = "" ;
+$Row['func']  = "" ;
 
-$selected['ko'] = ($C_language == "ko")?"selected":"" ;
-$selected['en'] = ($C_language == "en")?"selected":"" ;
-$selected['jp'] = ($C_language == "jp")?"selected":"" ; 
+@$selected['ko'] = ($C_language == "ko")?"selected":"" ;
+@$selected['en'] = ($C_language == "en")?"selected":"" ;
+@$selected['jp'] = ($C_language == "jp")?"selected":"" ; 
+@$selected['zh'] = ($C_language == "zh")?"selected":"" ; 
 
 //현재 사용하고 있는 DB타입을 확인하여 기존의 정보를 보여주도록
-$Row[title] = "언어(Language,言語)" ;
-$Row[func]  = "<select name='language' onChange='ToggleSetting(document.main_form);'>
+$Row['title'] = "언어(Language,言語)" ;
+$Row['func']  = "<select name='language' onChange='ToggleSetting(document.main_form);'>
 			<option value='ko' ${selected['ko']}>ko(Korean)</option>
 			<option value='en' ${selected['en']}>en(English)</option>
 			<option value='jp' ${selected['jp']}>jp(Japanese)</option>

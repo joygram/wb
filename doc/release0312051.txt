@@ -55,15 +55,15 @@
 		write.html 스킨 파일에 다음의 첨부파일에 따라 추가 하도록 한다.
 		<?=$Row[InputFile_name]?> 변수가 있는곳에 추가하도록 한다. 
 
-		<?=$hide['attach']?>Remove <input class='wDefault' type='checkbox' name='remove_attach1'><?=$hide['/attach']?>
-		<?=$hide['attach2']?>Remove <input class='wDefault' type='checkbox' name='remove_attach2'><?=$hide['/attach2']?>
+		<?@=$hide['attach']?>Remove <input class='wDefault' type='checkbox' name='remove_attach1'><?@=$hide['/attach']?>
+		<?@=$hide['attach2']?>Remove <input class='wDefault' type='checkbox' name='remove_attach2'><?@=$hide['/attach2']?>
 
 		--> 새로 추가한 경우.
 		<tr> 
 		<td width="50" class="wVer7">Attach #1</td>
 		<td width="350">
 		<?=$Row[InputFile_name]?>
-		&nbsp;&nbsp;<?=$hide['attach']?>Remove <input class='wDefault' type='checkbox' name='remove_attach1'><?=$hide['/attach']?>
+		&nbsp;&nbsp;<?@=$hide['attach']?>Remove <input class='wDefault' type='checkbox' name='remove_attach1'><?@=$hide['/attach']?>
 		<input name='InputFile' type='file' size='35' class=wForm></td>
 		</tr>
 
@@ -71,7 +71,7 @@
 		<td width="50" class="wVer7">Attach #2</td>
 		<td width="350">
 		<?=$Row[InputFile2_name]?>
-		<?=$hide['attach2']?>&nbsp;&nbsp;Remove <input class='wDefault' type='checkbox' name='remove_attach2'><?=$hide['/attach2']?>
+		<?@=$hide['attach2']?>&nbsp;&nbsp;Remove <input class='wDefault' type='checkbox' name='remove_attach2'><?@=$hide['/attach2']?>
 		<input name='InputFile2' type='file' size='35' class=wForm></td>
 		</tr>
 			

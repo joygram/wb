@@ -27,14 +27,14 @@ function checkForm(form)
 		return false ;
 	}
 
-	<?=$hide['/*main_writing']?>
+	<?@=$hide['/*main_writing']?>
 	if(form.subject.value.length == 0)
 	{
 		alert('力格阑 持绢林技夸.') ;
 		form.subject.focus() ;
 		return false ;
 	}	
-	<?=$hide['main_writing*/']?>
+	<?@=$hide['main_writing*/']?>
 
 	if(form.comment.value.length == 0)
 	{
@@ -43,7 +43,7 @@ function checkForm(form)
 		return false ;
 	}
 
-	<?=$hide['/*password']?>
+	<?@=$hide['/*password']?>
 	if(form.password.value.length == 0 && form.passwd_exist.value != '1' )
 	{
 		alert('鞠龋甫 持绢林技夸.') ;
@@ -58,7 +58,7 @@ function checkForm(form)
             return false ;
         }
     }
-	<?=$hide['password*/']?>	
+	<?@=$hide['password*/']?>	
 
 	form.submit() ;
 }

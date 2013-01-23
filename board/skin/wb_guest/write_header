@@ -1,5 +1,5 @@
 <!--write header-->
-<?=$hide['reply_writing']?>
+<?@=$hide['reply_writing']?>
 <br>
 <table width='300' border='0' cellspacing='3'cellpadding='7' class="wBox" align="center">
 
@@ -15,5 +15,5 @@
 </tr>
 
 </table>
-<?=$hide['/reply_writing']?>
+<?@=$hide['/reply_writing']?>
 <!--write header-->

@@ -13,20 +13,20 @@
 </td>
 
 <td width="160" align="center">
-<?=$hide['author_email']?><a href='mailto:<?=$Row[author_email]?>'><?=$hide['/author_email']?><?=$Row[author]?><?=$hide['author_email']?></a><?=$hide['/author_email']?>
-<?=$hide['author_url']?> / <a href='<?=$AUTHOR_URL?>' target="_blank"><?=_L_HOME?></a> <?=$hide['/author_url']?>
+<?@=$hide['author_email']?><a href='mailto:<?=$Row[author_email]?>'><?@=$hide['/author_email']?><?=$Row[author]?><?@=$hide['author_email']?></a><?@=$hide['/author_email']?>
+<?@=$hide['author_url']?> / <a href='<?=$AUTHOR_URL?>' target="_blank"><?=_L_HOME?></a> <?@=$hide['/author_url']?>
 </td>
 
 <td width="98" align="center">
-<?=$hide['readme']?>
+<?@=$hide['readme']?>
 <a href='<?=$README_URL?>' target="_blank"><?=_L_README?></a>
-<?=$hide['/readme']?>
+<?@=$hide['/readme']?>
 </td>
 
 <td width="97" align="center">
-<?=$hide['preview']?>
+<?@=$hide['preview']?>
 <a href='<?=$PREVIEW_URL?>' target="_blank"><?=_L_PREVIEW?></a>
-<?=$hide['/preview']?>
+<?@=$hide['/preview']?>
 </td>
 
 <td width="64" align="center">
@@ -34,7 +34,7 @@
 </td>
 
 <td width="64" align="center">
-<a href='<?=$DEL_URL?>' ><?=$hide['del']?><?=_L_DELETE?><?=$hide['/del']?></a>
+<a href='<?=$DEL_URL?>' ><?@=$hide['del']?><?=_L_DELETE?><?@=$hide['/del']?></a>
 </td>
 </tr>
 

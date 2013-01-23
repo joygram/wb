@@ -1,0 +1,60 @@
+<html>
+<head>
+<title><?=_L_WHITEBBS_ADMIN?></title>
+<!--meta http-equiv="Content-Type" content="text/html; charset=<?=?>"-->
+<link rel=stylesheet type="text/css" href="html/style.css">
+</head>
+
+<body class="wBody" leftmargin="0" topmargin="0">
+<table cellspacing=0 cellpadding=0 width="100%" height="100%" border=0>
+<tr>
+<td valign=top width=15></td>
+<td valign=top>
+		<table width='100%' border=0 cellpadding=5 cellspacing=0 align='center' class="wBox">
+		<tr>
+		<td class="wDefault"><b><?=_L_WHITEBBS_ADMIN?></b>
+		</td>
+		</tr>
+		<tr>
+		<td class="wDefault">	
+		<?=_L_VERSION?>: <b><?=$Row[version]?></b> <br>
+		<?=_L_RELEASE?>: <b><?=$Row[release]?></b> <br>
+		<?=_L_ADMIN_ALIAS?>: <b><?=$Row[alias]?></b> <br>
+		<?=_L_BASEURL?>: <b><?=$Row[base_url]?>/</b> <br>
+		<?=_L_BASEDIR?>: <b><?=$Row[base_dir]?></b> <br>
+		</td>
+		</tr>
+		</table>
+		<br>
+		<table width='100%' border=0 cellpadding=5 cellspacing=0 align='center' class="wBox">
+		<tr>
+		<td class="wDefault"><b><?=_L_DOCUMENT?></b>
+		</td>
+		</tr>
+		<tr>
+		<td class="wDefault">	
+
+		<a href="http://doc.whitebbs.net/install.html" target="_blank"><?=_L_INSTALL_GUIDE?></a><br> 
+		<a href="http://doc.whitebbs.net/user.html" target="_blank"><?=_L_USER_GUIDE?><br> 
+		<a href="http://doc.whitebbs.net/admin.html" target="_blank"><?=_L_ADMIN_GUIDE?><br> 
+		<a href="http://doc.whitebbs.net/stylist.html" target="_blank"><?=_L_STYLIST_GUIDE?></a><br> 
+		</td>
+		</tr>
+		</table>
+		<br>
+		<table width='100%' border=0 cellpadding=5 cellspacing=0 align='center' class="wBox">
+		<tr>
+		<td class="wDefault">
+		<?=_L_CURRENT_WHITEBBS_VERSION?>: <b><i><?=$Row['wb_version']?></i></b><br>
+		<?=$Row['news']?>
+
+		</td>
+		</tr>
+		</table>
+
+
+		<br>
+		<table width="100%" border=0 cellpadding=0  cellspacing=0 class="wAdmin">
+		<tr> 
+		<td valign=top colspan=6 height=1 class="fline"></td>
+		</tr>

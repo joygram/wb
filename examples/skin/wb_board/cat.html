@@ -1,0 +1,122 @@
+<table width="100%" align="center"border=0 cellspacing=0 cellpadding=0 >
+<tr>
+<td align="left" width=40% class="wVer7">
+<?=$hide['exec_perm']//자신의 글에 대해 수정/삭제권한이 있는경우//?>
+<a href='<?=$URL["list"]?>'>List</a></td>
+<td align="right" width=60% class="wVer7">
+<a href='<?=$URL["edit"]?>'>Modify</a> <a href='javascript:onClick=Confirm("<?=$URL["delete"]?>");'>Delete</a> 
+<?=$hide['/exec_perm']?>
+
+</td>
+</tr>
+</table>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr> 
+<td valign=top colspan=2 height=1 class="fline"></td>
+</tr>
+
+<tr> 
+<td width="25" bgcolor="#F7F5F5" class="wVer7">
+&nbsp;&nbsp;&nbsp;<b>Name</b>
+</td>
+<td bgcolor="#F7F5F5" class="wDefault"><b>:</b>
+<?=$hide['email']?><a href="javascript:window_open('<?=$URL['sendmail']?>',300,250,'');"><?=$hide['/email']?>
+<?=$hide['avatar']?><img src="<?=$URL[avatar]?>" border="0"><?=$hide['/avatar']?><?=$Row[name]?>
+<?=$hide['email']?></a><?=$hide['/email']?>
+</td>
+</tr>
+
+<?=$hide['home']?>
+<tr> 
+<td width="25" height=22  class="wVer7" bgcolor="#F7F5F5">
+&nbsp;&nbsp;&nbsp;<b>Homepage</b>
+</td>
+<td class="wVer7" align="left" bgcolor="#F7F5F5"><b class="wDefault">: </b>
+<a href='<?=$Row[homepage]?>' target='_blank'><?=$Row[homepage]?></a>
+</td>
+</tr>
+<?=$hide['/home']?>
+
+<?=$hide['link']?>
+<tr> 
+<td width="25" height=22  class="wVer7" bgcolor="#F7F5F5">
+&nbsp;&nbsp;&nbsp;<b>Link</b>
+</td>
+<td class="wVer7" align="left" bgcolor="#F7F5F5"><b class="wDefault">: </b>
+<a href='<?=$Row[link]?>' target="_blank"><?=$Row[link]?></a>
+</td>
+</tr>
+<?=$hide['/link']?>
+
+<?=$hide['attach']?>
+<tr> 
+<td width="25" height=22  class="wVer7" bgcolor="#F7F5F5">
+&nbsp;&nbsp;&nbsp;<b>Image</b>
+</td>
+<td class="wVer7" align="left" bgcolor="#F7F5F5"><b class="wDefault">: </b>
+<a href='<?=$URL["img"]?>' target="_blank"><?=$Row[InputFile_name]?></a> (<?=$Row[cnt_download]?>)
+</td>
+</tr>
+<?=$hide['/attach']?>
+
+<?=$hide['attach2']?>
+<tr> 
+<td width="25" height=22  class="wVer7" bgcolor="#F7F5F5">
+&nbsp;&nbsp;&nbsp;<b>File</b>
+</td>
+<td class="wVer7" align="left" bgcolor="#F7F5F5"><b class="wDefault">: </b>
+<a href='<?=$URL["download2"]?>'><?=$Row[InputFile2_name]?></a> (<?=$Row[cnt_download2]?>)
+</td>
+</tr>
+<?=$hide['/attach2']?>
+
+<tr> 
+<td width="25" height=22  class="wVer7" bgcolor="#F7F5F5">
+&nbsp;&nbsp;&nbsp;<b>Subject </b>
+</td>
+
+<td class="wDefault" align="left" bgcolor="#F7F5F5">
+<b>: <?=$Row[subject]?></b>
+</td>
+</tr>
+
+<tr> 
+<td valign=top colspan=2 height=1 class="fline"></td>
+</tr>
+
+</table>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+<?=$hide['attach']?>	
+<tr align="center">
+<td width='100%' align='center'>
+<br>
+<a href="javascript:void(0);"><img src="<?=$URL["img"]?>" border=0 width="<?=$Row[img_width]?>" height="<?=$Row[img_height]?>" onClick="open_win_resize('<?=$URL["img"]?>','scrollbars=no,resizable=no,width=<?=$Row[org_img_width]?>,height=<?=$Row[org_img_height]?>', <?=$Row[org_img_width]+30?>, <?=$Row[org_img_height]+50?>);"></a>
+<br>
+<br><br>
+</td>
+</tr>
+<?=$hide['/attach']?>
+
+<tr>
+<td width="80%" height=22 class="wDefault">
+<br>
+<?=$Row[comment]?>
+</td>
+<td width="20%" height=22  align="right" class="wTah7" valign="bottom" nowrap> 
+<?=$Row[w_date]?>
+</td> 
+</tr>
+
+<tr> 
+<td colspan=2>&nbsp;</td>
+</tr>
+
+<tr>
+<td colspan=2 class="line"></td>
+</tr>
+
+</table>

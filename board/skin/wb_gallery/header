@@ -1,0 +1,99 @@
+<html>
+<head>
+<title>WhiteBBS 2.8.0</title>
+<meta http-equiv="Content-Type" content="text/html; charset=<?=$wb_charset?>">
+<link rel=stylesheet type="text/css" href="skin/<?=$C_skin?>/style.css">
+<script language="JavaScript">
+<!--
+	function window_open(URL, width, height, opt) 
+	{
+		parameter = "width="+ width +",height=" + height + ",resizable=0,status=no,menubar=0,"+opt ;
+		win = window.open(URL,'popwin', parameter) ;
+	}
+
+	function open_win_resize( url, Opt, myWidth, myHeight )
+	{
+		popWin = window.open( url, 'resizeWin', Opt ) ;
+		popWin.resizeTo( myWidth, myHeight ) ;
+		popWin.focus() ;
+	}
+
+    function Confirm( url )
+    {
+        var Message = '정말로 삭제를 하시겠습니까 ?';
+        if(confirm(Message)==1)
+        {
+            document.location= url;
+        }
+    }
+/*
+입력 폼에서 항목의 [공란] 검사를 하고 싶으면  
+
+입력폼의 항목: <input name='항목이름'>  
+
+1. if블럭을 복사해서 붙인다음
+    1) if( form.항목이름.value.length == 0 )
+    2) form.항목이름.focus() ; 
+두개를 항목이름으로 변경시켜주도록 한다.
+
+2. submit 단추에 onClick='checkForm(this.form); return false;' 를 추가 시킨다. 
+<input type=submit name=Submit value=write class=wButton onClick='checkForm(this.form);return false;'>
+아래는 name, password, comment
+기본적으로 꼭 들어가야 한다고 
+생각되는 3개의 항목만 검사하도록 했다. 
+*/
+
+function checkForm(form)
+{
+	if(form.name.value.length == 0)
+	{
+		alert('이름을 넣어주세요.') ;
+		form.name.focus() ;
+		return false ;
+	}
+
+	if(form.password.value.length == 0)
+	{
+		alert('암호를 넣어주세요.') ;
+		form.password.focus() ;
+		return false ;
+	}
+	
+	if(form.subject.value.length == 0)
+	{
+		alert('제목을 넣어주세요.') ;
+		form.subject.focus() ;
+		return false ;
+	}
+	
+
+	if(form.comment.value.length == 0)
+	{
+		alert('내용을 넣어주세요.') ;
+		form.comment.focus() ;
+		return false ;
+	}
+
+	form.submit() ;
+
+}
+-->
+</script>
+
+</head>
+
+<body topmargin="0" leftmargin="0" marginwidth="0" marginheight="0" class="wBody">
+<center>
+<table cellpadding=0 cellspacing=0 width='400' align="<?=$Row[table_align]?>" border="0">
+<br>
+
+<?=$hide['board_title']?>
+<tr>
+<td class="wDefault"><?=$Row[board_title] ?>
+</td>
+</tr>
+<?=$hide['/board_title']?>
+
+<tr>
+<td>
+<!--header -->

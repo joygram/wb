@@ -1,0 +1,84 @@
+<html>
+<head>
+<script>
+function focus_input(input_num)
+{
+	//2002/04/25 win2000에서 PHP를 사용할 경우 SESSID가 hidden으로 들어가서 오류가 나는 것을 처리
+	if(document.forms[0].elements[0].value != "")
+	{
+		input_num++ ;	
+	}
+	//alert("["+input_num+"]["+document.forms[0].elements[0].value+"]["+document.forms[0].elements[0].length+"]") ;	
+	document.forms[0].elements[input_num].focus() ;	
+	return true ;
+}
+
+function form_submit(form)
+{
+	//window.alert("auth_user:"+form.auth_user.value) ;
+	form.submit() ;
+	return false ;
+}
+
+</script>
+
+<LINK REL=stylesheet TYPE="text/css" HREF="<?=$Row_auth[theme_url]?>/style.css">
+</head>
+
+<body onLoad='focus_input(0)' class="body">
+<center>
+<table border="0" cellspacing="0" cellpadding="0" height="100%">
+<tr>
+<td class="wVer7">
+<form action='<?=$Row_auth[url]?>'  method='post'>
+	<table width=300 border=0 cellpadding=2 cellspacing=0 0 valign='center'>
+	<tr> 
+	<td colspan=2 align=left class="wVer7">WhiteBoard Authentication</td>
+	</tr>
+
+	<tr> 
+	<td colspan=2 class="line"></td>
+	</tr>
+
+	<tr> 
+	<td colspan=2 height=10 class="wVer7"><br><?=$Row_auth[msg]?><br></td>
+	</tr>
+	
+	<?=$hide_auth['id'] ?>
+	<tr> 
+	<td valign='top' align=right class="wVer7" nowrap>ID </td>
+	<td>
+	<input type='text' name='auth_user' size=20 maxlength=20  class='wForm'>
+	</td>
+	</tr>
+	<?=$hide_auth['/id'] ?>
+	
+	<tr> 
+	<td valign='top' align=right class="wVer7" nowrap>PASSWORD </td>
+	<td>
+	<input type='password' name='auth_passwd' size=20 maxlength=20  class='wForm' >
+	<br><br>
+	</td>
+	</tr>
+	   
+	<tr> 
+	<td colspan=2 class="line"></td>
+	</tr>
+	<tr height=30> 
+	<td align=center colspan=2 > <br><br>
+	<input type=hidden name='auth_param' value='<?=$Row_auth[param]?>' >
+	<input type=hidden name='auth_mode'  value='<?=$Row_auth[auth_mode]?>'>
+	<input type=hidden name='auth_try'   value='<?=$Row_auth[try]?>'>
+
+	<input type=submit value='CONNECT'  onClick='form_submit(this.form);' class='wSave'>
+	<input type=button value='BACK' onClick='history.go(<?=$Row_auth[back_no]?>);'  class='wSave'>
+	</td>
+	</tr>
+	</table>
+</form>
+<!-- inner table end-->
+</td></tr>
+</table>
+</center>
+</body>
+</html>

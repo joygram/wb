@@ -1,0 +1,65 @@
+<script language="JavaScript">
+/**
+::Write Form Script
+
+입력 폼에서 항목의 [공란] 검사를 하고 싶으면  
+
+입력폼의 항목: <input name='항목이름'>  
+
+1. if블럭을 복사해서 붙인다음
+    1) if( form.항목이름.value.length == 0 )
+    2) form.항목이름.focus() ; 
+두개를 항목이름으로 변경시켜주도록 한다.
+
+2. submit 단추에 onClick='checkForm(this.form); return false;' 를 추가 시킨다. 
+<input type=submit value=write class=wButton onClick='checkForm(this.form);return false;'>
+아래는 name, password, comment
+기본적으로 꼭 들어가야 한다고 
+생각되는 3개의 항목만 검사하도록 했다. 
+*/
+
+function checkForm(form)
+{
+	if(form.name.value.length == 0)
+	{
+		alert('이름을 넣어주세요.') ;
+		form.name.focus() ;
+		return false ;
+	}
+
+	<?=$hide['/*main_writing']?>
+	if(form.subject.value.length == 0)
+	{
+		alert('제목을 넣어주세요.') ;
+		form.subject.focus() ;
+		return false ;
+	}	
+	<?=$hide['main_writing*/']?>
+
+	if(form.comment.value.length == 0)
+	{
+		alert('내용을 넣어주세요.') ;
+		form.comment.focus() ;
+		return false ;
+	}
+
+	<?=$hide['/*password']?>
+	if(form.password.value.length == 0 && form.passwd_exist.value != '1' )
+	{
+		alert('암호를 넣어주세요.') ;
+		form.password.focus() ;
+		return false ;
+	}	
+
+ 	if( form.password.value.length == 0 && form.passwd_exist.value == '1')
+    {
+        if( !confirm('기존의 암호를 그대로 사용하시겠습니까?') )
+        {
+            return false ;
+        }
+    }
+	<?=$hide['password*/']?>	
+
+	form.submit() ;
+}
+</script>

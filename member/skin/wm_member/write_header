@@ -1,0 +1,143 @@
+<script>
+<!--
+/*
+입력 폼에서 항목의 [공란] 검사를 하고 싶으면  
+
+입력폼의 항목: <input name='항목이름'>  
+
+1. if블럭을 복사해서 붙인다음
+    1) if( form.항목이름.value.length == 0 )
+    2) form.항목이름.focus() ; 
+두개를 항목이름으로 변경시켜주도록 한다.
+
+2. submit 단추에 onClick='checkForm(this.form); return false;' 를 추가 시킨다. 
+<input type=submit name=Submit value=write class=wButton onClick='checkForm(this.form);return false;'>
+아래는 name, password, comment
+기본적으로 꼭 들어가야 한다고 
+생각되는 3개의 항목만 검사하도록 했다. 
+*/
+
+function checkForm(form)
+{
+	if(form.uname.value.length < 6)
+	{
+		alert('사용자이름(ID)을 영문6자 또는 한글3자 이상으로 넣어주세요.') ;
+		form.uname.focus() ;
+		return false ;
+	}
+
+
+	<?=$hide['/*password']?>
+	if(form.password.value.length < 6)
+	{
+		alert('암호는 6자리 이상 영,숫자를 섞어서 정해주세요.') ;
+		form.password.focus() ;
+		return false ;
+	}	
+
+	if(form.password.value != form.password_again.value)
+	{
+		alert('입력한 암호가 일치하지 않습니다.') ;
+		form.password_again.focus() ;
+		return false ;
+	}	
+	<?=$hide['password*/']?>	
+
+
+	if(form.h_grad_year.value.length < 4)
+	{
+		alert('졸업년도는 4자리 숫자로 입력해주세요.') ;
+		form.h_grad_year.focus() ;
+		return false ;
+	}
+
+	if(form.lastname.value.length < 1)
+	{
+		alert('성을 입력해주세요.') ;
+		form.lastname.focus() ;
+		return false ;
+	}
+
+	if(form.firstname.value.length < 2)
+	{
+		alert('이름을 입력해주세요.') ;
+		form.firstname.focus() ;
+		return false ;
+	}
+
+	if(form.idnum.value.length < 2)
+	{
+		alert('주민릉록번호 나 사회복지번호를 입력해주세요.') ;
+		form.idnum.focus() ;
+		return false ;
+	}
+
+	/*
+	if(form.birthday.value.length < 8 || form.birthday.value.length > 10)
+	{
+		alert('생일을 적어주세요. 년도4자리, 월/일2자리') ;
+		form.birthday.focus() ;
+		return false ;
+	}
+	*/
+
+	if(form.mobilephone.value.length < 8)
+	{
+		alert('휴대전화 번호나 연락가능한 전화번호(지역번호 포함)를 적어주세요.') ;
+		form.mobilephone.focus() ;
+		return false ;
+	}
+
+	if(form.email.value.length < 6)
+	{
+		alert('전자우편 주소를 적어주세요') ;
+		form.email.focus() ;
+		return false ;
+	}
+
+
+	if(form.company_name.value.length < 2)
+	{
+		alert('회사명을 적어주세요.') ;
+		form.company_name.focus() ;
+		return false ;
+	}
+
+	if(form.company_title.value.length < 1)
+	{
+		alert(form.lastname.value+form.firstname.value+'님의 직함을 적어주세요.') ;
+		form.company_title.focus() ;
+		return false ;
+	}
+
+
+
+	if(form.comment.value.length == 0)
+	{
+		alert('경력/이력을 넣어주세요.') ;
+		form.comment.focus() ;
+		return false ;
+	}
+
+	form.submit() ;
+
+}
+-->
+</script>
+
+<?=$hide['reply_writing']?>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" align="center" class="wVer7">
+
+<tr> 
+<td width="100%" align="left">
+<b>SUBJECT <span class="wDefault">:: </b><?=$Row[subject]?></span>
+</td>
+</tr>
+
+<tr>
+<td class="wDefault" >
+<br>
+</td>
+</tr>
+</table>
+<?=$hide['/reply_writing']?>

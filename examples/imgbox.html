@@ -1,0 +1,66 @@
+<script language="javascript">
+	function image_insert(form, no, width, height, border) 
+	{  
+		no++ ;
+		img_data = '[w_img#'+no+']' ;
+		form.comment.value += img_data ;
+    }
+
+	function image_delete(form, img_name)
+	{
+		form.imagebox_mode.value = "delete" ;
+		form.img_name.value = img_name ;
+		form.submit() ;
+	}
+
+	function highlightmetasearch(form) 
+	{  
+		form.comment.select(); form.comment.focus();  
+	}  
+
+	function comment_copy(form) 
+	{  
+		/*
+		highlightmetasearch(form);  
+		textRange = form.comment.createTextRange();  
+		textRange.execCommand("RemoveFormat");  
+		textRange.execCommand("Copy");  
+		*/
+		alert(form.comment.value) ;
+		window.clipboardData.setData('Text', form.comment.value) ;
+	}  
+
+	function comment_paste(form) 
+	{  
+		var rng = document.selection.createRange();  
+		rng.execCommand("paste");  
+	}  
+
+	function onImgSubmit(img_form, form) 
+	{
+		comment_copy(form) ;
+		img_form.submit() ;
+	}
+
+	function recoverComment(form)
+	{
+		form.comment.focus() ;
+		comment_paste(form) ;
+	}
+</script>
+
+
+<?=$imgbox?>
+
+
+<br>
+IMGBOX 
+<br>
+<input type=hidden name='imagebox_mode' value='upload'>
+<input type=hidden name='board_group' value='<?=$board_group?>'>
+<input type=hidden name='data' value='<?=$data?>'>
+<input type=hidden name='img_name' value=''>
+<tr> 
+<td width="350">
+<input name='upload_img' type='file' size='25' class=wForm>
+<input value='¿Ã¸®±â' type='submit' onClick="onImgSubmit(this, document.wb_form);return false;">

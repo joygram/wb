@@ -1,0 +1,104 @@
+<br><br>
+<form method=post action='<?=$WRITE_PHP?>' 
+	enctype='multipart/form-data' >
+<!-- 이부분은 손 대지 말아 주세요. -->
+<input type=hidden name=mode value='<?=$mode?>' >
+<input type=hidden name=board_group value='<?=$board_group?>' >
+<input type=hidden name=board_id    value='<?=$board_id?>'    >
+<input type=hidden name=w_date      value='<?=$Row[w_date]?>' >
+<input type=hidden name=subject_org  value='<?=$Row[subject]?>' >
+<input type=hidden name=data        value='<?=$data?>'   >
+<input type=hidden name=tot_page value='<?=$tot_page?>'>
+<input type=hidden name=cur_page value='<?=$cur_page?>'>
+
+<input type=hidden name="spam_check" value="<?=$Row[spam_check]?>">
+<!-- 여기 까지 -->
+<table border="0" cellspacing="0" cellpadding="0" width=100% height="90%" align="center">
+<tr>
+<td>
+	
+	<table cellspacing=0 cellpadding=2 align=center border=0>
+	<tr>
+	<td align="right" colspan="2">
+	<a href='<?=$URL["list"]?>'><img src="skin/<?=$C_skin?>/images/back.gif" border="0"></a>
+	</td>
+	</tr>
+	
+	<tr>
+	<td height=18 width=60 class="wVer7">
+	Subject
+	</td>
+	
+	<td height=18>
+	<input type=text name=subject size=40 maxlength=30 class=wForm value='<?=$Row[subject]?>' >
+	</td>
+	</tr>
+	
+	<?=$hide['password']?>
+	<tr>
+	<td height=18 width=60 class="wVer7">
+	Pass
+	</td>
+	<td height=18> 
+	<input type=password name=password size=40 maxlength=20 class=wForm >
+	</td>
+	</tr>
+	<?=$hide['/password']?>
+	
+	<tr> 
+	<td width=60 class="wVer7"> 
+	Homepage
+	</td>
+	<td>
+	<input type=text name=homepage size=40 maxlength=50 class=wForm value='<?=$Row[homepage]?>' >
+	</td>
+	</tr>
+	
+	<?=$hide['category_select']?>
+	<tr> 
+	<td width=60 class="wVer7"> 
+	Category
+	</td>
+	<td class="wVer7">
+	<?=$Row[category_select]?>
+	</td>
+	</tr>
+	<?=$hide['/category_select']?>
+
+	<tr> 
+	<td width=60 class="wVer7"> 
+	Comment
+	</td>
+	<td>
+	<textarea name=comment cols=39 rows=7 class=wForm><?=$Row[comment]?></textarea>
+	</td>
+	</tr>
+
+	<tr> 
+	<td width=60 class="wVer7" valign="top"> 
+	Image
+	</td>
+	<td class="wVer7" align="right">
+	<input name='InputFile' type='file' size='25' class='wForm'><br>
+	<?=$Row[InputFile_name]?>&nbsp;&nbsp;
+	<?=$hide['attach']?>Remove <input class='wDefault' type='checkbox' name='remove_attach1'><?=$hide['/attach']?>
+
+	</td>
+	</tr>
+
+	<tr>
+	<td width=60 class="wVer7"> 
+	&nbsp;
+	</td> 
+	<td align="right"> 
+	<br>
+	<input type=image name="submit" src="skin/<?=$C_skin?>/images/save.gif" onClick='checkForm(this.form);return false;'>
+	</td>
+	</tr>
+
+	</table>
+	
+</td>
+</tr>
+</table>
+</form>

@@ -1,0 +1,128 @@
+<html>
+<script>
+	var max_img = 5 ;
+	var img_no ;
+
+	//최고 
+	function init_imgs()
+	{
+		//max_img만큼 아래 img태그를 만든다.
+		max_img = 5 ;
+		img_no = 1 ;
+
+		for(i = 0; i < max_img; ++i)
+		{
+			document.write("<img name=img"+(i+1) +" src=\''\"  style='display=none;' width='50' >") ;
+			document.write("<input type=button name='del"+(i+1)+"' value='삭제' style='display=none;' onClick=\"delete_img('"+(i+1)+"')\">") ;
+			document.write("<input type=button name='ins"+(i+1)+"' value='넣기' style='display=none;' onClick=\"insert_img('"+(i+1)+"')\">") ;
+		}
+	}
+
+
+	function add_img() 
+	{
+		if(max_img < img_no ) 
+		{
+			alert('max_img...') ;
+			return ;
+		}
+
+		if(img_no < 0)
+		{
+			alert("bad image_no") ;
+			return ;
+		}
+
+		document.images[img_no-1].src = document.img_box.img_path.value ;
+		eval("document.img_box.del"+img_no+".style.display = 'inline'") ;
+		eval("document.img_box.ins"+img_no+".style.display = 'inline'") ;
+		eval("document.img"+img_no+".style.display = 'inline'") ;
+		//eval("document.img"+img_no+".src = "+document.img_box.img_path.value);
+		//document.img_box.del1.style.display = "inline" ;
+		//document.img_box.ins1.style.display = "inline" ;
+		//document.img1.style.display = "inline" ;
+
+		document.img_box.img1_file = document.img_box.img_path ;
+		//document.img_box.img_path.value = "없다" ;
+		//document.img1.src = document.img_box.img_path.value ;
+		img_no++ ;
+
+	}
+
+
+	function delete_img(no)
+	{
+		if(no <0) 
+		{
+			alert("bad img_no") ;
+			return ;
+		}
+
+		pos = no ;
+		eval("document.img"+pos+".style.display = 'none'") ;
+		eval("document.img_box.del"+pos+".style.display = 'none'") ;
+		eval("document.img_box.ins"+pos+".style.display = 'none'") ;
+
+
+		//땡기기
+		for(i = pos+1; i < max_img; ++i)
+		{
+			alert("pos:"+pos+"/ i:"+i) ;
+			eval("document.img"+pos+".style.display = " + "document.img"+pos+".style.display ;") ;
+			eval("document.img_box.del"+pos+".style.display =" + "document.img_box.del"+i+".style.display ;") ;
+			eval("document.img_box.ins"+pos+".style.display =" + "document.img_box.del"+i+".style.display ;") ;
+			document.images[pos-1].src = "" ;
+		}
+		/**
+		//땡기기 할까?
+		document.img_box.del1.style.display = "none" ;
+		document.img_box.ins1.style.display = "none" ;
+		document.img1.style.display = "none" ;
+		document.img1.src = "" ;
+		*/
+		img_no-- ;
+	}
+
+	function insert_img(no)
+	{
+		document.wb_form.comment.value += "[img#" + no + "]" ;
+	}
+</script>
+
+
+<form name='img_box'>
+<script>init_imgs();</script>
+<!--이부분을 스크립트로 출력-->
+<input type=file name=img1_file size=25>
+<!--
+<img name=img1 src='' style='display=none;' width='50'>
+<input type=button name='del1' value='삭제' style='display=none;' onClick="delete_img('1')">
+<input type=button name='ins1' value='넣기' style='display=none;' onClick="insert_img('1')">
+
+<img name=img2 src='' style='display=none;'  width='50'>
+<input type=button name='del2' value='삭제' style='display=none;' onClick="delete_img('2')">
+<input type=button name='ins2' value='넣기' style='display=none;' onClick="insert_img('2')">
+
+<img name=img3 src='' style='display=none;'  width='50'>
+<input type=button name='del3' value='삭제' style='display=none;' onClick="delete_img('3')">
+<input type=button name='ins3' value='넣기' style='display=none;' onClick="insert_img('3')">
+
+<img name=img4 src='' style='display=none;'  width='50'>
+<input type=button name='del4' value='삭제' style='display=none;' onClick="delete_img('4')">
+<input type=button name='ins4' value='넣기' style='display=none;' onClick="insert_img('4')">
+
+<img name=img5 src='' style='display=none;'  width='50'>
+<input type=button name='del5' value='삭제' style='display=none;' onClick="delete_img('5')">
+<input type=button name='ins5' value='넣기' style='display=none;' onClick="insert_img('5')">
+-->
+<br>
+
+<input type=file name=img_path size=25><input type=button value='추가' onClick='add_img()'>
+</form>
+
+<form name=wb_form>
+<textarea name=comment>
+
+</textarea>
+</form>
+</html>

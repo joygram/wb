@@ -1,0 +1,9 @@
+WhiteBBS 2.9.4
+	2004/09
+	- getImageSize()에서 파일이 없는 경우 추가 경고 무시 처리 
+
+WhiteBBS 2.9.3 
+	2004/08/26
+	- session_register전에 session_destroy로 인해 일부 사이트에서 접속이 안되던 문제 체리토마토님의 패치 적용. 
+	- 포트번호가 80포트가 아닌경우 기븐URL에 추가 포트를 넣도록 추가 김영환님 패치  개선적용 get_base.php
+	- 관리자 도구::걸러내기 에서 전역 선택시 제목 부분이 Disable처리 되지 않던 부분 추가

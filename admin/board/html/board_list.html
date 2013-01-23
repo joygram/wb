@@ -1,0 +1,40 @@
+<!-- admin board list start-->
+<tr>
+<td colspan="2" height=2></td>
+</tr>
+
+<tr>
+<td width="38" align="center"> 
+<div ><?=$Row[no]?>
+</td>
+
+<td width="146" height="20" align="center">
+<a href='<?=$PREVIEW_URL?>' target="_blank"><?=$Row[board]?></a>
+</td>
+
+<td width="78" align="center"> 
+<?=$Row[cnt]?>
+</td>
+
+<td width="78" align="center">
+<a href='<?=$CONFIG_URL?>' ><?=_L_CONFIG?></a>
+</td>
+
+<td width="97" align="center">
+<a href='<?=$PREVIEW_URL?>' target="_blank"><?=_L_PREVIEW?></a>
+</td>
+
+<td width="64" align="center">
+<a href='<?=$DEL_URL?>' ><?=_L_DELETE?></a>
+</td>
+</tr>
+
+<tr>
+<td colspan="2" height=3></td>
+</tr>
+
+<tr>
+<td colspan=6 height=1 class="fline"></td>
+</tr>
+
+<!-- admin board list end-->

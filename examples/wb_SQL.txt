@@ -1,0 +1,67 @@
+# phpMyAdmin SQL Dump
+# version 2.5.6
+# http://www.phpmyadmin.net
+#
+# 호스트: localhost
+# 처리한 시간: 04-08-25 10:52 
+# 서버 버전: 4.0.18
+# PHP 버전: 4.3.6
+# 
+# 데이터베이스 : `whitebbs`
+# 
+
+# --------------------------------------------------------
+
+# 이름을 데이터는 wb_보드명_data 라고 바꾸고 
+# 헤더는 wb_보드명_head 라고 바꿀까?
+# 테이블 구조 `wb_article_board`
+#
+
+CREATE TABLE `wb_board_data` (
+  `board_group` smallint(6) NOT NULL default '0',
+  `board_id` smallint(6) NOT NULL default '0',
+  `encode_type` tinyint(4) NOT NULL default '0',
+  `uname` varchar(20) NOT NULL default '',
+  `password` varchar(20) NOT NULL default '',
+  `email` varchar(100) NOT NULL default '',
+  `homepage` varchar(100) NOT NULL default '',
+  `date_write` datetime NOT NULL default '0000-00-00 00:00:00',
+  `date_update` datetime NOT NULL default '0000-00-00 00:00:00',
+  `attach_name` varchar(100) NOT NULL default '',
+  `attach_size` mediumint(9) NOT NULL default '0',
+  `attach_type` varchar(100) NOT NULL default '',
+  `attach2_name` varchar(100) NOT NULL default '',
+  `attach2_size` mediumint(9) NOT NULL default '0',
+  `attach2_type` varchar(100) NOT NULL default '',
+  `bgimg` varchar(100) NOT NULL default '',
+  `link` varchar(100) NOT NULL default '',
+  `remote_ip` varchar(15) NOT NULL default '',
+  `use_html` tinyint(4) NOT NULL default '0',
+  `use_br` tinyint(4) NOT NULL default '0',
+  `uid` tinyint(4) NOT NULL default '0',
+   `note` longtext NOT NULL
+) ;
+
+
+#
+# 테이블 구조 `wb_board_header`
+#
+
+CREATE TABLE `wb_board_header` (
+  `board_group` smallint(6) NOT NULL default '0',
+  `board_id` smallint(6) NOT NULL default '0',
+  `type` tinyint(4) NOT NULL default '0',
+  `uid` tinyint(4) NOT NULL default '0',
+  `uname` varchar(20) NOT NULL default '',
+  `subject` varchar(100) NOT NULL default '',
+  `subject_color` varchar(100) NOT NULL default '',
+  `date_write` datetime NOT NULL default '0000-00-00 00:00:00',
+  `date_update` datetime NOT NULL default '0000-00-00 00:00:00',
+  `mail_reply` tinyint(4) NOT NULL default '0',
+  `cnt_reply` smallint(6) NOT NULL default '0',
+  `cnt_article` smallint(6) NOT NULL default '0',
+  `cnt_view` mediumint(9) NOT NULL default '0',
+  `cnt_down1` mediumint(9) NOT NULL default '0',
+  `cnt_down2` mediumint(9) NOT NULL default '0'
+) ;
+

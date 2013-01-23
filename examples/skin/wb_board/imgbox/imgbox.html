@@ -1,0 +1,35 @@
+<script language="javascript">
+	function image_insert(form, no, width, height, border) 
+	{  
+		no++ ;
+		img_data = '[w_img#'+no+']' ;
+		form.comment.value += img_data ;
+    }
+
+	function image_delete(form, img_name)
+	{
+		form.imagebox_mode.value = "delete" ;
+		form.img_name.value = img_name ;
+		//Image_box처리 모드로 들어가도록 유도 해야함. (코드사이즈 ㅠ..ㅠ)
+		form.mode.value = "" ;
+		form.submit() ;
+	}
+
+	function onImgSubmit(form) 
+	{
+		//Image_box처리 모드로 들어가도록 유도 해야함. (코드사이즈 ㅠ..ㅠ) 수정할 때 모드도 필요.
+		form.mode.value = "" ;
+		form.submit() ;
+	}
+
+</script>
+
+<?=$imgbox_list?>
+
+<input type=hidden name='imagebox_mode' value='upload'>
+<!--<input type=hidden name='board_group' value='<?=$board_group?>'>-->
+<!--<input type=hidden name='data' value='<?=$data?>'>-->
+<input type=hidden name='img_name' value=''>
+<br>
+<input name='upload_img' type='file' size='25' class=wForm>
+<input value='올리기' type='submit' onClick="onImgSubmit(this.form); return false;" class='wForm'>

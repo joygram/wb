@@ -1,0 +1,77 @@
+<html>
+<header>
+<title>SETUP ADMIN</title>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<link rel=stylesheet type="text/css" href="../html/style.css">
+<script>
+<!--
+function SubmitCheck(form)
+{
+	if(form.uid.value == '' || form.uid.value.length < 2)  
+	{
+		alert('<?=_L_ADMINID_NEED?>') ;
+		form.uid.focus() ;
+		return false ;
+	}
+
+	if( (form.passwd.value == '' || form.passwd.value.length < 5) && form.passwd_exist.value != '1' )
+	{
+		alert('<?=_L_ADMINPASSWORD_NEED?>') ;
+		form.passwd.focus() ;
+		return false ;
+	}
+
+	if( (form.passwd_retry.value == '' || form.passwd_retry.value.length < 5) && form.passwd_exist.value != '1' )
+	{
+		alert('<?=_L_ADMINPASSWORD_RETRY_NEED?>') ;
+		form.passwd_retry.focus() ;
+		return false ;
+	}
+
+	if(form.passwd.value != form.passwd_retry.value)
+	{
+		alert('<?=_L_ADMINPASSWORD_NOTSAME?>') ;
+		form.passwd.value = '';
+		form.passwd_retry.value = '';
+		form.passwd.focus() ;
+		return false ;
+	}
+
+	if( form.passwd.value.length == 0 && form.passwd_exist.value == '1')
+	{
+		if( !confirm('<?=_L_CURRENTPASSWORD_USE?>') )
+		{
+			return false ;
+		}
+	}
+	// get parameter로 넘기면 이상하게 안넘어가서... 2002/08/04
+	//form.cmd.value = "next" ;
+	form.submit() ;	
+	return false ;
+}
+-->
+</script>
+</header>
+<body class="wBody" onLoad='main_form.uid.focus();'>
+<table width="100%" border=0 cellpadding=0  cellspacing=0 class="wAdmin">
+<?=$hide['setup']?>
+<tr>
+<td align='right' class='copyright'>
+CopyRight(C) 2001-2003, <a href="http://whitebbs.net">WhiteBBS.net</a> All Right Reserved.&nbsp;
+</td>
+</tr>
+<?=$hide['/setup']?>
+
+<tr> 
+<td valign=top colspan=3 height=1 class="fline"></td>
+</tr>
+<tr>
+<td class=row1>
+&nbsp;&nbsp;<?=_L_ADMIN_SETUP?>
+</td>
+</tr>
+<tr> 
+<td valign=top colspan=3 height=1 class="fline"></td>
+</tr>
+	<form action='<?=$URL['next']?>' method='post' name='main_form' enctype='multipart/form-data'>
+	<table width="100%" class="wAdmin">

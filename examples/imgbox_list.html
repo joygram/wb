@@ -1,0 +1,18 @@
+<form name='<?=$img_form?>'>
+	<tr>
+	<td width='50'>
+	<img src='<?=$img_link?>' width=50 height=50 >
+	<input type=hidden name=img_name value='<?=$img_name?>' >
+	</td>
+	<td width = 60%>
+	width  : <input type=text name=img_width size=4 maxlength=4 class=wForm>
+	height : <input type=text name=img_height size=4 maxlength=4 class=wForm>
+	border : <input type=text name=img_border size=1 maxlength=1 class=wForm>
+	popup <input type=checkbox name=img_popup class=wForm>
+	</td>
+	<td width = 20%>
+	<input type="button"  value ="»ðÀÔ" onClick='image_insert(document.wb_form,<?=$img_no?>);return false;'>
+	<input type="button"  value ="»èÁ¦" onClick='image_delete(document.imagebox,"<?=$img_name?>"); return false;'>
+	</td>
+	</tr>
+</form>

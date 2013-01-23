@@ -1,0 +1,31 @@
+	<!-- start setup_admin_footer -->
+	<tr>
+	<td>&nbsp;
+	</td>
+	</tr>
+	
+	<tr>
+	<td colspan="2">
+	<input type="hidden" name="passwd_exist" value='<?=$Row[passwd_exist]?>'>
+	
+	<?=$hide['setup']?>
+	<input type="hidden" name="cmd" class="wButton" value='next'>
+	<input type="button" name="prev" class="wButton" value="<< <?=_L_BACK?>" onClick="javascript:document.location.href='<?=$URL['prev']?>';" >
+	<input type="submit" name="next" class="wButton" value="<?=_L_NEXT?> >>" onClick="SubmitCheck(document.main_form); return false;">
+	&nbsp;&nbsp;
+	<input type="button" name="exit" class="wButton" value="<?=_L_CANCEL?>" onClick="javascript:document.location.href='../../setup.php?cmd=exit';" >
+	<?=$hide['/setup']?>
+	
+	<?=$hide['admin_tool']?>
+	<input type="hidden" name="cmd" class="wButton" value='save'>
+	<input type="submit" name="next" class="wButton" value="<?=_L_SAVE?>" onClick="SubmitCheck(document.main_form); return false;">
+	<?=$hide['/admin_tool']?>
+	</td>
+	</tr>
+	</table>
+	</form>
+</td>
+</tr>
+</table>
+</body>
+</html>

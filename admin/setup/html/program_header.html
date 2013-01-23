@@ -1,0 +1,56 @@
+<html>
+<header>
+<title>SETUP PROGRAM</title>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<link rel=stylesheet type="text/css" href="../html/style.css">
+<script>
+<!--
+function SubmitCheck(form)
+{
+	var i ;
+	var check_cnt = 0;
+	for( i = 0 ; i < form.elements.length ; i++ )
+	{
+		if( form.elements[i].type == 'checkbox' && form.elements[i].checked)
+		{
+			check_cnt++ ;
+		}
+	}
+
+	if(check_cnt <= 0)
+	{
+		alert('<?=_L_PROGRAMSELECT_NEED?>') ;
+		return false ;
+	}
+	form.submit() ;	
+	return false ;
+}
+-->
+</script>
+
+</header>
+<body class="wBody">
+
+<table width="100%" border=0 cellpadding=0  cellspacing=0 class="wAdmin">
+<?=$hide['setup']?>
+<tr>
+<td align='right' class='copyright'>
+CopyRight(C) 2001-2003, <a href="http://whitebbs.net">WhiteBBS.net</a> All Right Reserved.&nbsp;
+</td>
+</tr>
+<?=$hide['/setup']?>
+
+
+<tr> 
+<td valign=top colspan=3 height=1 class="fline"></td>
+</tr>
+<tr>
+<td class=row1>
+&nbsp;&nbsp;<?=_L_PROGRAM_SELECTION?>
+</td>
+</tr>
+<tr> 
+<td valign=top colspan=3 height=1 class="fline"></td>
+</tr>
+	<form action='<?=$URL['next']?>' name='main_form' method='post'>
+	<table width="100%" class="wAdmin">

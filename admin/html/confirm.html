@@ -1,0 +1,74 @@
+	<html>
+	<head>
+	<LINK REL=stylesheet TYPE="text/css" HREF="admin/html/style.css">
+	</head>
+
+	<body bgcolor=#ffffff>
+
+	<!-- 이부분은 가급적이면 건드리지 말아주세요 -->
+	<form action='<?=$PHP_SELF?>' method=post >
+	<input type=hidden name=data value='<?=$data?>' >
+	<input type=hidden name=mode value='<?=$mode?>' >
+	<input type=hidden name=main_writing value='<?=$main_writing?>' >
+	<input type=hidden name=data value=<?=$data?>>
+	<input type=hidden name=board_group value='<?=$board_group?>' >
+	<input type=hidden name=board_id value='<?=$board_id?>' >
+	<input type=hidden name=subject value='<?=$subject?>' >
+	<input type=hidden name=admin value='<?=$admin?>' >
+	<input type=hidden name=chk_passwd value='yes' >
+	<input type=hidden name=url value='<?=$url?>' >
+	<!-- 주의 끝 -->
+
+	<center>
+	<table border="0" cellspacing="0" cellpadding="0" height="100%">
+	<tr>
+    <td>
+		<table width=300 border=0 cellpadding=2 cellspacing=0 0 valign='center' class='wDefault'>
+		<tr> 
+		<td colspan=2 align=left class="wVer7">WHITEBOARD AUTHENTICATION</td>
+		</tr>
+
+		<tr> 
+		<td colspan=2 bgcolor="A3A3A3" height="1"></td>
+		</tr>
+
+		<tr> 
+		<td colspan=2 height=10><br><br></td>
+		</tr>
+
+		<?=$id_use_start?>
+		<tr> 
+		<td align=right class="wVer7">ID　</td>
+		<td>
+			<input type=text name=member_id size=20 maxlength=20  class='wForm'>
+		</td>
+		</tr>
+		<?=$id_use_end?>
+		<tr> 
+		<td align=right class="wVer7">Password　</td>
+		<td>
+			<input type=password name=password size=20 maxlength=20  class='wForm' >
+		<br><br>
+		</td>
+		</tr>
+           
+		<tr> 
+		<td colspan=2 bgcolor="A3A3A3" height="1"></td>
+		</tr>
+		<tr height=30> 
+		<td align=center colspan=2 > <br><br>
+			<input type=submit value='CONNECT'  name="submit" class='wSave'>
+		</td>
+		</tr>
+		</table>
+		</form>
+	<!-- inner table end-->
+	</td></tr>
+	<tr> 
+	<td  colspan=2 align="center" class="wVer7"><a href="http://whitebbs.net" "target="_blank">WHITEBOARD</a>
+    </td>
+	</tr>
+	</table>
+</center>
+	</body>
+	</html>

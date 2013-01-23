@@ -1,0 +1,2130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Name>whitebbs</Name>
+    <ProjectGuid>{78210b14-89ec-4966-814f-d9f29f795842}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>whitebbs</RootNamespace>
+    <!-- important to be opened by PHP Tools, when also Phalanger Tools are installed -->
+    <ProjectTypeGuids>{A0786B88-2ADB-4C21-ABE8-AA2D79766269}</ProjectTypeGuids>
+    <AssemblyName>whitebbs</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <IncludeDebugInformation>true</IncludeDebugInformation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <IncludeDebugInformation>false</IncludeDebugInformation>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="admin\board\board.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="admin\board\board_add.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="admin\board\board_del.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="admin\board\config_menu.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="admin\board\config_open.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="admin\board\config_read.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="admin\board\config_save.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="admin\board\plugin.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="admin\board\plugin_add.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="admin\board\plugin_del.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="admin\board\skin.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="admin\board\skin_add.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="admin\board\skin_del.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="admin\correct212.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="admin\counter\config_menu.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="admin\counter\config_open.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="admin\counter\config_read.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="admin\counter\config_save.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="admin\counter\counter.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="admin\counter\counter_add.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="admin\counter\counter_del.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="admin\counter\skin.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="admin\counter\skin_add.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="admin\counter\skin_del.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="admin\counter\stat.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="admin\counter\whois.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="admin\index.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="admin\main.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="admin\menu.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="admin\purge\purge_board.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="admin\purge\purge_data.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="admin\setup\admin.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="admin\setup\db.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="admin\setup\language.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="admin\setup\program.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="admin\setup\timezone.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="admin\upgrade212.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="admin\upgrade245.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="auth\auth.inc.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="auth\auth.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="board\cat.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="board\conf\board.conf.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="board\conf\config.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="board\conf\__global.conf.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="board\data\board\data.backup.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="board\data\board\data.idx.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="board\delete.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="board\download.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="board\goto.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="board\list.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="board\manage.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="board\news.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="board\plugin\wplug_list\cat_footer.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="board\plugin\wplug_new\list.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="board\write.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cat.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="counter\conf\config.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="counter\conf\__global.conf.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="counter\counter.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="counter\example.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="examples\db_class.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="examples\Db_Mysql.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="examples\imagebox.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="examples\localtime\localtime.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="examples\localtime\page1.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="examples\localtime\page2.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="examples\Skin_Base.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="index.php" />
+    <Compile Include="lib\category.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\config.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\contrib\PEAR.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\contrib\phpsniff\index.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\contrib\phpsniff\phpSniff.class.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\contrib\phpsniff\phpSniff.core.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\contrib\phpsniff\phpTimer.class.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\contrib\Tar.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\contrib\txt-db-api\array_test.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\contrib\txt-db-api\const.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\contrib\txt-db-api\database.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\contrib\txt-db-api\db_test.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\contrib\txt-db-api\expression.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\contrib\txt-db-api\resultset.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\contrib\txt-db-api\sql.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\contrib\txt-db-api\stringparser.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\contrib\txt-db-api\txt-db-api.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\contrib\txt-db-api\util.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\contrib\ziplib.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\crypt.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\db_board_file.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\db_board_mysql.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\db_board_pgsql.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\db_counter_file.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\db_counter_pgsql.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\db_member_file.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\db_member_pgsql.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\file_list.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\filter.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\get_base.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\gradition_color.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\imagebox.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\io.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\license.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\lock.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\make_comment.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\make_news.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\make_url.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\message.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\notice.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\page.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\plugin.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\qsort.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\Record.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\reply_list.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\server_vars.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\spam.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\string.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\system_ini.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\Timer.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\total_cnt.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\util.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\wb.inc.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\whitebbs.inc.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\WhiteBBS_Suite.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\whois.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\Writer.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\Xplode.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\zlib.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="list.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="locale\en.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="locale\jp.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="locale\ko.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="member\admin.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="member\cat.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="member\conf\member.conf.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="member\delete.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="member\download.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="member\goto.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="member\list.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="member\Lister.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="member\list_1.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="member\Member.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="member\Member_Writer.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="member\wb_login.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="member\write.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="member\Writer.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="member\write_1.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="phpunit\Member_Test.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="phpunit\PHPUnit.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="phpunit\PHPUnit\Assert.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="phpunit\PHPUnit\GUI\Gtk.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="phpunit\PHPUnit\GUI\HTML.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="phpunit\PHPUnit\GUI\SetupDecorator.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="phpunit\PHPUnit\RepeatedTest.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="phpunit\PHPUnit\Skeleton.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="phpunit\PHPUnit\TestCase.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="phpunit\PHPUnit\TestDecorator.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="phpunit\PHPUnit\TestFailure.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="phpunit\PHPUnit\TestListener.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="phpunit\PHPUnit\TestResult.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="phpunit\PHPUnit\TestSuite.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="phpunit\test_runner.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="phpunit\Writer_Test.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="phpunit\xplode_Test.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sendmail.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="setup.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="system.ini.php">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="write.php">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="admin\board\html\board_footer.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\board\html\board_header.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\board\html\board_list.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\board\html\config_footer.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\board\html\config_header.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\board\html\config_list.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\board\html\config_title.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\board\html\header.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\board\html\plugin_footer.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\board\html\plugin_header.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\board\html\plugin_list.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\board\html\skin_footer.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\board\html\skin_header.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\board\html\skin_list.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\bsd_license.en">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\bsd_license.kr">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\counter\html\config_footer.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\counter\html\config_header.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\counter\html\config_list.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\counter\html\config_title.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\counter\html\counter_footer.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\counter\html\counter_header.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\counter\html\counter_list.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\counter\html\header.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\counter\html\plugin_footer.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\counter\html\plugin_header.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\counter\html\plugin_list.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\counter\html\skin_footer.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\counter\html\skin_header.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\counter\html\skin_list.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\counter\html\stat_footer.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\counter\html\stat_header.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\counter\html\stat_list.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\counter\html\whois_footer.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\counter\html\whois_header.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\counter\html\whois_list.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\counter\images\bg_bottom.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\counter\images\c.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\counter\images\dot.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\counter\images\left_bg.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\counter\images\left_bottom.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\counter\images\point.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\counter\images\pxcccccc.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\counter\images\right_bg.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\counter\images\right_bottom.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\counter\images\right_top.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\counter\images\top_bg.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\counter\images\top_logo.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\frame\blank.frame">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\frame\board.frame">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\frame\center.frame">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\frame\guest.frame">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\html\bottom.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\html\confirm.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\html\correct212.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\html\correct212_msg.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\html\header">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\html\images\btn_hlp.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\html\images\c.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\html\images\cnrbl1.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\html\images\cnrbl2.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\html\images\cnrbr1.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\html\images\cnrbr2.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\html\images\cnrtr1.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\html\images\cnrtr2.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\html\images\cntr.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\html\images\correct212.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\html\images\dot.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\html\images\dot1.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\html\images\left_bg.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\html\images\line.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\html\images\line2.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\html\images\point.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\html\images\point1.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\html\images\pxcccccc.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\html\images\rtbck.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\html\images\spacer.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\html\images\top_logo.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\html\images\tree\base.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\html\images\tree\empty.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\html\images\tree\folder.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\html\images\tree\folderopen.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\html\images\tree\join.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\html\images\tree\joinbottom.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\html\images\tree\line.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\html\images\tree\minus.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\html\images\tree\minusbottom.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\html\images\tree\page.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\html\images\tree\plus.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\html\images\tree\plusbottom.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\html\left.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\html\main_header.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\html\menu_footer.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\html\menu_header.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\html\menu_list.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\html\menu_title.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\html\right.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\html\style.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\html\top.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\html\tree.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\html\tree.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\index.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\license">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\license2">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\play.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\setup\html\admin_footer.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\setup\html\admin_header.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\setup\html\admin_list.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\setup\html\db_footer.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\setup\html\db_header.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\setup\html\db_list.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\setup\html\language_footer.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\setup\html\language_header.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\setup\html\language_list.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\setup\html\program_footer.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\setup\html\program_header.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\setup\html\program_list.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\setup\html\timezone_footer.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\setup\html\timezone_header.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\setup\html\timezone_list.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin\sign.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\data\board\news.txt">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\data\board\total.cnt">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\HISTORY.TXT">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\images\noimage.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\INSTALL.TXT">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\plugin\wplug_list\images\arrow.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\plugin\wplug_new\author.txt">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\plugin\wplug_new\images\new.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\plugin\wplug_new\readme.txt">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\README.TXT">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board\admin\header">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board\admin\list.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board\admin\list_footer">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board\admin\list_header">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board\admin\write.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board\author.txt">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board\cat.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board\category\category_footer">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board\category\category_header">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board\category\category_list.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board\cat_footer">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board\cat_header">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board\footer">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board\header">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board\images\admin.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board\images\back.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board\images\c-comment.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board\images\c-name.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board\images\c-subject.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board\images\cancel.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board\images\chk_off.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board\images\chk_on.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board\images\config.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board\images\date.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board\images\dot.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board\images\dot1.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board\images\hit.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board\images\line.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board\images\member.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board\images\name.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board\images\no.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board\images\save.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board\images\search.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board\images\subject.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board\imgbox\imgbox.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board\imgbox\imgbox_list.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board\imgbox\list_footer.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board\imgbox\list_header.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board\list.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board\list_footer">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board\list_header">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board\news\news.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board\news\news_footer">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board\news\news_header">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board\pagebar\pagebar_footer">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board\pagebar\pagebar_header">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board\pagebar\pagebar_list.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board\pagebar\pagebar_selected.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board\reply_list.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board\style.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board\write.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board\write_header">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board_new\admin\header">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board_new\admin\list.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board_new\admin\list_footer">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board_new\admin\list_header">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board_new\admin\write.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board_new\author.txt">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board_new\cat.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board_new\category\category_footer">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board_new\category\category_header">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board_new\category\category_list.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board_new\cat_footer">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board_new\cat_header">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board_new\footer">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board_new\header">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board_new\images\admin.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board_new\images\back.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board_new\images\c-comment.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board_new\images\c-name.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board_new\images\c-subject.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board_new\images\cancel.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board_new\images\chk_off.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board_new\images\chk_on.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board_new\images\config.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board_new\images\date.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board_new\images\dot.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board_new\images\dot1.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board_new\images\hit.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board_new\images\line.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board_new\images\member.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board_new\images\name.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board_new\images\no.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board_new\images\save.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board_new\images\search.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board_new\images\subject.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board_new\imgbox\imgbox.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board_new\imgbox\imgbox_list.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board_new\imgbox\list_footer.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board_new\imgbox\list_header.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board_new\list.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board_new\list_footer">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board_new\list_header">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board_new\news\news.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board_new\news\news_footer">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board_new\news\news_header">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board_new\pagebar\pagebar_footer">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board_new\pagebar\pagebar_header">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board_new\pagebar\pagebar_list.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board_new\pagebar\pagebar_selected.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board_new\reply_list.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board_new\style.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board_new\write.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_board_new\write_header">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_gallery\category\category_footer">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_gallery\category\category_header">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_gallery\category\category_list.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_gallery\footer">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_gallery\header">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_gallery\images\admin.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_gallery\images\back.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_gallery\images\bullet.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_gallery\images\c-comment.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_gallery\images\c-name.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_gallery\images\c-subject.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_gallery\images\cancel.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_gallery\images\chk_off.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_gallery\images\chk_on.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_gallery\images\config.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_gallery\images\email.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_gallery\images\home.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_gallery\images\line.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_gallery\images\save.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_gallery\images\search.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_gallery\list.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_gallery\list_footer">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_gallery\list_header">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_gallery\pagebar\pagebar_footer">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_gallery\pagebar\pagebar_header">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_gallery\pagebar\pagebar_list.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_gallery\pagebar\pagebar_selected.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_gallery\reply_list.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_gallery\style.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_gallery\wb_gallery.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_gallery\write.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_guest\footer">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_guest\header">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_guest\images\back.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_guest\images\c-comment.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_guest\images\c-name.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_guest\images\cancel.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_guest\images\chk_off.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_guest\images\chk_on.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_guest\images\config.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_guest\images\line.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_guest\images\save.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_guest\images\search.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_guest\list.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_guest\list_footer">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_guest\list_header">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_guest\pagebar\pagebar_footer">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_guest\pagebar\pagebar_header">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_guest\pagebar\pagebar_list.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_guest\pagebar\pagebar_selected.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_guest\reply_list.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_guest\style.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_guest\write.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_guest\write_header">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_link\category\category_footer">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_link\category\category_header">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_link\category\category_list.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_link\footer">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_link\header">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_link\images\back.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_link\images\c-comment.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_link\images\c-name.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_link\images\c-subject.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_link\images\cancel.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_link\images\chk_off.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_link\images\chk_on.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_link\images\config.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_link\images\line.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_link\images\noimage.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_link\images\save.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_link\images\search.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_link\list.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_link\list_footer">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_link\list_header">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_link\pagebar\pagebar_footer">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_link\pagebar\pagebar_header">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_link\pagebar\pagebar_list.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_link\pagebar\pagebar_selected.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_link\style.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_link\write.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_notice\cat.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_notice\footer">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_notice\header">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_notice\images\admin.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_notice\images\back.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_notice\images\line.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_notice\images\save.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_notice\list.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_notice\list_footer">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_notice\list_header">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_notice\news.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_notice\pagebar\pagebar_footer">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_notice\pagebar\pagebar_header">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_notice\pagebar\pagebar_list.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_notice\pagebar\pagebar_selected.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_notice\reply_list.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_notice\style.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_notice\write.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_photo\admin\write.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_photo\admin\write_header">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_photo\cat.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_photo\category\category_footer">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_photo\category\category_header">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_photo\category\category_list.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_photo\footer">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_photo\header">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_photo\images\back.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_photo\images\c-comment.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_photo\images\c-name.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_photo\images\chk_off.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_photo\images\chk_on.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_photo\images\config.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_photo\images\line.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_photo\images\save.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_photo\images\scissor.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_photo\images\search.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_photo\list.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_photo\list_footer">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_photo\list_header">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_photo\pagebar\pagebar_footer">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_photo\pagebar\pagebar_header">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_photo\pagebar\pagebar_list.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_photo\pagebar\pagebar_selected.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_photo\style.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_photo\write.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\wb_photo\write_header">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\__global\category\wbc_horizontal\author.txt">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\__global\category\wbc_horizontal\category_footer">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\__global\category\wbc_horizontal\category_header">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\__global\category\wbc_horizontal\category_list.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\__global\category\wbc_horizontal\preview.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\__global\category\wbc_horizontal\readme.txt">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\__global\category\wbc_select\author.txt">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\__global\category\wbc_select\category_footer">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\__global\category\wbc_select\category_header">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\__global\category\wbc_select\category_list.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\__global\category\wbc_select\preview.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\__global\category\wbc_select\readme.txt">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\__global\category\wbc_vertical\author.txt">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\__global\category\wbc_vertical\category_footer">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\__global\category\wbc_vertical\category_header">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\__global\category\wbc_vertical\category_list.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\__global\category\wbc_vertical\readme.txt">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\__global\news\wbn_normal\author.txt">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\__global\news\wbn_normal\news.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\__global\news\wbn_normal\news_footer">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\__global\news\wbn_normal\news_header">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\__global\news\wbn_normal\preview.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\skin\__global\news\wbn_normal\readme.txt">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="board\TODO.TXT">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="counter\skin\wc_white\author.txt">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="counter\skin\wc_white\counter.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="counter\skin\wc_white\images\dot.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="counter\skin\wc_white\preview.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="counter\skin\wc_white\readme.txt">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="counter\skin\wc_white\style.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="doc\install249.txt">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="doc\release0311040.txt">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="doc\release0312051.txt">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="doc\upgrade212.txt">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="doc\upgrade245.txt">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="doc\upgrade249.txt">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="examples\img.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="examples\imgbox.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="examples\imgbox_list.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="examples\list_footer.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="examples\list_header.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="examples\skin\wb_board\admin_list.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="examples\skin\wb_board\admin_list_footer.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="examples\skin\wb_board\admin_list_header.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="examples\skin\wb_board\admin_write.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="examples\skin\wb_board\author.txt">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="examples\skin\wb_board\cat.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="examples\skin\wb_board\category\category_footer">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="examples\skin\wb_board\category\category_header">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="examples\skin\wb_board\category\category_list.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="examples\skin\wb_board\cat_footer.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="examples\skin\wb_board\cat_header.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="examples\skin\wb_board\footer.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="examples\skin\wb_board\header.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="examples\skin\wb_board\images\admin.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="examples\skin\wb_board\images\back.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="examples\skin\wb_board\images\c-comment.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="examples\skin\wb_board\images\c-name.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="examples\skin\wb_board\images\c-subject.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="examples\skin\wb_board\images\cancel.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="examples\skin\wb_board\images\chk_off.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="examples\skin\wb_board\images\chk_on.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="examples\skin\wb_board\images\config.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="examples\skin\wb_board\images\date.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="examples\skin\wb_board\images\dot.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="examples\skin\wb_board\images\dot1.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="examples\skin\wb_board\images\hit.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="examples\skin\wb_board\images\line.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="examples\skin\wb_board\images\member.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="examples\skin\wb_board\images\name.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="examples\skin\wb_board\images\no.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="examples\skin\wb_board\images\save.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="examples\skin\wb_board\images\search.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="examples\skin\wb_board\images\subject.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="examples\skin\wb_board\imgbox\imgbox.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="examples\skin\wb_board\imgbox\imgbox_list.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="examples\skin\wb_board\imgbox\list_footer.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="examples\skin\wb_board\imgbox\list_header.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="examples\skin\wb_board\list.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="examples\skin\wb_board\list_footer.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="examples\skin\wb_board\list_header.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="examples\skin\wb_board\news\news.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="examples\skin\wb_board\news\news_footer">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="examples\skin\wb_board\news\news_header">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="examples\skin\wb_board\reply_list.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="examples\skin\wb_board\style.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="examples\skin\wb_board\write.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="examples\skin\wb_board\write_header.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="examples\wb_SQL.txt">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="HISTORY.TXT">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="installed_ver">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="lib\contrib\phpsniff\user_agent.inc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="lib\contrib\txt-db-api\php-txt-db-api-0.3.1-Beta-01.zip">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="mail\images\bg_bottom.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="mail\images\c.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="mail\images\dot.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="mail\images\left_bg.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="mail\images\left_bottom.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="mail\images\left_top.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="mail\images\pxcccccc.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="mail\images\right_bg.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="mail\images\right_bottom.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="mail\images\right_top.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="mail\images\top_bg.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="mail\images\top_logo.gif">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="member\skin\wm_member\cat.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="member\skin\wm_member\cat_footer">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="member\skin\wm_member\cat_footer.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="member\skin\wm_member\cat_header">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="member\skin\wm_member\cat_header.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="member\skin\wm_member\footer">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="member\skin\wm_member\footer.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="member\skin\wm_member\header">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="member\skin\wm_member\header.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="member\skin\wm_member\list.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="member\skin\wm_member\list_footer">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="member\skin\wm_member\list_footer.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="member\skin\wm_member\list_header">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="member\skin\wm_member\list_header.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="member\skin\wm_member\news.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="member\skin\wm_member\reply_list.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="member\skin\wm_member\style.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="member\skin\wm_member\write.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="member\skin\wm_member\write_header">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="member\skin\wm_member\write_header.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="member\zipcode.kr">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="phpunit\pear_manual_en.chm">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="phpunit\PHPUnit\GUI\HTML.tpl">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="README.TXT">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="release\gzip.exe">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="release\make_release">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="release\make_release.bat">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="release\tar.exe">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="release\unzip.exe">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="release\zip.exe">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="release_no">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="sql\postgresql\member.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="theme\white\login.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="theme\white\message.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="theme\white\message_abort.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="theme\white\style.css">
+      <SubType>Content</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="admin" />
+    <Folder Include="admin\board" />
+    <Folder Include="admin\board\html" />
+    <Folder Include="admin\counter" />
+    <Folder Include="admin\counter\html" />
+    <Folder Include="admin\counter\images" />
+    <Folder Include="admin\frame" />
+    <Folder Include="admin\html" />
+    <Folder Include="admin\html\images" />
+    <Folder Include="admin\html\images\tree" />
+    <Folder Include="admin\purge" />
+    <Folder Include="admin\setup" />
+    <Folder Include="admin\setup\html" />
+    <Folder Include="auth" />
+    <Folder Include="auth\session" />
+    <Folder Include="board" />
+    <Folder Include="board\conf" />
+    <Folder Include="board\data" />
+    <Folder Include="board\data\board" />
+    <Folder Include="board\images" />
+    <Folder Include="board\plugin" />
+    <Folder Include="board\plugin\wplug_list" />
+    <Folder Include="board\plugin\wplug_list\images" />
+    <Folder Include="board\plugin\wplug_new" />
+    <Folder Include="board\plugin\wplug_new\images" />
+    <Folder Include="board\skin" />
+    <Folder Include="board\skin\wb_board" />
+    <Folder Include="board\skin\wb_board\admin" />
+    <Folder Include="board\skin\wb_board\category" />
+    <Folder Include="board\skin\wb_board\images" />
+    <Folder Include="board\skin\wb_board\imgbox" />
+    <Folder Include="board\skin\wb_board\news" />
+    <Folder Include="board\skin\wb_board\pagebar" />
+    <Folder Include="board\skin\wb_board_new" />
+    <Folder Include="board\skin\wb_board_new\admin" />
+    <Folder Include="board\skin\wb_board_new\category" />
+    <Folder Include="board\skin\wb_board_new\images" />
+    <Folder Include="board\skin\wb_board_new\imgbox" />
+    <Folder Include="board\skin\wb_board_new\news" />
+    <Folder Include="board\skin\wb_board_new\pagebar" />
+    <Folder Include="board\skin\wb_gallery" />
+    <Folder Include="board\skin\wb_gallery\category" />
+    <Folder Include="board\skin\wb_gallery\images" />
+    <Folder Include="board\skin\wb_gallery\pagebar" />
+    <Folder Include="board\skin\wb_guest" />
+    <Folder Include="board\skin\wb_guest\images" />
+    <Folder Include="board\skin\wb_guest\pagebar" />
+    <Folder Include="board\skin\wb_link" />
+    <Folder Include="board\skin\wb_link\category" />
+    <Folder Include="board\skin\wb_link\images" />
+    <Folder Include="board\skin\wb_link\pagebar" />
+    <Folder Include="board\skin\wb_notice" />
+    <Folder Include="board\skin\wb_notice\images" />
+    <Folder Include="board\skin\wb_notice\pagebar" />
+    <Folder Include="board\skin\wb_photo" />
+    <Folder Include="board\skin\wb_photo\admin" />
+    <Folder Include="board\skin\wb_photo\category" />
+    <Folder Include="board\skin\wb_photo\images" />
+    <Folder Include="board\skin\wb_photo\pagebar" />
+    <Folder Include="board\skin\__global" />
+    <Folder Include="board\skin\__global\category" />
+    <Folder Include="board\skin\__global\category\wbc_horizontal" />
+    <Folder Include="board\skin\__global\category\wbc_select" />
+    <Folder Include="board\skin\__global\category\wbc_vertical" />
+    <Folder Include="board\skin\__global\news" />
+    <Folder Include="board\skin\__global\news\wbn_normal" />
+    <Folder Include="board\skin\__global\pagebar" />
+    <Folder Include="counter" />
+    <Folder Include="counter\conf" />
+    <Folder Include="counter\skin" />
+    <Folder Include="counter\skin\wc_white" />
+    <Folder Include="counter\skin\wc_white\images" />
+    <Folder Include="doc" />
+    <Folder Include="examples" />
+    <Folder Include="examples\localtime" />
+    <Folder Include="examples\skin" />
+    <Folder Include="examples\skin\wb_board" />
+    <Folder Include="examples\skin\wb_board\category" />
+    <Folder Include="examples\skin\wb_board\images" />
+    <Folder Include="examples\skin\wb_board\imgbox" />
+    <Folder Include="examples\skin\wb_board\news" />
+    <Folder Include="lib" />
+    <Folder Include="lib\contrib" />
+    <Folder Include="lib\contrib\phpsniff" />
+    <Folder Include="lib\contrib\txt-db-api" />
+    <Folder Include="locale" />
+    <Folder Include="mail" />
+    <Folder Include="mail\images" />
+    <Folder Include="member" />
+    <Folder Include="member\conf" />
+    <Folder Include="member\skin" />
+    <Folder Include="member\skin\wm_member" />
+    <Folder Include="phpunit" />
+    <Folder Include="phpunit\PHPUnit" />
+    <Folder Include="phpunit\PHPUnit\GUI" />
+    <Folder Include="release" />
+    <Folder Include="sql" />
+    <Folder Include="sql\postgresql" />
+    <Folder Include="theme" />
+    <Folder Include="theme\white" />
+  </ItemGroup>
+</Project>

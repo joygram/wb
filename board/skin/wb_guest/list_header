@@ -1,0 +1,70 @@
+<!--list header-->
+<?=$hide['write_perm']?>
+<br>
+<table border="0" cellspacing="0" cellpadding="1"  width="100%" align="center">
+<tr>
+<td align="center">
+<form method=post action='<?=$WRITE_PHP?>' enctype='multipart/form-data' >
+<!-- 이부분은 손 대지 말아 주세요. -->
+<input type=hidden name=mode value='insert'>
+<input type=hidden name=board_group value='<?=$board_group?>' >
+<input type=hidden name=board_id    value='<?=$board_id?>'    >
+<input type=hidden name=data        value='<?=$data?>'    >
+<input type=hidden name=w_date      value='<?=$Row[w_date]?>' >
+<input type=hidden name=name_org    value='<?=$Row[name]?>'   >
+<!-- 여기 까지 -->
+
+	<table border="0" cellspacing="0" cellpadding="1" class="wVer7">
+	<tr> 
+	 <td colspan="2">
+	 Name&nbsp;
+	 <input type=text name=name size=14 maxlength=10 class=wForm value='<?=$Row[name]?>' >&nbsp;
+	 Mail&nbsp;
+	 <input type=text name=email size=19 maxlength=50 class=wForm value='<?=$Row[email]?>' >
+	</td>
+	</tr>
+	
+	<tr> 
+	<td colspan="2">
+	Home&nbsp;
+	<input type=text name=homepage size=23 maxlength=50 class=wForm value='<?=$Row[homepage]?>' >&nbsp;
+	Pass&nbsp;
+	<input type=password name=password size=10 maxlength=15 class=wForm >
+	<br><br>
+	</td>
+	</tr>
+	<tr>
+    <td align="center">
+	<textarea name=comment cols=46 rows=7 class=wOver><?=$Row[comment]?></textarea>
+	</td>
+	</tr>
+
+	<tr>
+	<td colspan="2 ">
+	<div align="right">
+	<input type=image name="submit" src="skin/<?=$C_skin?>/images/save.gif" onfocus='this.blur()' onClick='checkForm(this.form);return false;'>
+	</div>
+	</td>
+	</tr>
+	</table>
+</form>	
+</td>
+</tr>
+</table>
+<?=$hide['/write_perm']?>
+
+<?=$hide[board_title_start]?>
+<table border=0  cellspacing=0 cellpadding=10 align='center' class="wNotice">
+<tr>
+<td align="center" class="wDefault"><?=$Row[board_title] ?>
+</td>
+</tr>
+</table>
+<br><br>
+<?=$hide[board_title_end]?>
+	
+<table border=0 width='98%' cellspacing=0 cellpadding=0 align='center' class="wVer7">
+<tr> 
+<td class="line">
+</tr>
+</table>

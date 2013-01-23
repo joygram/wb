@@ -1,0 +1,18 @@
+
+</td>
+</tr>
+
+<?=$hide['category_list']?>
+<tr>
+<td align="right">
+<?=$Row[category_list]?>
+</td>
+</tr>
+<?=$hide['/category_list']?>
+
+<tr> 
+<td class="line"></td>
+</tr>
+
+<tr>
+<td>

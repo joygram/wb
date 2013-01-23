@@ -1,0 +1,29 @@
+<LINK REL=stylesheet TYPE="text/css" HREF="<?=$Row[theme_url]?>/style.css">
+<center>
+<table border='0' cellspacing='0' cellpadding='0' height='100%'>
+<tr>
+<td>
+<table width=400 border=0 cellpadding=2 cellspacing=0 0 valign='center'>
+<tr><td align=left class='wVer7'>WHITEBOARD MESG</td></tr>
+<tr><td bgcolor='A3A3A3' height='1'></td></tr>
+<tr><td height=5><br></td></tr>
+<tr><td align=left class='wDefault'>
+<?=$message?> 
+</td></tr>
+
+<tr><td height=5><br></td></tr>
+
+<tr><td bgcolor='A3A3A3' height='1'></td></tr>
+<tr height=30> 
+<td align=right > <br><br>
+<input type=button value='되돌아가기' class='wButton' onClick="history.go(-1);">
+&nbsp;&nbsp;
+<input type=button value='문의 하기' class='wButton' onClick="document.location='http://whitebbs.net/go.php?where=qa&hostname=$hostname&script=$script&mesg=$mesg&skin=$GLOBALS[C_skin]';" >
+</td>
+</tr>
+</table>
+</form>
+<!-- inner table end-->
+</td></tr>
+</table>
+</center>

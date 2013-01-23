@@ -1,0 +1,32 @@
+<table border="0" cellspacing="0" cellpadding="4" width="100%">
+<tr> 
+<td width="100%" class="wDate">
+
+<?=$hide['exec_perm']?><a href='javascript:onClick=Confirm("<?=$URL["delete"]?>");' title="삭제"><?=$hide['/exec_perm']?>
+<font class="wPoint">&#149;</font>
+<?=$hide['exec_perm']?></a><?=$hide['/exec_perm']?> 
+<?=$Row[w_year]?><?=$Row[w_mon]?><?=$Row[w_day]?>
+<?=$hide['exec_perm']?><a href='<?=$URL["edit"]?>'  title="수정"><?=$hide['/exec_perm']?> 
+<font class="wPoint">&#149;</font>
+<?=$hide['exec_perm']?></a><?=$hide['/exec_perm']?>
+</td>
+</tr>
+
+<!-- 
+<tr> 
+<td width="100%" class="wDefault">
+<?=$Row[subject]?>
+</td>
+</tr>
+-->
+
+<tr> 
+<td class="wDefault">
+<?=$hide["attach"]?>
+<a href="#"><img src="<?=$URL["img"]?>" border=0 width="<?=$Row[img_width]?>" height="<?=$Row[img_height]?>" onClick="open_win_resize('<?=$URL["cat"]?>','scrollbars=no,resizable=no,width=<?=$Row[org_img_width]?>,height=<?=$Row[org_img_height]?>', <?=$Row[org_img_width]+16?>, <?=$Row[org_img_height]+33?>);"></a>
+<br>
+<?=$hide["/attach"]?>
+<?=$Row[comment]?>
+</td>
+</tr>
+</table>

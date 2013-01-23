@@ -1,0 +1,55 @@
+<STYLE TYPE="TEXT/CSS">
+<!--
+/* 주의: 클래스나 아이디 이름은 8자 이내로 하여야 한다. */ 	
+
+	/* link */
+A:link {text-decoration:none; color:#666666}
+A:visited {text-decoration:none; color:#666666}
+A:active {text-decoration:none}
+A:hover {text-decoration:none; color:#CCCCCC}
+
+	/* normal text */
+.wDefault {font-family: 굴림; font-size:9pt; line-height:15pt; color:#666666}
+.wDate {font-family: tahoma ; font-size:7pt; color:#666666}
+.wVer7 {  font-family: Verdana; font-size: 7pt; color:#666666}
+.wTah7 {  font-family: tahoma; font-size: 7pt; color:#666666}
+
+	/* reply */
+.wRepl {font-family: 굴림; font-size:9pt; line-height:15pt; color:#999999}
+.wRdate {font-family: tahoma; font-size:7pt; color:#999999}
+
+	/* categoary */
+.wCat {  font-family: tahoma; font-size: 8pt;color:#666666}
+.wCate {border:solid 1; border-color:#EEEEEF; font-size:8pt; font-family: tahoma; color:#666666; background-color:transparent}
+
+	/* form */	
+.wButton {border:solid 0; border-color:#666666; background:#FFFFFF; font-family: tahoma; font-size:7pt;color:#666666}
+.wForm {border:solid 1; border-color:#E5E5E5; background:#FFFFFF; font-family: 굴림; font-size:9pt;color:#666666}
+.wSearch {border-width:0 0 1; border-bottom: dotted #e9e9e9 1px; background:; line-height:100%; font-size:9pt; color:#999999}
+.wRep {border-width:0 0 1; border-color:#FFFFFF; background:; line-height:100%; font-size:9pt;}
+.wOver {border:solid 1; border-color:#E5E5E5; font-family: 굴림; font-size:9pt;color:#333333; overflow:auto}
+.wBox { border: solid 1 #666666;}
+
+	/* etc */
+.copyright {font-family:tahoma; font-size:7pt; color:#666666}
+
+	/* page_bar */
+.page_bar {font-family:tahoma; font-size:7pt}
+#page_bar {font-family:tahoma; font-size:10pt; color:#666666;}
+
+.line {background:url(images/line.gif);}
+
+.wBody 
+{
+
+	scrollbar-face-color:#F7F7F7; 
+	scrollbar-shadow-color:#cccccc ;
+	scrollbar-highlight-color: #FFFFFF;
+	scrollbar-3dlight-color: #FFFFFF;
+	scrollbar-darkshadow-color: #FFFFFF;
+	scrollbar-track-color: #FFFFFF;
+	scrollbar-arrow-color: #cccccc}
+}
+
+-->
+</STYLE>

@@ -1,0 +1,115 @@
+	<br>
+	<table border='0' cellspacing='0' cellpadding='0'  width='100%' align='center'>
+	<tr>
+	<td align="left" width="50%" class="wVer7">
+	<?=$hide['write_perm']?>
+	<a href='<?=$WRITE_URL?>' >Register</a>	| 
+	<?=$hide['/write_perm']?>
+	<?=$hide['login']?>
+	<a href='<?=$URL[login]?>'>Login</a>
+	<?=$hide['/login']?>
+	
+	<?=$hide['logout']?>
+	<a href='<?=$URL[logout]?>'>Logout</a> | 
+	<a href='javascript:onClick=window_open("<?=$URL['config']?>",460,480,"")'>Config</a>
+	<?=$hide['/logout']?>
+	</td>
+	<td align="right" class="wVer7"><?=$page_bar?></td>
+	</tr>
+	
+	<tr>
+	<td align="center" colspan="2">
+	<br>
+	<!-- 검색 항목 선택을 이미지로 하기 위한 자바스크립트 -->
+	<script language="javascript">
+	browserName = navigator.appName ;
+	browserVer = parseInt(navigator.appVersion) ;
+	
+	if(browserName == "Netscape" && browserVer >= 3)
+	{ 
+		init = "net"; 
+	}
+	else 
+	{ 
+		init = "ie"; 
+	}
+	
+	if(((init == "net")&&(browserVer >=3))||((init == "ie")&&(browserVer >= 4)))
+	{
+		chk_name_on  = new Image ;
+		chk_name_off = new Image ;
+		chk_name_on.src  = "skin/<?=$C_skin?>/images/chk_on.gif" ;
+		chk_name_off.src = "skin/<?=$C_skin?>/images/chk_off.gif" ;
+	
+		chk_comment_on   = new Image ;
+		chk_comment_off  = new Image ;
+		chk_comment_on.src  = "skin/<?=$C_skin?>/images/chk_on.gif" ;
+		chk_comment_off.src = "skin/<?=$C_skin?>/images/chk_off.gif" ;
+	}
+	
+	
+	function OnOff( selected ) 
+	{
+		if(((init == "net")&&(browserVer >=3))||((init == "ie")&&(browserVer >= 4))) 
+		{
+			
+			if( selected == "name")
+			{
+				document.search.field.value = selected ;
+				document.chk_name.src = chk_name_on.src ;
+				document.chk_comment.src = chk_comment_off.src ;
+				
+			}
+			else if( selected == "subject" )
+			{
+				document.search.field.value = selected ;
+				document.chk_name.src = chk_name_off.src ;
+				document.chk_comment.src = chk_comment_off.src ;
+			}
+			else if( selected == "comment" )
+			{
+				document.search.field.value = selected ;
+				document.chk_name.src = chk_name_off.src ;
+				document.chk_comment.src = chk_comment_on.src ;
+			}
+	
+			//window.alert(document.search.field.value) ;		
+		}
+	}
+	</script>
+	<!-- 검색 항목 선택을 이미지로 하기 위한 자바스크립트 끝-->
+	
+	
+	
+	<table border=0 cellspacing=0 cellpadding=5 align="center">
+	
+	<!--폼에 이름을 꼭 search라고 줄것-->
+	<form action='<?=$URL['list']?>' method='get' name='search'>
+	<input type=hidden name='mode' value='find'>
+	<input type=hidden name='cur_page' value='<?=$cur_page?>' >
+	<input type=hidden name='data' value='<?=$data?>'>
+	<input type=hidden name='tot_page' value='<?=$tot_page?>' >
+	<!-- WBS-0001적용20020323 -->
+	<input type=hidden name='filter_type' value='<?=$filter_type?>' >
+	
+	<tr align="center">
+	<td class="wTah7"> 
+		
+	<!--이미지로 처리하기 위해서 필요한 것 여기서 부터 -->
+	<input type=hidden name=field value='<?=$Row[field]?>'>
+	<a href="javascript:OnOff('name')" onfocus='this.blur()'><img src=skin/<?=$C_skin?>/images/chk_on.gif border=0 name=chk_name>Name</a> 
+	<a href="javascript:OnOff('comment')" onfocus='this.blur()'><img src=skin/<?=$C_skin?>/images/chk_off.gif border=0 name=chk_comment>Comment</a> 
+	<script language='javascript'>OnOff('<?=$Row[field]?>'); </script>
+	<!--이미지로 처리하기 위해서 필요한 것 여기까지-->
+	
+	<input type=text name=key size=8 maxlength=10 value='<?=$key?>' class=wSearch>
+	<input type=submit value=Search class=wButton>
+	<a href='<?=$URL['list']?>'><img src="skin/<?=$C_skin?>/images/cancel.gif" align=absmiddle border=0></a>
+	</td>
+	</tr>
+	</form>
+	</table>
+
+	</td>
+	</tr>
+	</table>

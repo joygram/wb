@@ -1,0 +1,93 @@
+<html>
+<head>
+<title><?=_L_WHITEBBS_ADMIN?></title>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<link rel=stylesheet type="text/css" href="../html/style.css">
+<script language='JavaScript'>
+
+function centerPOP(mypage,myname,w,h)
+{
+	LeftPosition = (screen.width) ? (screen.width-w)/2 : 0 ;
+	TopPosition = (screen.height) ? (screen.height-h)/2 : 0 ;
+	settings = 'height='+h+',width='+w+',top='+TopPosition+',left='+LeftPosition+',scrollbars=no,resizable=no,menubar=0' ;
+	win = window.open(mypage,myname,settings) ;
+	return win ;
+}
+
+
+function POP(URL) 
+{
+	win = window.open(URL,'new','width=460,height=480,scrollbars=yes,resizable=0,status=yes,menubar=0');
+}
+
+function Confirm( url, name, func )
+{
+	if( func == "del")
+	{
+		var Message = '['+name+']<?=_L_REALLY_DELETE?>';
+	}
+	else if( func == "correct" )
+	{
+	}
+
+	if(confirm(Message)==1)
+	{
+		document.location= url;
+	}
+}
+
+function checkForm(form)
+{
+	if(form.data.value.length == 0)
+	{
+		alert('<?=_L_BOARDNAME_NEED?>') ;
+		form.data.focus() ;
+		return false ;
+	}	
+
+	str = form.data.value ;
+
+	str = str.replace(/(\s+)/gi, "") ;
+	//alert('[AFTER:'+str+']') ;
+	found = str.search(/([^a-z1-9\-_]+)/gi) ;
+	//alert('[FOUND:'+found+']') ;
+
+	if( found != -1 )
+	{
+		alert('<?=_L_CORRECT_BOARDNAME_NEED?>') ; 
+		form.data.focus() ;
+		return false ;
+	}
+
+	form.data.value = str ;
+	return true ;
+}
+
+</script>
+
+</head>
+
+<body class="wBody" leftmargin="0" topmargin="0">
+<table cellspacing=0 cellpadding=0 width="100%" height="100%" border=0>
+<tr>
+<td valign=top width=15></td>
+<td valign=top class='wDefault'>
+		<?=$Row[title]?>
+		<table width="100%" border=0 cellpadding=0  cellspacing=0 class="wAdmin">
+		<tr> 
+		<td valign=top colspan=6 height=1 class="fline"></td>
+		</tr>
+		
+		<tr align='center' > 	
+		<td align=center class=row1 width="38" height="22"><?=_L_NUM?></td>
+		<td align=center class=row1 width="146" height="22"><?=_L_BOARDNAME?></td>
+		<td align=center class=row1 width="78" height="22"><?=_L_TOTAL_ARTICLE?></td>
+		<td align=center class=row1 width="78" height="22"><?=_L_CONFIG?></td>
+		<td align=center class=row1 width="97" height="22"><?=_L_PREVIEW?></td>	
+		<td align=center class=row1 width="64" height="22"><?=_L_DELETE?></td>	
+		</tr>
+		
+		<tr> 
+		<td valign=top colspan=6 height=1 class="fline"></td>
+		</tr>
+	<!-- admin board list header -->

@@ -1,0 +1,123 @@
+<!--plugin start-->
+<?php 
+	if($Row[h_grad_year] == 1949) $Row[h_grad_year]=1948 ; // 1회가 1949년6월임. 
+	$Row[grad_no] = ($Row[h_grad_year]-1948); 
+	$Row[name] = $Row[lastname].$Row[firstname] ;
+
+	$Row[birthday_select] = $Row[birthday_select]?"음력":"양력"
+?>
+<!--plugin end-->
+
+<table width="100%" align="center"border=0 cellspacing=0 cellpadding=0 >
+<tr>
+<td align="left" width=40% class="wVer7">
+
+<?=$hide['exec_perm']//자신의 글에 대해 수정/삭제권한이 있는경우//?>
+<a href='<?=$URL["list"]?>'>List</a></td>
+<td align="right" width=60% class="wVer7">
+<a href='<?=$URL["edit"]?>'>Modify</a> <a href='javascript:onClick=Confirm("<?=$URL["delete"]?>");'>Delete</a> 
+<?=$hide['/exec_perm']?>
+
+</td>
+</tr>
+</table>
+
+<table width=100% align="center" border=1 cellspacing=0 cellpadding=0 bordercolorlight="#A3A3A3" bordercolordark="#FFFFFF" bgcolor="#E5E5E5">
+<tr> 
+<td width="100%"> 
+	<table width=100% align="center"border=0 cellspacing=0 cellpadding=0  bgcolor="#E5E5E5">
+	<tr> 
+	<td> 
+	</td>
+	</tr>
+	</table>
+</td>
+</tr>
+</table>
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+
+<tr> 
+<td width="25" bgcolor="#F7F5F5" class="wVer7">
+&nbsp;&nbsp;&nbsp;<b>Name</b>
+</td>
+<td bgcolor="#F7F5F5" class="wDefault"><b>:</b>
+
+<?=$hide['admin_writing']//관리자의 글//?>
+<?=$hide['email']?><a href="javascript:window_open('<?=$URL['sendmail']?>',300,250,'');"><?=$hide['/email']?>
+<img src="./skin/<?=$C_skin?>/images/admin.gif" border="0"><?=$Row[name]?>
+<?=$hide['email']?></a><?=$hide['/email']?>
+<?=$hide['/admin_writing']//관리자의 글 끝//?>
+
+<?=$hide['member_writing']//회원의 글//?>
+<?=$hide['email']?><a href="javascript:window_open('<?=$URL['sendmail']?>',300,250,'');"><?=$hide['/email']?>
+<b><?=$Row[name]?></b> (<?=$Row[grad_no]?>회)
+<?=$hide['email']?></a><?=$hide['/email']?>
+<?=$hide['/member_writing']//회원의 글 끝//?>
+
+<?=$hide['anonymous_writing']//무명씨의 글//?>
+<?=$hide['email']?><a href="javascript:window_open('<?=$URL['sendmail']?>',300,250,'');"><?=$hide['/email']?>
+<?=$Row[name]?>
+<?=$hide['email']?></a><?=$hide['/email']?>
+<?=$hide['/anonymous_writing']//무명씨의 글 끝//?>
+
+</td>
+</tr>
+
+<?=$hide['home']?>
+<tr> 
+<td width="25" height=22  class="wVer7" bgcolor="#F7F5F5">
+&nbsp;&nbsp;&nbsp;<b>Homepage</b>
+</td>
+<td class="wVer7" align="left" bgcolor="#F7F5F5"><b class="wDefault">: </b>
+<a href='<?=$Row[homepage]?>' target='_blank'><?=$Row[homepage]?></a>
+</td>
+</tr>
+<?=$hide['/home']?>
+</table>
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+<?=$hide['attach']?>	
+<tr align="center">
+<td width='100%' align='center'>
+<br>
+<img src='<?=$URL["img"]?>' border=0  width="<?=$Row[img_width]?>" height="<?=$Row[img_height]?>">
+<br><br>
+</td>
+</tr>
+<?=$hide['/attach']?>
+
+<tr>
+<td class='wDefault'>
+전화 : <?=$Row[mobilephone]?>
+<br>
+전자우편 : <?=$Row[email]?>
+<br>
+졸업년도 : <?=$Row[h_grad_year]?>
+<br>
+회사 : <?=$Row[company_name]?>
+<br>
+회사홈 : <?=$Row[company_homepage]?> 
+
+<br>
+</td>
+</tr>
+
+<tr>
+<td width="80%" height=22 class="wDefault">
+<br>
+<?=$Row[comment]?>
+</td>
+<td width="20%" height=22  align="right" class="wTah7" valign="bottom" nowrap> 
+<?=$Row[w_date]?>
+</td> 
+</tr>
+
+<tr> 
+<td colspan=2>&nbsp;</td>
+</tr>
+
+<tr>
+<td colspan=2 class="line"></td>
+</tr>
+</table>

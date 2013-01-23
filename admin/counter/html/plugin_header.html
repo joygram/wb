@@ -1,0 +1,96 @@
+<html>
+<head>
+<title>화이트보드 - 관리자 도구</title>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<link rel=stylesheet type="text/css" href="../html/style.css">
+<script language='JavaScript'>
+
+function centerPOP(mypage,myname,w,h)
+{
+	LeftPosition = (screen.width) ? (screen.width-w)/2 : 0 ;
+	TopPosition = (screen.height) ? (screen.height-h)/2 : 0 ;
+	settings = 'height='+h+',width='+w+',top='+TopPosition+',left='+LeftPosition+',scrollbars=no,resizable=no,menubar=0' ;
+	win = window.open(mypage,myname,settings) ;
+	return win ;
+}
+
+
+function POP(URL) 
+{
+	win = window.open(URL,'new','width=460,height=480,scrollbars=yes,resizable=0,status=yes,menubar=0');
+}
+
+function Confirm( url, name, func )
+{
+	if( func == "del")
+	{
+		var Message = '['+name+']를 정말로 삭제 하시겠습니까 ?';
+	}
+	else if( func == "correct" )
+	{
+	}
+
+	if(confirm(Message)==1)
+	{
+		document.location= url;
+	}
+}
+
+function checkForm(form)
+{
+	if(form.data.value.length == 0)
+	{
+		alert('올릴 플러그인을 선택해주세요.') ;
+		form.data.focus() ;
+		return false ;
+	}	
+
+	str = form.data.value ;
+
+	/*
+	str = str.replace(/(\s+)/gi, "") ;
+	//alert('[AFTER:'+str+']') ;
+	found = str.search(/([^a-z1-9\-_]+)/gi) ;
+	//alert('[FOUND:'+found+']') ;
+
+	if( found != -1 )
+	{
+		alert('올바른 보드명을 적어주세요.\n\n알파벳, 숫자, -, _, 만 들어갈 수 있습니다.') ; 
+		form.data.focus() ;
+		return false ;
+	}
+	*/
+
+	form.data.value = str ;
+	return true ;
+}
+
+</script>
+
+</head>
+
+<body class="wBody" leftmargin="0" topmargin="0">
+<table cellspacing=0 cellpadding=0 width="100%" height="100%" border=0>
+<tr>
+<td valign=top width=15></td>
+<td valign=top class='wDefault'>
+		<?=$Row[title]?>
+		<br>
+		<table width="100%" border=0 cellpadding=0  cellspacing=0 class="wAdmin">
+		<tr> 
+		<td valign=top colspan=7 height=1 class="fline"></td>
+		</tr>
+		
+		<tr align='center' > 	
+		<td align=center class=row1 width="38" height="22">번호</td>
+		<td align=center class=row1 width="146" height="22">플러그인 이름</td>
+		<td align=center class=row1 width="98" height="22">제작자</td>
+		<td align=center class=row1 width="98" height="22">설명</td>
+		<td align=center class=row1 width="64" height="22">백업</td>	
+		<td align=center class=row1 width="64" height="22">삭제</td>	
+		</tr>
+		
+		<tr> 
+		<td valign=top colspan=7 height=1 class="fline"></td>
+		</tr>
+	<!-- admin board list header -->

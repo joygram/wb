@@ -1,0 +1,15 @@
+	<tr>
+	<td width='50'>
+	<img src='<?=$img_link?>' width=50 height=50 >
+	</td>
+	<td width = 60% class='wDefault'>
+	width  : <input type=text name=img_width size=4 maxlength=4 class=wForm>
+	height : <input type=text name=img_height size=4 maxlength=4 class=wForm>
+	border : <input type=text name=img_border size=1 maxlength=1 class=wForm>
+	popup <input type=checkbox name=img_popup class=wForm>
+	</td>
+	<td width = 20%>
+	<input type="button"  value ="태그" onClick='image_insert(this.form,<?=$img_no?>);return false;' class=wForm>
+	<input type="button"  value ="삭제" onClick='image_delete(this.form,"<?=$img_name?>"); return false;' class=wForm>
+	</td>
+	</tr>

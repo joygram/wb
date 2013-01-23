@@ -1,0 +1,55 @@
+<html>
+<head>
+<title>WhiteBBS 2.8.0</title>
+<meta http-equiv="Content-Type" content="text/html; charset=<?=$wb_charset?>">
+<link rel=stylesheet type="text/css" href="skin/<?=$C_skin?>/style.css">
+<script language="JavaScript">
+<!--
+/**
+::Common Script
+**/
+function window_open(URL, width, height, opt) 
+{
+	parameter = "width="+ width +",height=" + height + ",resizable=0,status=no,menubar=0,"+opt ;
+	win = window.open(URL,'popwin', parameter) ;
+}
+
+function Confirm( url )
+{
+	var Message = '정말로 삭제를 하시겠습니까 ?';
+        if(confirm(Message)==1)
+        {
+            document.location= url;
+        }
+    }
+    
+function open_win_resize( url, Opt, myWidth, myHeight )
+{
+	popWin = window.open( url, 'resizeWin', Opt ) ;
+	popWin.resizeTo( myWidth, myHeight ) ;
+	popWin.focus() ;
+}
+
+function checkForm(form)
+{
+	if(form.password.value.length == 0)
+	{
+		alert('암호를 넣어주세요.') ;
+		form.password.focus() ;
+		return false ;
+	}	
+	if(form.comment.value.length == 0)
+	{
+		alert('내용을 넣어주세요.') ;
+		form.comment.focus() ;
+		return false ;
+	}
+
+	form.submit() ;
+}
+-->
+</script>
+
+</head>
+
+<body topmargin='0' leftmargin='0' marginwidth='0' marginheight='0' class="wBody">

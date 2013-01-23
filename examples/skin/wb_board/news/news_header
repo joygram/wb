@@ -1,0 +1,19 @@
+<style type="text/css">
+<!--
+	/* link */
+A:link {text-decoration:none; color:#666666}
+A:visited {text-decoration:none; color:#666666}
+A:active {text-decoration:none; color:#666666}
+A:hover {text-decoration:none; color:#CCCCCC}
+
+.nDate {  font-family: "tahoma"; font-size: 7pt; line-height: 100%; color:#666666}
+.nDefault {  font-family: "Verdana"; font-size: 9pt; line-height: 18pt; color:#666666}
+.wVer7 {  font-family: "Verdana"; font-size: 7pt; line-height: 100%; color:#666666}
+-->
+</style>
+<table border=0 width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<a href='<?=$URL["list"]?>' class="nDefault">º¸µå:<?=$Row[data]?></a>
+</td>
+<tr>

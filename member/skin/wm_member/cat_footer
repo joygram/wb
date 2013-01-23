@@ -1,0 +1,13 @@
+<table border=0 cellpadding=2 cellspacing=0 width="100%" align="center">
+<tr>
+<td align=left width=50% class="wVer7" colspan="3"><a href='<?=$URL["list"]?>'>
+List</a>
+</td>
+<td align=right width=50% class="wVer7" colspan="3">
+<?=$hide['reply_perm']?>
+<a href='<?=$URL["reply"]?>'>
+Reply</a>
+<?=$hide['/reply_perm']?>
+</td>
+</tr>
+</table>

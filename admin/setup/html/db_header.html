@@ -1,0 +1,80 @@
+<html>
+<header>
+<title>SETUP DB</title>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<link rel=stylesheet type="text/css" href="../html/style.css">
+<script>
+<!--
+function SubmitCheck(form)
+{
+	/*
+	if(form.uid.value == '' || form.uid.value.length < 2)  
+	{
+		alert('<?=_L_DBID_NEED?>') ;
+		form.uid.focus() ;
+		return false ;
+	}
+
+	if( (form.passwd.value == '' || form.passwd.value.length < 5) && form.passwd_exist.value != '1' )
+	{
+		alert('<?=_L_DBPASSWORD_NEED?>') ;
+		form.passwd.focus() ;
+		return false ;
+	}
+
+	if( (form.passwd_retry.value == '' || form.passwd_retry.value.length < 5) && form.passwd_exist.value != '1' )
+	{
+		alert('<?=_L_DBPASSWORD_RETRY_NEED?>') ;
+		form.passwd_retry.focus() ;
+		return false ;
+	}
+
+	if(form.passwd.value != form.passwd_retry.value)
+	{
+		alert('<?=_L_DBPASSWORD_NOTSAME?>') ;
+		form.passwd.value = '';
+		form.passwd_retry.value = '';
+		form.passwd.focus() ;
+		return false ;
+	}
+
+	if( form.passwd.value.length == 0 && form.passwd_exist.value == '1')
+	{
+		if( !confirm('<?=_L_CURRENTPASSWORD_USE?>') )
+		{
+			return false ;
+		}
+	}
+	*/
+	form.submit() ;	
+	return false ;
+}
+-->
+</script>
+
+</header>
+
+<body class="wBody">
+<table width="100%" border=0 cellpadding=0  cellspacing=0 class="wAdmin">
+<?=$hide['setup']?>
+<tr>
+<td align='right' class='copyright'>
+CopyRight(C) 2001-2003, <a href="http://whitebbs.net">WhiteBBS.net</a> All Right Reserved.&nbsp;
+</td>
+</tr>
+<?=$hide['/setup']?>
+
+<tr> 
+<td valign=top colspan=3 height=1 class="fline"></td>
+</tr>
+<tr>
+<td class=row1>
+&nbsp;&nbsp;<?=_L_DATABASE_SETUP?>
+</td>
+</tr>
+<tr> 
+<td valign=top colspan=3 height=1 class="fline"></td>
+</tr>
+
+	<form action='<?=$URL['next']?>' name='main_form' method='post'>
+	<table width="100%" class="wAdmin">

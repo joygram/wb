@@ -1,0 +1,6 @@
+<!-- plug-in start-->
+<?php 
+	if($Row[h_grad_year] == 1949) $Row[h_grad_year]=1948 ; // 1회가 1949년6월임. 
+	$Row[grad_no] = ($Row[h_grad_year]-1948); 
+?>
+<!-- plug-in end -->

@@ -1,0 +1,88 @@
+<table border="0" cellspacing="0" cellpadding="0" width=100% height="90%" align="center"  height="100%" valign="meddle">
+<tr>
+<td>
+				
+	<table cellspacing=0 cellpadding=2 align=center border=0 >
+	<form method=post action='<?=$WRITE_PHP?>' enctype='multipart/form-data' class='wForm'>
+	<!-- 이부분은 손 대지 말아 주세요. -->
+	<input type=hidden name=mode value='<?=$mode?>' >
+	<input type=hidden name=board_group value='<?=$board_group?>' >
+	<input type=hidden name=board_id    value='<?=$board_id?>'    >
+	<input type=hidden name=w_date      value='<?=$Row[w_date]?>' >
+	<input type=hidden name=name_org    value='<?=$Row[name]?>'   >
+	<input type=hidden name=data        value='<?=$data?>'   >
+	<input type=hidden name=tot_page value='<?=$tot_page?>'>
+	<input type=hidden name=cur_page value='<?=$cur_page?>'>
+	<input type=hidden name='to' value="<?=$Row[to]?>">
+	<input type=hidden name="spam_check" value="<?=$Row[spam_check]?>">
+	<!-- 여기 까지 -->
+	
+	<tr>
+	<td align="right" colspan="2">
+	<a href='<?=$URL["list"]?>'><img src="skin/<?=$C_skin?>/images/back.gif" border="0"></a>
+	</td>
+	</tr>
+	
+	<tr> 
+	<td height=18 width=60 align=center class="wVer7"> 
+	Subject
+	</td>
+	<td height=18 > 
+	<input type=text name='subject' size=40 maxlength=50 class=wForm value='<?=$Row[subject]?>' >
+	</td>
+	</tr>
+	
+	<?=$hide['password']?>
+	<tr> 
+	<td height=18 width=60 align=center class="wVer7"> 
+	Pass
+	</td>
+	<td height=18 > 
+	<input type=password name='password' size=45 maxlength=40 class=wForm >
+	</td>
+	</tr>
+	<?=$hide['/password']?>
+	
+	<tr> 
+	<td colspan="2"> 
+	<textarea name=comment cols=49 rows=12 class=wForm><?=$Row[comment]?></textarea>
+	</td>
+	</tr>
+	
+		
+	<?=$hide['main_writing']?>
+	<tr> 
+	<td height=18 width=60 align=center valign="bottom" class="wVer7">Image</td>
+	<td height=18  class="wVer7" align="right"> 
+	<?=$Row[InputFile_name]?>&nbsp;&nbsp;
+	<?=$hide['attach']?>Del <input class='wDefault' type='checkbox' name='remove_attach1'><?=$hide['/attach']?><br>
+	<input name='InputFile' type='file' size='25' class=wForm></td>
+	</tr>
+	<?=$hide['/main_writing']?>
+	
+	<tr>
+	<td colspan="2" align=center> 
+	<br>
+	<input type=image name="submit" src="skin/<?=$C_skin?>/images/save.gif" onClick='checkForm(this.form);return false;'>
+	</td>
+	</tr>
+	
+	</table>
+	</form>
+	
+	
+<br>
+	<!--start of license-->
+	<table border=0 width='95%' align='center'>
+	<tr>
+	<td>
+	<?=$license2?>
+	</div>
+	</td>
+	</tr>
+	</table>
+	<!--end  of license-->
+</td>
+</tr>
+</table>
+

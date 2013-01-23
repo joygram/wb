@@ -1,0 +1,131 @@
+<table border="0" cellspacing="0" cellpadding="1" class="wDefault" align="center">
+
+<form method=post action='<?=$WRITE_PHP?>' enctype='multipart/form-data' class='wForm'>
+<!-- 이부분은 손 대지 말아 주세요. -->
+<input type=hidden name=mode value='<?=$mode?>'>
+<input type=hidden name=board_group value='<?=$board_group?>' >
+<input type=hidden name=board_id    value='<?=$board_id?>'    >
+<input type=hidden name=data        value='<?=$data?>'    >
+<input type=hidden name=w_date      value='<?=$Row[w_date]?>' >
+<input type=hidden name=subject_org    value='<?=$Row[subject]?>'   >
+<input type=hidden name="spam_check" value="<?=$Row[spam_check]?>">
+<!-- 여기 까지 -->
+
+<tr align="right">
+<td>
+	<br>
+	<table border="0" cellspacing="0" cellpadding="1" class="wVer7">
+	
+	<tr>
+	<td align="right" colspan="2">
+	<a href='<?=$URL["list"]?>'><img src="skin/<?=$C_skin?>/images/back.gif" border="0"></a>
+	</td>
+	</tr>
+	
+	<!-- 관리자의 글쓰기 시작-->
+	<?=$hide['admin']?>
+	<tr> 
+	<td>Name&nbsp;</td>
+	<td class="wDefault">
+	<?=$Row[alias]?>
+	<input type=hidden name=name value='<?=$Row[alias]?>' >
+	</td>
+	</tr>
+	<?=$hide['/admin']?>
+	<!-- 관리자의 글쓰기 끝-->
+	
+	
+	<!-- 회원 글쓰기 시작-->
+	<?=$hide['member']?>
+	<tr> 
+	<td>Name&nbsp;</td>
+	<td>
+	<?=$Row[alias]?>
+	<input type=hidden name=name value='<?=$Row[alias]?>' >
+	</td>
+	</tr>
+	<?=$hide['/member']?>
+	<!-- 회원의 글쓰기 끝-->
+	
+	
+	<?=$hide['anonymous']//무명씨글쓰기 시작?>
+	<tr> 
+	<td>Name&nbsp;</td>
+	<td>
+	<input type=text name=name value='<?=$Row[name]?>'size=40 maxlength=10 class=wForm>
+	</td>
+	</tr>
+	
+	<?=$hide['password']?>
+	<tr>
+	<td>Pass&nbsp;</td>
+	<td>
+	<input type=password name=password size=40 maxlength=10 class=wForm >
+	</td>
+	</tr>
+	<?=$hide['/password']?>
+
+	<tr>
+	<td>E-mail&nbsp;</td>
+	<td>
+	<input type=text name=email size=40 maxlength=50 class=wForm value='<?=$Row[email]?>' >
+	</td>
+	</tr>
+
+	<tr>
+	<td>Url&nbsp;</td>
+	<td>
+	<input type=text name=homepage size=40 maxlength=100 class=wForm value='<?=$Row[homepage]?>' >
+	</td>
+	</tr>
+	<?=$hide['/anonymous']//무명씨글쓰기 끝?>
+	
+	<tr>
+	<td>Subject&nbsp;</td>
+	<td>
+	<input type=text name=subject size=40 maxlength=20 class=wForm value='<?=$Row[subject]?>' >
+	</td>
+	</tr>
+	
+	<?=$hide[category_select_start]?>
+	<tr> 
+	<td class="wVer7"> 
+	Categoary
+	</td>
+	<td class="wVer7">
+	<?=$Row[category_select]?>
+	</td>
+	</tr>
+	<?=$hide[category_select_end]?>
+
+	<tr>
+	<td colspan="2"><textarea name=comment cols=47 rows=15 class=wOver><?=$Row[comment]?></textarea>
+	</td>
+	</tr>
+
+	<tr>
+	<td valign="bottom">Image&nbsp;</td>
+	<td align="right">&nbsp;
+	<?=$Row[InputFile_name]?>&nbsp;&nbsp;
+	<?=$hide['attach']?>Del <input class='wDefault' type='checkbox' name='remove_attach1'><?=$hide['/attach']?><br>
+	<input name='InputFile' type='file' size='25' class=wForm>
+	</td>
+	</tr>
+
+	<tr>
+	<td colspan="2 ">
+	<br>
+	<div align="center">
+	<input type=image name="submit" src="skin/<?=$C_skin?>/images/save.gif" onClick='checkForm(this.form);return false;'>
+	</div>
+	<br>
+	</td>
+	</tr>
+	</table>
+
+
+	</td>
+	</tr>
+	</form>
+	</table>
+

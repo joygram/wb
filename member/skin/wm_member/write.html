@@ -1,0 +1,139 @@
+
+<form method=post action='<?=$WRITE_URL?>' enctype='multipart/form-data' >
+<!-- 이부분은 손 대지 말아 주세요. -->
+<input type=hidden name=mode        value='<?=$Row_m[mode]?>' >
+<input type=hidden name=board_group value='<?=$board_group?>' >
+<input type=hidden name=board_id    value='<?=$board_id?>' >
+<input type=hidden name=file        value='<?=$file?>' >
+<input type=hidden name=data        value='<?=$data?>' >
+<input type=hidden name=tot_page	value='<?=$tot_page?>'>
+<input type=hidden name=cur_page	value='<?=$cur_page?>'>
+
+<!-- 여기 까지 -->
+
+
+<table border="0" cellspacing="0" cellpadding="3" width="400" class="wDefault" align="center">
+<tr>
+<td align="right" colspan="2">
+<a href='<?=$URL["list"]?>'>:: back ::</a> <br>
+* 표시를 한것은 필수 입력 항목입니다.
+
+</td>
+</tr>
+
+<tr> 
+<td width=100 class="wDefault">아이디 *</td>
+<td width="350" class="wDefault">
+<input type=text name='uname' size=35 maxlength=16 class=wForm value='<?=$Row_m[uname]?>' >
+<input type=button name='check_uname' value='중복검사' disabled>
+</td>
+</tr>
+
+<?=$hide['password']?>
+<tr> 
+<td width=100 class="wDefault">암호 *</td>
+<td width="350">
+<input type=password name=password size=50 maxlength=20 class=wForm >
+</td>
+</tr>
+
+<tr> 
+<td width=100 class="wDefault" nowrap>암호 재입력 *</td>
+<td width="350">
+<input type=password name='password_again' size=50 maxlength=20 class=wForm >
+</td>
+</tr>
+<?=$hide['/password']?>
+
+
+<tr><td><br></td></tr>
+
+<tr> 
+<td width=100 class="wDefault">이름 *</td>
+<td width="350" class="wDefault">
+<input type=text name=name size=20 maxlength=20 class=wForm value='<?=$Row_m[name]?>' >
+</td>
+</tr>
+
+<tr> 
+<td width=100 class="wDefault">생일 *</td>
+<td width="350">
+<input type=text name='birthday' size=20 maxlength=100 class=wForm value='<?=$Row_m[birthday]?>' >
+음력<input type=checkbox name='birthday_select'>
+</td>
+</tr>
+
+<tr> 
+<td width=100 class="wDefault">별명 *</td>
+<td width="350" class="wDefault">
+<input type=text name=firstname size=20 maxlength=20 class=wForm value='<?=$Row_m[firstname]?>' >
+</td>
+</tr>
+
+
+<tr><td><br></td></tr>
+
+<tr> 
+<td width=100 class="wDefault">휴대전화 *</td>
+<td width="350" class="wDefault">
+<input type=text name='mobilephone' size=25 maxlength=50 class=wForm value='<?=$Row_m[mobilephone]?>' >(없으면 연락가능 전화번호)
+</td>
+</tr>
+
+<tr> 
+<td width=100 class="wDefault">E-메일 *</td>
+<td width="350" class="wDefault">
+<input type=text name='email' size=50 maxlength=50 class=wForm value='<?=$Row_m[email]?>' >
+</td>
+</tr>
+
+
+<tr> 
+<td width=100 class="wDefault" valign='top'>소개</td>
+<td width="350" colspan="2">
+<textarea name=comment cols=50 rows=10 class=wOver><?=$Row_m[comment]?></textarea>
+</td>
+</tr>
+
+
+<tr> 
+<td width=100 class="wDefault">사진</td>
+<td width="350">
+<?=$Row_m[attach]?>
+<input name='InputFile' type='file' size='35' class=wForm></td>
+</tr>
+
+<tr> 
+<td width="350" align="right" colspan="2">
+<input type=button onClick='checkForm(this.form);return false;' value="SAVE" class=wButton>
+<br>
+</td>
+</tr>
+
+</table>
+
+</form>
+
+<br>
+
+
+
+
+<!--start of license-->
+<table border=0 width='100%' align='center'>
+<tr>
+<td>
+<?=$license2?>
+</div>
+</td>
+</tr>
+</table>
+<!--end  of license-->
+
+</td>
+</tr>
+</table>
+
+</center>
+</body>
+</html>

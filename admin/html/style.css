@@ -1,0 +1,83 @@
+<STYLE TYPE="TEXT/CSS">
+<!--
+/* 주의: 클래스나 아이디 이름은 8자 이내로 하여야 한다. */ 	
+
+	/* link */
+A:hover {text-decoration:none; color:#999999;}
+A:link {text-decoration:none; color:#333333}
+A:visited {text-decoration:none; color:#333333}
+A:active {text-decoration:none;}
+
+	/* subject text */
+.wTitle { font-family: Trebuchet MS, Verdana, Arial, Helvetica,굴림; font-size : 9pt; font: bold;color:#333333;}
+.wTitle1 { font-family: 굴림; font-size :9pt; font: bold;color:#DD6900;}
+
+
+	/* normal text */
+.wSub {font-family: Verdana; font-size:9pt; line-height:17pt; font: bold;color:#333333;}
+.wDefault {font-family: helvetica, arial; font-size:9pt; line-height:17pt; color:#333333}
+#wDate {font-family:Verdana ; font-size:7pt; color:#333333}
+.wAdmin {font-family: "Verdana"; font-size:9pt; line-height:12pt; color:#333333}
+.wVer7 {  font-family: "Verdana", "Arial", "Helvetica", "sans-serif"; font-size: 7pt; line-height: 15pt; color: #333333}
+.wVer8 {  font-family: "Verdana", "Arial", "Helvetica", "sans-serif"; font-size: 8pt; color: #333333}
+
+
+	/* reply */
+.wRepl {font-family: Verdana; font-size:9pt; color:#686868}
+#wRdate {font-family: Verdana; font-size:6pt;}
+
+	/* form */	
+.wButton {height:18; background: #D6D3CE; font-family: Verdana,tahoma;font-size:9pt;color:#000000; border-top: #E7E3E7 1px solid; border-right: #737173 1px solid; border-left: #E7E3E7 1px solid; border-bottom: #737173 1px solid;}
+.wSave {background:#E5E5E5;  font-family: Verdana; font-size: 7pt; line-height: 12pt; color: #333333}
+.wForm {border:inset 1; border-color:#e3e3e3; background:#FFFFFF; font-family: Verdana; font-size:9pt;color:#333333}
+.wBox { border: solid 1 #333333;}
+
+	/* etc */
+.page_bar {font-family:Verdana; font-size:7pt}
+.admin {font-family:Verdana; font-size:9pt; color:#333333}
+.copy {font-family:"Lucida Grande,Geneva,Arial"; font-size:7pt; color:#999999;line-height:17pt;}
+
+	/* bg */
+.row1{ background-color: #EFEFEF; height: 28px;}
+.wBox {border-bottom: #EEEEEE 1px solid; border-left:#EEEEEE 1px solid; border-right: #EEEEEE 1px solid; border-top:#EEEEEE 1px solid;}
+
+
+	/* table */
+.wTable	{ background-color: #FFFFFF; border: 2px #006699 solid ; font-family: Verdana; font-size:9pt;}
+.wTable1 { font-weight: bold; border: #FFFFFF; border-style: solid; height: 28px; }
+
+	/* admin */
+	
+	/* line */
+.fline { background:url( images/dot.gif);}
+.vline { background:url( images/dot1.gif);}
+.line { background-color:#F5F5F5;}
+
+
+	/*counter*/
+.cDefault {font-family: helvetica, arial; font-size:8pt; line-height:17pt; color:#666666}
+.cTah7 {font-family: Tahoma,Verdana; font-size:7pt; line-height:17pt; color:#333333}
+.cSelect {border:solid 1 E5E5E5; font-family: Tahoma,Verdana; font-size:7pt; color:#666666 }
+.cForm {border:inset 1; border-color:#E5E5E5; background:#FFFFFF; font-family: Tahoma,Verdana; font-size:9pt; color:#666666}
+.cButton {height:18; background: #D6D3CE; font-family: tahoma,Verdana;font-size:7pt;color:#000000; border-top: #E7E3E7 1px solid; border-right: #737173 1px solid; border-left: #E7E3E7 1px solid; border-bottom: #737173 1px solid;}
+
+	/*mail*/
+.mDefault {font-family: helvetica, arial; font-size:7pt; line-height:17pt; color:#666666}
+.mTah7 {font-family: Tahoma,Verdana; font-size:7pt; line-height:17pt; color:#333333}
+.mSelect {border:solid 1 E5E5E5; font-family: Tahoma,Verdana; font-size:7pt; color:#666666 }
+.mForm {border:inset 1; border-color:#E5E5E5; background:#FFFFFF; font-family: helvetica, arial,Tahoma,Verdana; font-size:9pt; color:#666666}
+.mButton {height:18; background: #D6D3CE; font-family: tahoma,Verdana;font-size:7pt;color:#000000; border-top: #E7E3E7 1px solid; border-right: #737173 1px solid; border-left: #E7E3E7 1px solid; border-bottom: #737173 1px solid;}
+
+.wBody 
+{
+	background-color: #FFFFFF;
+	scrollbar-face-color:#F7F7F7; 
+	scrollbar-shadow-color:#cccccc ;
+	scrollbar-highlight-color: #FFFFFF;
+	scrollbar-3dlight-color: #FFFFFF;
+	scrollbar-darkshadow-color: #FFFFFF;
+	scrollbar-track-color: #FFFFFF;
+	scrollbar-arrow-color: #cccccc
+}
+-->
+</STYLE>

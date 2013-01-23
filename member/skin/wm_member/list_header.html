@@ -1,0 +1,89 @@
+<table border=0 cellpadding=0 cellspacing=2 width=100% align="center" >
+<tr>
+<td align=left width="43%" nowrap class="wCat">
+<?=$Row[category_list]?>
+</td>
+
+<td align=right class="wVer7" width="57%">
+total <?=$Row[nTotal]?> page <?=$Row[cur_page]?> / <?=$Row[tot_page]?>
+&nbsp;&nbsp;
+<?=$hide['login']?>
+<a href='<?=$URL[login]?>'>Login</a>
+<?=$hide['/login']?>
+
+<?=$hide['logout']?>
+<a href='<?=$URL[logout]?>'>Logout</a>
+<a href='javascript:onClick=window_open("<?=$URL['config']?>",460,480,"")'><img src="skin/<?=$C_skin?>/images/config.gif"  border="0"></a>
+<?=$hide['/logout']?>
+
+</td>
+</tr>
+
+<tr> 
+<td width='100%' colspan='2' class='wDefault'>
+*자세한 정보를 보시려면 로그인을 하셔야 합니다.
+</td>
+</tr>
+
+
+</table> 
+
+<table width=100% align="center" border=1 cellspacing=0 cellpadding=0 bordercolorlight="#A3A3A3" bordercolordark="#FFFFFF" bgcolor="#E5E5E5" class="wGb">
+<tr> 
+<td width="100%"> 
+
+	<table width=100% align="center"border=0 cellspacing=0 cellpadding=0  bgcolor="#E5E5E5">
+	<tr> 
+	<td width="26"> 
+		
+		<table width=100% border=0 cellspacing=0 cellpadding=0 >
+		<tr> 
+		<td height="20" align=center>
+		<img src="./skin/<?=$C_skin?>/images/no.gif" border="0"></td>
+		</tr>
+		</table>
+		
+	</td>
+	
+	<td> 
+		
+		<table width=100% border=0 cellspacing=0 cellpadding=0 >
+		<tr> 
+		<td align=center height="20"></td>
+		</tr>
+		</table>
+		
+	</td>
+	<td width="78"> 
+		
+		<table width=100% border=0 cellspacing=0 cellpadding=0>
+		<tr> 
+		<td align=center height="20"></td>
+		</tr>
+		</table>
+	
+	</td>
+	<td width="60"> 
+		
+		<table width=100% border=0 cellspacing=0 cellpadding=0>
+		<tr> 
+		<td align=center height="20"></td>
+		</tr>
+		</table>
+		
+	</td>
+	<td width="20"> 
+		
+		<table width=100% border=0 cellspacing=0 cellpadding=0 >
+		<tr> 
+		<td align=center height="20">
+		&nbsp;</td>
+		</tr>
+		</table>
+		
+	</td>
+	</tr>
+	</table>
+</td>
+</tr>
+</table>

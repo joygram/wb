@@ -1,0 +1,107 @@
+<!-- list $Row[no] start -->	
+<table width="100%" border="0" cellspacing="0" cellpadding="0">  
+	<tr>
+	<td colspan="2" height="12">
+	
+	</td>
+	</tr>
+	<tr>
+	<td class="wDefault" nowrap>
+	<a href='javascript:onClick=Confirm("<?=$URL["delete"]?>");' title="삭제"><span class="wVer7">*</span></a>
+	<a href='<?=$URL["edit"]?>' title="수정"><b><?=$Row[subject]?></b></a>
+	</td>
+	<td align="right" class="wDefault">
+	
+		<?=$hide['avatar']?><img src="<?=$URL[avatar]?>" border="0"><?=$hide['/avatar']?><?=$Row[name]?>	
+		
+		<span class="wVer7">
+		<?=$hide['home']?>
+		&nbsp;&nbsp;<a href='<?=$Row[homepage] ?>' target=_blank title="홈페이지">Home</a>
+		<?=$hide['/home']?>
+		
+		<?=$hide['email']?>
+		&nbsp;&nbsp;<a href="javascript:window_open('<?=$URL['sendmail']?>',300,250,'');">Mail</a>
+		<?=$hide['/email']?>
+		</span>
+	<?=$hide['/write_perm']?>
+	
+	</td>
+	</tr>
+	<!-- 이미지 출력 -->
+	<?=$hide['attach']?>	
+	<tr>
+	<td align='center' colspan="2">
+	<br>
+	<a href="javascript:void(0);"><img src="<?=$URL["img"]?>" border=0 width="<?=$Row[img_width]?>" height="<?=$Row[img_height]?>" onClick="open_win_resize('<?=$URL["img"]?>','scrollbars=no,resizable=no,width=<?=$Row[org_img_width]?>,height=<?=$Row[org_img_height]?>', <?=$Row[org_img_width]+30?>, <?=$Row[org_img_height]+50?>);"></a>
+	<br>
+	</td>
+	</tr>
+	<?=$hide['/attach']?>
+	<!-- 이미지 출력 -->
+	<tr>
+	<td class="wDefault" colspan="2">
+	<?=$Row[comment]?>
+		
+	<div class="wdate" align="right">
+	<?=$Row[w_mon]?>/<?=$Row[w_day]?></div>
+	</td>
+	</tr>
+	
+	<tr>
+	<td width='100%' colspan="2">
+	<?=$Row[reply_list]?>
+	</td>
+	</tr>
+	<tr>
+	<td align=right colspan="2">
+		<?=$hide['reply_perm']?>
+		<?=$hide['reply']?>
+		<table border=0 cellpadding=0 cellspacing=0 width="100%" align="center">
+		<tr>
+		<td>
+		<br>
+		<form action='<?=$WRITE_PHP?>' name='reply' method="GET">
+		<input type=hidden name=data value='<?=$data?>' >
+		<input type=hidden name='auth_param' value='<?=$Row_auth[param]?>' >
+		<input type=hidden name=mode value='reply' >
+		<input type=hidden name=board_group value='<?=$Row[board_group]?>' >
+			<table border=0 cellpadding=0 cellspacing=0 width="100%" align="right">
+				<tr align="right"> 
+				<td class=wTah7>
+				
+				<?=$hide['admin']//관리자 권한//?>
+				<font class='wDefault'><?=$Row[alias]?> : </font>
+				<input type=hidden name=name value='<?=$Row[alias]?>'>
+				<?=$hide['/admin']//관리자 권한 끝//?>
+				
+				<?=$hide['member']//회원권한//?>
+				<font class='wDefault'><?=$Row[alias]?> : </font>
+				<input type=hidden name=name value='<?=$Row[alias]?>'>
+				<?=$hide['/member']//회원권한 끝//?>
+				
+				<?=$hide['anonymous']//무명씨권한//?>
+				Name:
+				<input type=text name=name value='<?=$Row[cookie_name]?>' size=6 maxlength=10 class=wSearch>
+				Pass:
+				<input type=password name=password size=5 maxlength=20 class=wSearch >
+				Comment:
+				<?=$hide['/anonymous']//무명씨권한 끝//?>		
+				<input type=text   name=comment size=25 maxlength=100 class=wSearch>
+				<input type=submit value=SavE class=wButton>
+				</td>
+				</tr>
+			</table>
+		</form>
+		</tr>
+		</table>
+		<br>
+		<?=$hide['/reply']?>
+		<?=$hide['/reply_perm']?>		  	  
+	</td>
+  	</tr>
+	<tr> 
+		<td colspan="2" class="line"></td>
+	</tr>
+</table>
+
+<!-- list $Row[no] end -->

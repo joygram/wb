@@ -1,0 +1,16 @@
+<table border="0" cellspacing="0" cellpadding="0" width="100%" align="center">
+<tr>
+<td align="left"  class="wVer7">
+<?=$hide['write_perm']?><a href='<?=$URL["write"]?>'>Register</a> | <?=$hide['/write_perm']?>
+<?=$hide['login']?>
+<a href='<?=$URL[login]?>'>Login</a>
+<?=$hide['/login']?>
+
+<?=$hide['logout']?>
+<a href='<?=$URL[logout]?>'>Logout</a> | 
+<a href='javascript:onClick=window_open("<?=$URL['config']?>",460,480,"")'>Config</a>
+<?=$hide['/logout']?>
+</td>
+<td align="right" width="50%" class="wVer7"><?=$page_bar?></td>
+</tr>
+</table>

@@ -1,0 +1,361 @@
+<html>
+<head>
+<title>WhiteBBS 2.8.0</title>
+<meta http-equiv="Content-Type" content="text/html; charset=<?=$wb_charset?>">
+<link rel=stylesheet type="text/css" href="skin/<?=$C_skin?>/style.css">
+<script language="JavaScript">
+<!--
+	function window_open(URL, width, height, opt) 
+	{
+		parameter = "width="+ width +",height=" + height + ",resizable=0,status=no,menubar=0,"+opt ;
+		win = window.open(URL,'popwin', parameter) ;
+	}
+
+	function open_win_resize( url, Opt, myWidth, myHeight )
+	{
+		popWin = window.open( url, 'resizeWin', Opt ) ;
+		popWin.resizeTo( myWidth, myHeight ) ;
+		popWin.focus() ;
+	}
+
+    function Confirm( url )
+    {
+        var Message = '정말로 삭제를 하시겠습니까 ?';
+        if(confirm(Message)==1)
+        {
+            document.location= url;
+        }
+    }
+/*
+입력 폼에서 항목의 [공란] 검사를 하고 싶으면  
+
+입력폼의 항목: <input name='항목이름'>  
+
+1. if블럭을 복사해서 붙인다음
+    1) if( form.항목이름.value.length == 0 )
+    2) form.항목이름.focus() ; 
+두개를 항목이름으로 변경시켜주도록 한다.
+
+2. submit 단추에 onClick='checkForm(this.form); return false;' 를 추가 시킨다. 
+<input type=submit name=Submit value=write class=wButton onClick='checkForm(this.form);return false;'>
+아래는 name, password, comment
+기본적으로 꼭 들어가야 한다고 
+생각되는 3개의 항목만 검사하도록 했다. 
+*/
+
+function checkForm(form)
+{
+	if(form.name.value.length == 0)
+	{
+		alert('이름을 넣어주세요.') ;
+		form.name.focus() ;
+		return false ;
+	}
+
+	if(form.password.value.length == 0)
+	{
+		alert('암호를 넣어주세요.') ;
+		form.password.focus() ;
+		return false ;
+	}
+	
+	if(form.subject.value.length == 0)
+	{
+		alert('제목을 넣어주세요.') ;
+		form.subject.focus() ;
+		return false ;
+	}
+	
+
+	if(form.comment.value.length == 0)
+	{
+		alert('내용을 넣어주세요.') ;
+		form.comment.focus() ;
+		return false ;
+	}
+
+	form.submit() ;
+
+}
+-->
+</script>
+
+</head>
+
+<body topmargin="0" leftmargin="0" marginwidth="0" marginheight="0" class="wBody">
+<center>
+<table cellpadding=0 cellspacing=0 width='400' align="<?=$Row[table_align]?>" border="0">
+<br>
+
+<?=$hide['board_title']?>
+<tr>
+<td class="wDefault"><?=$Row[board_title] ?>
+</td>
+</tr>
+<?=$hide['/board_title']?>
+
+<tr>
+<td>
+<!--header -->
+
+<!-- list_header -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+	<td>
+	<div align="right" class="wVer7">
+		<?=$Row[category_list]?>
+	  </div>
+	</td>
+  </tr>
+  <tr>
+	<td class="line"></td>
+  </tr>
+</table>
+<!-- list_header -->
+
+<!-- list $Row[no] start -->	
+<table width="100%" border="0" cellspacing="0" cellpadding="0">  
+	<tr>
+	<td colspan="2" height="12">
+	
+	</td>
+	</tr>
+	<tr>
+	<td class="wDefault" nowrap>
+	<a href='javascript:onClick=Confirm("<?=$URL["delete"]?>");' title="삭제"><span class="wVer7">*</span></a>
+	<a href='<?=$URL["edit"]?>' title="수정"><b><?=$Row[subject]?></b></a>
+	</td>
+	<td align="right" class="wDefault">
+	
+		<?=$hide['avatar']?><img src="<?=$URL[avatar]?>" border="0"><?=$hide['/avatar']?><?=$Row[name]?>	
+		
+		<span class="wVer7">
+		<?=$hide['home']?>
+		&nbsp;&nbsp;<a href='<?=$Row[homepage] ?>' target=_blank title="홈페이지">Home</a>
+		<?=$hide['/home']?>
+		
+		<?=$hide['email']?>
+		&nbsp;&nbsp;<a href="javascript:window_open('<?=$URL['sendmail']?>',300,250,'');">Mail</a>
+		<?=$hide['/email']?>
+		</span>
+	<?=$hide['/write_perm']?>
+	
+	</td>
+	</tr>
+	<!-- 이미지 출력 -->
+	이미지가 들어가는 부분
+	<?=$hide['attach']?>	
+	<tr>
+	<td align='center' colspan="2">
+	<br>
+	<a href="javascript:void(0);"><img src="<?=$URL["img"]?>" border=0 width="<?=$Row[img_width]?>" height="<?=$Row[img_height]?>" onClick="open_win_resize('<?=$URL["img"]?>','scrollbars=no,resizable=no,width=<?=$Row[org_img_width]?>,height=<?=$Row[org_img_height]?>', <?=$Row[org_img_width]+30?>, <?=$Row[org_img_height]+50?>);"></a>
+	<br>
+	</td>
+	</tr>
+	<?=$hide['/attach']?>
+	<!-- 이미지 출력 -->
+	<tr>
+	<td class="wDefault" colspan="2">
+	본문글
+	<?=$Row[comment]?>
+		
+	<div class="wdate" align="right">
+	<?=$Row[w_mon]?>/<?=$Row[w_day]?></div>
+	</td>
+	</tr>
+	
+	<tr>
+	<td width='100%' colspan="2">
+	답글이 들어가는 부분
+	<?=$Row[reply_list]?>
+	</td>
+	</tr>
+	<tr>
+	<td align=right colspan="2">
+	짧은 코멘트 달기
+		<?=$hide['reply_perm']?>
+		<?=$hide['reply']?>
+		<table border=0 cellpadding=0 cellspacing=0 width="100%" align="center">
+		<tr>
+		<td>
+		<br>
+		<form action='<?=$WRITE_PHP?>' name='reply' method="GET">
+		<input type=hidden name=data value='<?=$data?>' >
+		<input type=hidden name='auth_param' value='<?=$Row_auth[param]?>' >
+		<input type=hidden name=mode value='reply' >
+		<input type=hidden name=board_group value='<?=$Row[board_group]?>' >
+			<table border=0 cellpadding=0 cellspacing=0 width="100%" align="right">
+				<tr align="right"> 
+				<td class=wTah7>
+				
+				<?=$hide['admin']//관리자 권한//?>
+				<font class='wDefault'><?=$Row[alias]?> : </font>
+				<input type=hidden name=name value='<?=$Row[alias]?>'>
+				<?=$hide['/admin']//관리자 권한 끝//?>
+				
+				<?=$hide['member']//회원권한//?>
+				<font class='wDefault'><?=$Row[alias]?> : </font>
+				<input type=hidden name=name value='<?=$Row[alias]?>'>
+				<?=$hide['/member']//회원권한 끝//?>
+				
+				<?=$hide['anonymous']//무명씨권한//?>
+				Name:
+				<input type=text name=name value='<?=$Row[cookie_name]?>' size=6 maxlength=10 class=wSearch>
+				Pass:
+				<input type=password name=password size=5 maxlength=20 class=wSearch >
+				Comment:
+				<?=$hide['/anonymous']//무명씨권한 끝//?>		
+				<input type=text   name=comment size=25 maxlength=100 class=wSearch>
+				<input type=submit value=SavE class=wButton>
+				</td>
+				</tr>
+			</table>
+		</form>
+		</tr>
+		</table>
+		<br>
+		<?=$hide['/reply']?>
+		<?=$hide['/reply_perm']?>		  	  
+	</td>
+  	</tr>
+	<tr> 
+		<td colspan="2" class="line"></td>
+	</tr>
+</table>
+
+<!-- list $Row[no] end -->
+
+<!-- list_footer -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+	<td colspan="2">&nbsp;</td>
+  </tr>             
+  <tr>
+	<td align="left" width="50%" class="wVer7">
+		<?=$hide['write_perm']?>
+		<a href='<?=$WRITE_URL?>' >Register</a> | 
+		<?=$hide['/write_perm']?>
+		<?=$hide['login']?>
+		<a href='<?=$URL[login]?>'>Login</a>
+		<?=$hide['/login']?>
+		
+		<?=$hide['logout']?>
+		<a href='<?=$URL[logout]?>'>Logout</a> | 
+		<a href='javascript:onClick=window_open("<?=$URL['config']?>",460,480,"")'>Config</a>
+		<?=$hide['/logout']?>
+	</td>
+	<td align="right" class="wVer7">
+		<?=$page_bar?>
+	</td>				
+  </tr>
+    <tr> 
+	<td colspan="2" height="12"></td>
+  </tr>    
+  <tr> 
+	<td colspan="2">									
+		<!-- 검색 항목 선택을 이미지로 하기 위한 자바스크립트 -->
+		<script language="javascript">
+		browserName = navigator.appName ;
+		browserVer = parseInt(navigator.appVersion) ;
+		
+		if(browserName == "Netscape" && browserVer >= 3)
+		{ 
+			init = "net"; 
+		}
+		else 
+		{ 
+			init = "ie"; 
+		}
+		
+		if(((init == "net")&&(browserVer >=3))||((init == "ie")&&(browserVer >= 4)))
+		{
+			chk_name_on  = new Image ;
+			chk_name_off = new Image ;
+			chk_name_on.src  = "skin/<?=$C_skin?>/images/chk_on.gif" ;
+			chk_name_off.src = "skin/<?=$C_skin?>/images/chk_off.gif" ;
+		
+			chk_subject_on  = new Image ;
+			chk_subject_off = new Image ;
+			chk_subject_on.src  = "skin/<?=$C_skin?>/images/chk_on.gif" ;
+			chk_subject_off.src = "skin/<?=$C_skin?>/images/chk_off.gif" ;
+			
+			chk_comment_on   = new Image ;
+			chk_comment_off  = new Image ;
+						chk_comment_on.src  = "skin/<?=$C_skin?>/images/chk_on.gif" ;
+						chk_comment_off.src = "skin/<?=$C_skin?>/images/chk_off.gif" ;
+					}
+					
+					
+					function OnOff( selected ) 
+					{
+						if(((init == "net")&&(browserVer >=3))||((init == "ie")&&(browserVer >= 4))) 
+						{
+							
+							if( selected == "name")
+							{
+								document.search.field.value = selected ;
+								document.chk_name.src = chk_name_on.src ;
+								document.chk_subject.src = chk_subject_off.src ;
+								document.chk_comment.src = chk_comment_off.src ;
+								
+							}
+							else if( selected == "subject" )
+							{
+								document.search.field.value = selected ;
+								document.chk_name.src = chk_name_off.src ;
+								document.chk_subject.src = chk_subject_on.src ;
+								document.chk_comment.src = chk_comment_off.src ;
+							}
+							else if( selected == "comment" )
+							{
+								document.search.field.value = selected ;
+								document.chk_name.src = chk_name_off.src ;
+								document.chk_subject.src = chk_subject_off.src ;
+								document.chk_comment.src = chk_comment_on.src ;
+							}
+					
+							//window.alert(document.search.field.value) ;		
+						}
+					}
+					</script>
+					<!-- 검색 항목 선택을 이미지로 하기 위한 자바스크립트 끝-->
+		<table border=0 cellspacing=0 cellpadding=5 align="center">	
+			<!--폼에 이름을 꼭 search라고 줄것-->
+			<form action='<?=$URL['list']?>' method='get' name='search'>
+			<input type=hidden name='mode' value='find'>
+			<input type=hidden name='cur_page' value='<?=$cur_page?>' >
+			<input type=hidden name='data' value='<?=$data?>'>
+			<input type=hidden name='tot_page' value='<?=$tot_page?>' >
+			<!-- WBS-0001적용20020323 -->
+			<input type=hidden name='filter_type' value='<?=$filter_type?>' >
+			
+			<tr align="center">
+			<td class="wVer7"> 
+				
+			<!--이미지로 처리하기 위해서 필요한 것 여기서 부터 -->
+			<input type=hidden name=field value='<?=$Row[field]?>'>
+			<a href="javascript:OnOff('name')" onfocus='this.blur()'><img src=skin/<?=$C_skin?>/images/chk_on.gif border=0 name=chk_name>Name</a> 
+			<a href="javascript:OnOff('subject')" onfocus='this.blur()'><img src=skin/<?=$C_skin?>/images/chk_off.gif border=0 name=chk_subject>Subject</a> 
+			<a href="javascript:OnOff('comment')" onfocus='this.blur()'><img src=skin/<?=$C_skin?>/images/chk_off.gif border=0 name=chk_comment>Comment</a>
+			<script language='javascript'>OnOff('<?=$Row[field]?>'); </script>
+			<!--이미지로 처리하기 위해서 필요한 것 여기까지-->
+
+			<input type=text name=key size=8 maxlength=10 value='<?=$key?>' class=wSearch>
+			<input type=submit value=Search class=wButton>
+			<a href='<?=$URL['list']?>'><img src="skin/<?=$C_skin?>/images/chk_on.gif" align=absmiddle border=0></a>
+			
+			</td>
+			</tr>
+			</form>
+		</table>
+	</td>
+  </tr>
+</table> 	
+<!--list_footer  -->
+
+<!-- footer  -->
+</td>
+</tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,7 @@
+<?php
+$F_BOX_START = "" ;
+$F_BOX_END    = "" ;
+$F_BOX_BR     = "" ;
+$F_BOX_DATA_START = "" ;
+$F_BOX_DATA_END   = "" ;
+?>

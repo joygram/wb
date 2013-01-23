@@ -1,0 +1,50 @@
+<table width=100% border=0 cellspacing=0 cellpadding=5 align='right'>
+<tr>
+<td align='left' class="wRve7" width=10>
+<a href='javascript:onClick=Confirm("<?=$URL["delete"]?>");'><font class="wRve7">*</font></a>
+</td>
+
+<td align='left' class="wRve7">
+<?=$hide['admin_writing']?>
+<?=$hide['exec_perm']?>
+<a href='<?=$URL["edit"]?>' title="수정"><font class="wRepl"><b><?=$Row[name]?></b></font></a>&nbsp;&nbsp;
+<?=$hide['/exec_perm']?>
+<?=$hide['/admin_writing']?>
+
+<?=$hide['member_writing']?>
+<?=$hide['exec_perm']?>
+<a href='<?=$URL["edit"]?>' title="수정"><font class="wRepl"><b><?=$Row[name]?></b></font></a>&nbsp;&nbsp;
+<?=$hide['/exec_perm']?>
+<?=$hide['/member_writing']?>
+
+<?=$hide['anonymous_writing']?>
+<?=$hide['exec_perm']?>
+<a href='<?=$URL["edit"]?>' title="수정"><font class="wRepl"><b><?=$Row[name]?></b></font></a>&nbsp;&nbsp;
+<?=$hide['/exec_perm']?>
+<?=$hide['/anonymous_writing']?>
+
+<?=$hide[home_start]?>
+<a href='<?=$URL["homepage"]?>' target="_blank"><font class="wRve7"><b>H</b>ome</font></a> 
+<?=$hide[home_end]?>
+
+<?=$hide[email_start]?>
+<a href="javascript:window_open('<?=$URL['sendmail']?>',300,250,'');"><font class="wRve7"><b>E</b>-mail</font></a> 
+<?=$hide[email_end]?>
+
+</td>
+<td class="wRta7" align="right">
+<?=$Row[w_date]?>
+</td>
+</tr>
+
+<tr>
+<td align='left' width=10>
+&nbsp;
+</td>
+
+<td width=100%  valign="top" class="wRepl" colspan="2">
+<?=$Row[comment]?>
+</td>
+</tr>
+	
+</table>

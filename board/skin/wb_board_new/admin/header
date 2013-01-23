@@ -1,0 +1,123 @@
+<html>
+<head>
+<title>WhiteBBS 2.9.0</title>
+<meta http-equiv="Content-Type" content="text/html; charset=<?=$wb_charset?>">
+<link rel=stylesheet type="text/css" href="./skin/<?=$C_skin?>/style.css">
+<script language="JavaScript">
+<!--
+/**
+::Common Script
+**/
+	function window_open(URL, width, height, opt) 
+	{
+		parameter = "width="+ width +",height=" + height + ",resizable=0,status=no,menubar=0,"+opt ;
+		win = window.open(URL,'popwin', parameter) ;
+	}
+
+    function Confirm( url )
+    {
+        var Message = '정말로 삭제를 하시겠습니까 ?';
+        if(confirm(Message)==1)
+        {
+            document.location= url;
+        }
+    }
+    
+    function open_win_resize( url, Opt, myWidth, myHeight )
+	{
+		popWin = window.open( url, 'resizeWin', Opt ) ;
+		popWin.resizeTo( myWidth, myHeight ) ;
+		popWin.focus() ;
+	}
+/**
+:: manage 를 위한 추가 Script
+**/
+	function CheckAll() 
+	{ 
+	   document.wb_list.selcheck.checked = true; 
+	   for(i = 0; i < document.wb_list.elements.length; ++i) { 
+	      if(document.wb_list.elements[i].name == 'check[]') { 
+		 document.wb_list.elements[i].checked = true; 
+	      } 
+	   } // END : for 
+	} 
+ 
+	function UnCheckAll() 
+	{ 
+	   document.wb_list.selcheck.checked = false; 
+	   for(i = 0; i < document.wb_list.elements.length; ++i) { 
+	      if(document.wb_list.elements[i].name == 'check[]') { 
+		 document.wb_list.elements[i].checked = false; 
+	      } 
+	   } // END : for 
+	} 
+
+	function changeStatus()
+	{ 
+		 if(document.wb_list.selcheck.checked) 
+		 { 
+		    CheckAll(); 
+		 } 
+		 else 
+		 { 
+		    UnCheckAll(); 
+		 } 
+	} 
+
+	function Manage(form)
+	{ 
+		if (isCheckedAnyOne() == false) 
+		{ 
+			window.alert("관리할 게시물을 선택해 주세요."); 
+		} 
+		else 
+		{ 
+			window.open("",'pop_manage', 'width=320,height=260,resizable=0,status=no,menubar=0,scrollbars=no, ')
+			document.wb_list.submit();	
+		} 
+	} 
+
+	function isCheckedAnyOne() 
+	{ 
+		for(i = 0; i < document.wb_list.elements.length; ++i) 
+		{ 
+			if(document.wb_list.elements[i].name == 'check[]') 
+			{ 
+				if (document.wb_list.elements[i].checked == true) return true; 
+			} 
+		} 
+		return false; 
+	} 
+ 
+	function get_checkbox_values()
+	{
+		var return_value = "" ;
+		for(i = 0; i < document.wb_list.elements.length; ++i) 
+		{ 
+			if(document.wb_list.elements[i].name == 'check[]') 
+			{ 
+				if (document.wb_list.elements[i].checked == true) 
+				{
+					return_value = document.wb_list.elements[i].value + "," + return_value ;
+				}
+			} 
+		} 
+		return return_value ;
+	}
+-->
+</script>
+</head>
+<body class="wBody">
+<table cellpadding=0 cellspacing=0 width='<?=$Row[table_size] ?>' align="<?=$Row[table_align]?>" border="0">
+
+<?=$hide['board_title']?>
+<tr>
+<td class="wDefault">
+<?=$Row[board_title] ?>
+</td>
+</tr>
+<?=$hide['/board_title']?>
+
+
+<tr>
+<td>

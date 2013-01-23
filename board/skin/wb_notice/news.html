@@ -1,0 +1,31 @@
+<STYLE TYPE="TEXT/CSS">
+<!--
+/* 주의: 클래스나 아이디 이름은 8자 이내로 하여야 한다. */ 	
+
+	/* link */
+A:link {text-decoration:none; color:#606060}
+A:visited {text-decoration:none; color:#606060}
+A:active {text-decoration:none}
+A:hover {text-decoration:underline; color:#606060}
+
+	/* normal text */
+.wNews {font-family: "굴림체"; font-size:9pt; line-height:17pt; color:#666666}
+.wNta7 {  font-family: "tahoma"; font-size: 7pt;color: #666666} 
+
+-->
+</STYLE>
+
+<table border="0" cellspacing="0" cellpadding="0" width="100%" class="wNews" >
+
+<tr> 
+<td><b><?=$Row[subject]?></b>
+</td>
+</tr>
+
+<tr> 
+<td><?=$Row[comment]?><div align="right"><font class="wNta7"><?=$Row[w_date]?></font></div>
+</td>
+</tr>
+
+</table>
+		

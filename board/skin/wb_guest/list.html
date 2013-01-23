@@ -1,0 +1,64 @@
+<table width=100% border=0 cellspacing=8 cellpadding=0 align='center'>
+<tr>
+<td align='left' class="wVer7" width=5>
+<a href='javascript:onClick=Confirm("<?=$URL["delete"]?>");'>*</a>
+</td>
+
+<td align='left' class="wVer7">
+
+<?=$hide['admin_writing']?>
+<a href='<?=$URL["edit"]?>' title="수정"><font class="wDefault"><b><?=$Row[name]?></b></font></a>&nbsp;&nbsp;
+<?=$hide['/admin_writing']?>
+
+<?=$hide['member_writing']?>
+<a href='<?=$URL["edit"]?>' title="수정"><font class="wDefault"><b><?=$Row[name]?></b></font></a>&nbsp;&nbsp;
+<?=$hide['/member_writing']?>
+
+<?=$hide['anonymous_writing']?>
+<a href='<?=$URL["edit"]?>' title="수정"><font class="wDefault"><b><?=$Row[name]?></b></font></a>&nbsp;&nbsp;
+<?=$hide['/anonymous_writing']?>
+
+
+<?=$hide['reply_perm']?>
+<a href='<?=$URL["reply"]?>' title="댓글달기"><b>R</b>eply</a>
+<?=$hide['/reply_perm']?>
+
+<?=$hide['home']?>
+<a href='<?=$URL["homepage"]?>' target="_blank"><b>H</b>ome</a> 
+<?=$hide['/home']?>
+
+<?=$hide['email']?>
+<a href="javascript:window_open('<?=$URL['sendmail']?>',300,250,'');"><b>E</b>-mail</a> 
+<?=$hide['/email']?>
+
+</td>
+<td class="wTah7" align="right">
+<?=$Row[w_date]?>
+</td>
+</tr>
+
+<tr>
+<td align='left' class="wVer7" width=5>
+&nbsp;
+</td>
+
+<td width=100%  valign="top" class="wDefault" colspan="2">
+<?=$Row[comment]?>
+</td>
+</tr>
+
+<tr>
+<td align='left' class="wVer7" width=5>
+&nbsp;
+</td>
+
+<td valign="top" colspan="2">
+<?=$Row[reply_list]?>
+</td>
+</tr>
+
+<tr> 
+<td colspan="3" class="line">
+</tr>
+	
+</table>

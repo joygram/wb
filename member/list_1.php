@@ -165,12 +165,12 @@ WhiteBoard 1.1.1       2001/4/11
 
 		// category list 2001/12/09
 	$URL['list'] = "$C_base[url]/member/list.php?data=$C_data" ;
-	//$Row[category_list] = category_list($C_data, $URL['list']) ;
+	//$Row['category_list'] = category_list($C_data, $URL['list']) ;
 		//머리말에 들어갈 변수들
-	$Row[nTotal]   = $dbi->total ; 
-	$Row[cur_page] = empty($cur_page)?1:$cur_page ;
-	$Row[tot_page] = $tot_page ;
-	$Row[play_list] = $play_list ; //음악 선택곡 목록
+	$Row['nTotal']   = $dbi->total ; 
+	$Row['cur_page'] = empty($cur_page)?1:$cur_page ;
+	$Row['tot_page'] = $tot_page ;
+	$Row['play_list'] = $play_list ; //음악 선택곡 목록
 	
 
 	$hide = make_comment($C_data, $Row, NOT_USE, "member") ;
@@ -231,24 +231,24 @@ WhiteBoard 1.1.1       2001/4/11
 			break ;
 		}
 
-		$Row[no] = $dbi->total - $nCnt ;
+		$Row['no'] = $dbi->total - $nCnt ;
 
-		$Row[cur_page] = $cur_page ;
-		$Row[tot_page] = $tot_page ;
-		$Row[filter_type] = $filter_type ;
+		$Row['cur_page'] = $cur_page ;
+		$Row['tot_page'] = $tot_page ;
+		$Row['filter_type'] = $filter_type ;
 
 
 			//plug_in 처리 필요 2003/06/13
-		$Row[name] = $Row[firstname].$Row[lastname] ;
-		$Row[mobilephone] = mobile_phone($Row[mobilephone]) ;
-		$Row[sex] = $Row[sex]?"남":"여" ;
+		$Row['name'] = $Row[firstname].$Row['lastname'] ;
+		$Row['mobilephone'] = mobile_phone($Row[mobilephone]) ;
+		$Row['sex'] = $Row[sex]?"남":"여" ;
 		$result = get_department($Row[interest_department]) ;
-		$Row[interest_department] = $result["name"] ;
-		$Row[job] = get_job($Row[job_kind]) ;
+		$Row['interest_department'] = $result["name"] ;
+		$Row['job'] = get_job($Row[job_kind]) ;
 
 		if(!$auth->is_anonymous())
 		{
-			//$Row[alias] = $auth->alias() ;
+			//$Row['alias'] = $auth->alias() ;
 		}
 			//2.
 		$URL = make_url($C_data, $Row, "member") ;
@@ -256,8 +256,8 @@ WhiteBoard 1.1.1       2001/4/11
 		{
 			if(@file_exists($URL[attach_filename]))
 				$size = GetImageSize($URL[attach_filename]) ;
-			$Row[img_width] = $size[0] ;
-			$Row[img_height] = $size[1] ;
+			$Row['img_width'] = $size[0] ;
+			$Row['img_height'] = $size[1] ;
 		}
 		if( $URL[no_img2] == "1" )
 		{
@@ -288,18 +288,18 @@ WhiteBoard 1.1.1       2001/4/11
 	///////////////////////////////////
 	$checked[$field] = "checked" ;
 	$selected[$field] = "selected" ;
-	$Row[field] = $field ;
+	$Row['field'] = $field ;
 
 	$page_bar = wb_page_bar( $C_data, $cur_page, $tot_page, $key, $field, $mode, "member" ) ;
 
 		//글쓰기는 한페이지전체에 적용이 되고 
 		//나머지는 글 하나에 적용되므로 이곳에서 적용
 	$hide = make_comment($C_data, $Row, NOT_USE, "member") ;
-	$Row[board_title] = "$C_board_title" ;	
+	$Row['board_title'] = "$C_board_title" ;	
 	$URL = make_url($C_data, $Row, "member") ;
 	$URL['list'] = "$C_base[url]/member/list.php?data=$C_data" ;
 		// category list 2001/12/09
-	//$Row[category_list] = category_list($C_data, $URL['list']) ;
+	//$Row['category_list'] = category_list($C_data, $URL['list']) ;
 
 	/////////////////////////////////////
 	// 꼬리말 처리 

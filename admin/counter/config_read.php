@@ -42,16 +42,16 @@
 	$conf_array = explode(".", $conf_name) ;
 	if( $conf_name == "__global.conf.php" )
 	{
-		$Row[conf] = "카운터 전역 기능 설정(Global Function Setting)" ;	
+		$Row['conf'] = "카운터 전역 기능 설정(Global Function Setting)" ;	
 	}
 	else
 	{
-		$Row[conf] = "<font class='wTitle'>$conf_array[0] 카운터 기능설정</font>" ;
+		$Row['conf'] = "<font class='wTitle'>$conf_array[0] 카운터 기능설정</font>" ;
 	}
 
 
 	//////////////////////////////////////////
-	$Row[title] = "카운터 전체 기능" ;
+	$Row['title'] = "카운터 전체 기능" ;
 	echo("<script>
 		function toggle_func(form)
 		{
@@ -87,11 +87,11 @@
 	</script>") ;
 
 
-	$Row[func] = "" ;
+	$Row['func'] = "" ;
 	if( $conf_name != "__global.conf.php" )
 	{
 		$checked = ( $C_global_use == "1" )?"checked":"" ; 
-		$Row[func] .= "전역설정 적용 <input type=checkbox name=C_global_use $checked onClick='toggle_func(this.form)'>\n" ;
+		$Row['func'] .= "전역설정 적용 <input type=checkbox name=C_global_use $checked onClick='toggle_func(this.form)'>\n" ;
 	}
 
 	//////////////////////////////////////////
@@ -99,7 +99,7 @@
 		// 초기값 지정 : 게시판 별로 바꾸려면 config/게시판명.php를 수정 
 	include("./html/config_header.html") ;
 	//////////////////////////////////////////
-	$Row[title] = "기본 설정" ;
+	$Row['title'] = "기본 설정" ;
 	echo("<script>
 		function toggle_general(form)
 		{
@@ -121,17 +121,17 @@
 	</script>") ;
 
 
-	$Row[func] = "" ;
+	$Row['func'] = "" ;
 	if( $conf_name != "__global.conf.php" )
 	{
 		$checked = ( $C_global_general_use == "1" )?"checked":"" ; 
-		$Row[func] .= "전역설정 적용 <input type=checkbox name=C_global_general_use $checked onClick='toggle_general(this.form)'>\n" ;
+		$Row['func'] .= "전역설정 적용 <input type=checkbox name=C_global_general_use $checked onClick='toggle_general(this.form)'>\n" ;
 	}
 	include("./html/config_title.html") ;
 	//////////////////////////////////////////
-	$Row[title] = "사용할 스킨" ;
-	$Row[func] = "" ;
-	$Row[func] .= "<select name=C_skin class='wForm'>\n" ;
+	$Row['title'] = "사용할 스킨" ;
+	$Row['func'] = "" ;
+	$Row['func'] .= "<select name=C_skin class='wForm'>\n" ;
 
 		// 스킨 디렉토리 이름을 읽어서 출력해주기
 	$flist = new file_list("$C_base[dir]/counter/skin", 1) ;
@@ -151,9 +151,9 @@
 		{
 			$selected = "selected" ;
 		}
-		$Row[func] .= "<option value='$file_name' $selected>$file_name</option>\n" ;
+		$Row['func'] .= "<option value='$file_name' $selected>$file_name</option>\n" ;
 	}
-	$Row[func] .= "</select>\n" ;
+	$Row['func'] .= "</select>\n" ;
 	include("./html/config_list.html") ;
 
 
@@ -161,25 +161,25 @@
 	{
 		$C_cookie_time = 1 ;
 	}
-	$Row[title] = "쿠키 적용 시간" ;
-	$Row[func] = "" ;
-	$Row[func] .= "<input type=text size=4 maxlength=5 name='C_cookie_time' value='$C_cookie_time' class='wForm'>분 단위\n" ;
+	$Row['title'] = "쿠키 적용 시간" ;
+	$Row['func'] = "" ;
+	$Row['func'] .= "<input type=text size=4 maxlength=5 name='C_cookie_time' value='$C_cookie_time' class='wForm'>분 단위\n" ;
 	include("./html/config_list.html") ;
 
 
-	$Row[title] = "카운터 클릭시" ;
-	$Row[func] = "" ;
+	$Row['title'] = "카운터 클릭시" ;
+	$Row['func'] = "" ;
 	$selected[$C_popup_func] = "selected" ;
-	$Row[func] .= "<select name='C_popup_func' class='wForm'>\n"; 
-	$Row[func] .= "<option value='0' $selected[0] class='wMat'>없음</option>\n" ; 
-	$Row[func] .= "<option value='1' $selected[1] class='wMat'>통계보기</option>\n" ;
-	$Row[func] .= "<option value='2' $selected[2] class='wMat'>기능설정</option>\n" ;
-	$Row[func] .= "</select>\n" ;
+	$Row['func'] .= "<select name='C_popup_func' class='wForm'>\n"; 
+	$Row['func'] .= "<option value='0' $selected[0] class='wMat'>없음</option>\n" ; 
+	$Row['func'] .= "<option value='1' $selected[1] class='wMat'>통계보기</option>\n" ;
+	$Row['func'] .= "<option value='2' $selected[2] class='wMat'>기능설정</option>\n" ;
+	$Row['func'] .= "</select>\n" ;
 	include("./html/config_list.html") ;
 
 	/*
 	//////////////////////////////////////////
-	$Row[title] = "권한(Permission) 설정" ;
+	$Row['title'] = "권한(Permission) 설정" ;
 	echo("<script>
 		function toggle_perm(form)
 		{
@@ -202,16 +202,16 @@
 		}
 	</script>") ;
 
-	$Row[func] = "" ;
+	$Row['func'] = "" ;
 	if( $conf_name != "__global.conf.php" )
 	{
 		$checked = ($C_global_perm_use == "1")?"checked":"" ; 
-		$Row[func] .= "전역설정 적용 <input type=checkbox name=C_global_perm_use $checked onClick='toggle_perm(this.form)'>\n" ;
+		$Row['func'] .= "전역설정 적용 <input type=checkbox name=C_global_perm_use $checked onClick='toggle_perm(this.form)'>\n" ;
 	}
 	include("./html/config_title.html") ;
 	//////////////////////////////////////////
-	$Row[title] = "관리자(admin) 권한" ;
-	$Row[func] = "" ;
+	$Row['title'] = "관리자(admin) 권한" ;
+	$Row['func'] = "" ;
 
 		//2002/03/23 2.1.x 이전 버젼인 경우 기본 권한 컨버젼.
 	if( !isset($C_auth_cat_perm) )
@@ -223,33 +223,33 @@
 	}
 
 	$perm_check[admin_stat]  = ($C_admin_perm & 4)?"checked":"" ;	
-	$Row[func] .= "통계<input type=checkbox name=C_perm[admin_stat] $perm_check[admin_stat]>\n" ;
+	$Row['func'] .= "통계<input type=checkbox name=C_perm[admin_stat] $perm_check[admin_stat]>\n" ;
 	include("./html/config_list.html") ;
 
-	$Row[title] = "그룹(group) 권한" ;
-	$Row[func] = "" ;
+	$Row['title'] = "그룹(group) 권한" ;
+	$Row['func'] = "" ;
 
 	$perm_check[group_stat]  = ($C_group_perm & 4)?"checked":"" ;	
-	$Row[func] .= "통계<input type=checkbox name=C_perm[group_stat] $perm_check[group_stat]>\n" ;
+	$Row['func'] .= "통계<input type=checkbox name=C_perm[group_stat] $perm_check[group_stat]>\n" ;
 	include("./html/config_list.html") ;
 
-	$Row[title] = "회원(member) 권한" ;
-	$Row[func] = "" ;
+	$Row['title'] = "회원(member) 권한" ;
+	$Row['func'] = "" ;
 
 	$perm_check[member_stat]  = ($C_member_perm & 4)?"checked":"" ;	
-	$Row[func] .= "통계<input type=checkbox name=C_perm[member_stat] $perm_check[member_stat]>\n" ;
+	$Row['func'] .= "통계<input type=checkbox name=C_perm[member_stat] $perm_check[member_stat]>\n" ;
 	include("./html/config_list.html") ;
 
-	$Row[title] = "무명씨(anonymous) 권한" ;
-	$Row[func] = "" ;
+	$Row['title'] = "무명씨(anonymous) 권한" ;
+	$Row['func'] = "" ;
 
 	$perm_check[anonymous_stat]  = ($C_anonymous_perm & 4)?"checked":"" ;	
-	$Row[func] .= "통계<input type=checkbox name=C_perm[anonymous_stat] $perm_check[anonymous_stat]>\n" ;
+	$Row['func'] .= "통계<input type=checkbox name=C_perm[anonymous_stat] $perm_check[anonymous_stat]>\n" ;
 	include("./html/config_list.html") ;
 	*/
 
 	//////////////////////////////////////////
-	$Row[title] = "보기 설정" ;
+	$Row['title'] = "보기 설정" ;
 	echo("<script>
 		function toggle_view(form)
 		{
@@ -276,11 +276,11 @@
 		}
 	</script>") ;
 
-	$Row[func] = "" ;
+	$Row['func'] = "" ;
 	if( $conf_name != "__global.conf.php" )
 	{
 		$checked = ( $C_global_view_use == "1" )?"checked":"" ; 
-		$Row[func] .= "전역설정 적용 <input type=checkbox name=C_global_view_use $checked onClick='toggle_view(this.form)'>\n" ;
+		$Row['func'] .= "전역설정 적용 <input type=checkbox name=C_global_view_use $checked onClick='toggle_view(this.form)'>\n" ;
 	}
 	include("./html/config_title.html") ;
 	//////////////////////////////////////////
@@ -291,19 +291,19 @@
 	$view_check[total] =  ($C_view_total =="on")?"checked":"" ;
 	$view_check[max]   =  ($C_view_max =="on")?"checked":"" ;
 	
-	$Row[title] = "보기 설정" ;
-	$Row[func] = "" ;
-	$Row[func] .= "어제<input type=checkbox name=C_view_yesterday  $view_check[yesterday]>\n" ;
-	$Row[func] .= "오늘<input type=checkbox name=C_view_today      $view_check[today]>\n" ;
-	$Row[func] .= "한달<input type=checkbox name=C_view_month      $view_check[month]>\n" ;
-	$Row[func] .= "일년<input type=checkbox name=C_view_year       $view_check[year]>\n" ;
-	$Row[func] .= "전체<input type=checkbox name=C_view_total      $view_check[total]>\n" ;
-	$Row[func] .= "하루최고<input type=checkbox name=C_view_max    $view_check[max]>\n" ;
+	$Row['title'] = "보기 설정" ;
+	$Row['func'] = "" ;
+	$Row['func'] .= "어제<input type=checkbox name=C_view_yesterday  $view_check[yesterday]>\n" ;
+	$Row['func'] .= "오늘<input type=checkbox name=C_view_today      $view_check[today]>\n" ;
+	$Row['func'] .= "한달<input type=checkbox name=C_view_month      $view_check[month]>\n" ;
+	$Row['func'] .= "일년<input type=checkbox name=C_view_year       $view_check[year]>\n" ;
+	$Row['func'] .= "전체<input type=checkbox name=C_view_total      $view_check[total]>\n" ;
+	$Row['func'] .= "하루최고<input type=checkbox name=C_view_max    $view_check[max]>\n" ;
 	include("./html/config_list.html") ;
 
 	//////////////////////////////////////////
 
-	$Row[title] = "데이터 설정" ;
+	$Row['title'] = "데이터 설정" ;
 	echo("<script>
 		function toggle_data(form)
 		{
@@ -320,20 +320,20 @@
 		}
 	</script>") ;
 
-	$Row[func] = "" ;
+	$Row['func'] = "" ;
 	if( $conf_name != "__global.conf.php" )
 	{
 		$checked = ( $C_global_data_use == "1" )?"checked":"" ; 
-		$Row[func] .= "전역설정 적용 <input type=checkbox name=C_global_data_use $checked onClick='toggle_data(this.form)'>\n" ;
+		$Row['func'] .= "전역설정 적용 <input type=checkbox name=C_global_data_use $checked onClick='toggle_data(this.form)'>\n" ;
 	}
 	include("./html/config_title.html") ;
 
-	$Row[title] = "Total 보정" ;
-	$Row[func] = "" ;
-	$Row[func] .= "<input type=text name=C_total_base size=4 maxlength=10 value='$C_total_base' class='wForm'> 점 가산" ;
+	$Row['title'] = "Total 보정" ;
+	$Row['func'] = "" ;
+	$Row['func'] .= "<input type=text name=C_total_base size=4 maxlength=10 value='$C_total_base' class='wForm'> 점 가산" ;
 	include("./html/config_list.html") ;
 	//////////////////////////////////////////
-	$Row[title] = "이벤트(Event) 설정" ;
+	$Row['title'] = "이벤트(Event) 설정" ;
 	echo("<script>
 		function toggle_event(form)
 		{
@@ -352,11 +352,11 @@
 		}
 	</script>") ;
 
-	$Row[func] = "" ;
+	$Row['func'] = "" ;
 	if( $conf_name != "__global.conf.php" )
 	{
 		$checked = ( $C_global_list_use == "1" )?"checked":"" ; 
-		$Row[func] .= "전역설정 적용 <input type=checkbox name=C_global_event_use $checked onClick='toggle_event(this.form)'>\n" ;
+		$Row['func'] .= "전역설정 적용 <input type=checkbox name=C_global_event_use $checked onClick='toggle_event(this.form)'>\n" ;
 	}
 	include("./html/config_title.html") ;
 	//////////////////////////////////////////
@@ -364,14 +364,14 @@
 	{
 		$C_event_point = 1000 ;
 	}
-	$Row[title] = "이벤트 설정" ;
-	$Row[func] = "" ;
-	$Row[func] .= "<input type=text name=C_event_point size=4 maxlength=10 value='$C_event_point' class='wForm'>점일 때 " ;
+	$Row['title'] = "이벤트 설정" ;
+	$Row['func'] = "" ;
+	$Row['func'] .= "<input type=text name=C_event_point size=4 maxlength=10 value='$C_event_point' class='wForm'>점일 때 " ;
 	include("./html/config_list.html") ;
 
-	$Row[title] = "팝업 URL" ;
-	$Row[func] = "" ;
-	$Row[func] .= "<input type=text name=C_event_url size=32 maxlength=100 value='$C_event_url' class='wForm'> 열기" ;
+	$Row['title'] = "팝업 URL" ;
+	$Row['func'] = "" ;
+	$Row['func'] .= "<input type=text name=C_event_url size=32 maxlength=100 value='$C_event_url' class='wForm'> 열기" ;
 	include("./html/config_list.html") ;
 	//////////////////////////////////////////
 	echo("<input type=hidden name=conf_name   value=$conf_name>\n") ;

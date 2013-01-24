@@ -1,10 +1,10 @@
 <!--plugin start-->
 <?php 
-	if($Row[h_grad_year] == 1949) $Row[h_grad_year]=1948 ; // 1회가 1949년6월임. 
-	$Row[grad_no] = ($Row[h_grad_year]-1948); 
-	$Row[name] = $Row[lastname].$Row[firstname] ;
+	if($Row['h_grad_year'] == 1949) $Row[h_grad_year]=1948 ; // 1회가 1949년6월임. 
+	$Row['grad_no'] = ($Row[h_grad_year]-1948); 
+	$Row['name'] = $Row[lastname].$Row['firstname'] ;
 
-	$Row[birthday_select] = $Row[birthday_select]?"음력":"양력"
+	$Row['birthday_select'] = $Row[birthday_select]?"음력":"양력"
 ?>
 <!--plugin end-->
 
@@ -45,19 +45,19 @@
 
 <?@=$hide['admin_writing']//관리자의 글//?>
 <?@=$hide['email']?><a href="javascript:window_open('<?=$URL['sendmail']?>',300,250,'');"><?@=$hide['/email']?>
-<img src="./skin/<?=$C_skin?>/images/admin.gif" border="0"><?=$Row[name]?>
+<img src="./skin/<?=$C_skin?>/images/admin.gif" border="0"><?=$Row['name']?>
 <?@=$hide['email']?></a><?@=$hide['/email']?>
 <?@=$hide['/admin_writing']//관리자의 글 끝//?>
 
 <?@=$hide['member_writing']//회원의 글//?>
 <?@=$hide['email']?><a href="javascript:window_open('<?=$URL['sendmail']?>',300,250,'');"><?@=$hide['/email']?>
-<b><?=$Row[name]?></b> (<?=$Row[grad_no]?>회)
+<b><?=$Row['name']?></b> (<?=$Row['grad_no']?>회)
 <?@=$hide['email']?></a><?@=$hide['/email']?>
 <?@=$hide['/member_writing']//회원의 글 끝//?>
 
 <?@=$hide['anonymous_writing']//무명씨의 글//?>
 <?@=$hide['email']?><a href="javascript:window_open('<?=$URL['sendmail']?>',300,250,'');"><?@=$hide['/email']?>
-<?=$Row[name]?>
+<?=$Row['name']?>
 <?@=$hide['email']?></a><?@=$hide['/email']?>
 <?@=$hide['/anonymous_writing']//무명씨의 글 끝//?>
 
@@ -70,7 +70,7 @@
 &nbsp;&nbsp;&nbsp;<b>Homepage</b>
 </td>
 <td class="wVer7" align="left" bgcolor="#F7F5F5"><b class="wDefault">: </b>
-<a href='<?=$Row[homepage]?>' target='_blank'><?=$Row[homepage]?></a>
+<a href='<?=$Row['homepage']?>' target='_blank'><?=$Row['homepage']?></a>
 </td>
 </tr>
 <?@=$hide['/home']?>
@@ -81,7 +81,7 @@
 <tr align="center">
 <td width='100%' align='center'>
 <br>
-<img src='<?=$URL["img"]?>' border=0  width="<?=$Row[img_width]?>" height="<?=$Row[img_height]?>">
+<img src='<?=$URL["img"]?>' border=0  width="<?=$Row['img_width']?>" height="<?=$Row['img_height']?>">
 <br><br>
 </td>
 </tr>
@@ -89,15 +89,15 @@
 
 <tr>
 <td class='wDefault'>
-전화 : <?=$Row[mobilephone]?>
+전화 : <?=$Row['mobilephone']?>
 <br>
-전자우편 : <?=$Row[email]?>
+전자우편 : <?=$Row['email']?>
 <br>
-졸업년도 : <?=$Row[h_grad_year]?>
+졸업년도 : <?=$Row['h_grad_year']?>
 <br>
-회사 : <?=$Row[company_name]?>
+회사 : <?=$Row['company_name']?>
 <br>
-회사홈 : <?=$Row[company_homepage]?> 
+회사홈 : <?=$Row['company_homepage']?> 
 
 <br>
 </td>
@@ -106,10 +106,10 @@
 <tr>
 <td width="80%" height=22 class="wDefault">
 <br>
-<?=$Row[comment]?>
+<?=$Row['comment']?>
 </td>
 <td width="20%" height=22  align="right" class="wTah7" valign="bottom" nowrap> 
-<?=$Row[w_date]?>
+<?=$Row['w_date']?>
 </td> 
 </tr>
 

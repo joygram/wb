@@ -33,7 +33,7 @@
 			$title = _L_BOARD ;
 			break ;
 	}
-	$Row[title] = $title." "._L_SKIN_MANAGE ;
+	$Row['title'] = $title." "._L_SKIN_MANAGE ;
 	include("./html/skin_header.html") ;
 	if ($_debug) echo("target_dir[$target_dir]<br>") ;	
 
@@ -64,7 +64,7 @@
 		{
 			$selected = "selected" ;
 		}
-		$Row[func] .= "<option value='$file_name' $selected>$file_name</option>\n" ;
+		$Row['func'] .= "<option value='$file_name' $selected>$file_name</option>\n" ;
 		*/
 		if ($_debug) echo("file_name[$file_name]") ;
 		if (empty($part)) 
@@ -79,11 +79,11 @@
 		}
 		$i++ ;
 		$board = explode(".", $file_name) ;
-		$Row[no] = $nTotal-$i+1 ;
-		$Row[board] = $board[0] ;
+		$Row['no'] = $nTotal-$i+1 ;
+		$Row['board'] = $board[0] ;
 
-		$Row[cnt] = $cnt ;
-		$Row[setup] = "read_config.php?data=$file_name" ;
+		$Row['cnt'] = $cnt ;
+		$Row['setup'] = "read_config.php?data=$file_name" ;
 
 		$hide['preview'] = "" ;
 		$hide['/preview'] = "" ;
@@ -107,8 +107,8 @@
 		$cont[0] = str_replace(">", "&gt;", $cont[0]) ;
 		$tmp_arr = explode("|", $cont[0]) ;
 
-		$Row[author]       = $tmp_arr[0] ;
-		$Row[author_email] = $tmp_arr[1] ;
+		$Row['author']       = $tmp_arr[0] ;
+		$Row['author_email'] = $tmp_arr[1] ;
 		$AUTHOR_URL        = $tmp_arr[2] ;
 		$hide['author_url'] = "" ;
 		$hide['/author_url'] = "" ;
@@ -152,7 +152,7 @@
 	}
 
 	if ($_debug) echo("part[$part]<br>") ;
-	$Row[title] = $title ;
-	$Row[part] = $part ;
+	$Row['title'] = $title ;
+	$Row['part'] = $part ;
 	include("./html/skin_footer.html") ;
 ?>

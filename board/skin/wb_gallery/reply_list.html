@@ -6,21 +6,21 @@
 <td class="wRepl" width=70 height ="22" valign="top">
 <?@=$hide['admin_writing']//관리자의 글//?>
 <?@=$hide['avatar']?><img src="<?=$URL[avatar]?>" border="0"><?@=$hide['/avatar']?>
-<a href='javascript:onClick=Confirm("<?=$URL["delete"]?>");'><?=$Row[name]?></a>
+<a href='javascript:onClick=Confirm("<?=$URL["delete"]?>");'><?=$Row['name']?></a>
 <?@=$hide['email']?></a><?@=$hide['/email']?>
 <?@=$hide['/admin_writing']//관리자의 글 끝//?>
 
 <?@=$hide['member_writing']//회원의 글//?>
-<a href='javascript:onClick=Confirm("<?=$URL["delete"]?>");'><?=$Row[name]?></a>
+<a href='javascript:onClick=Confirm("<?=$URL["delete"]?>");'><?=$Row['name']?></a>
 <?@=$hide['/member_writing']//회원의 글 끝//?>
 
 <?@=$hide['anonymous_writing']//무명씨의 글//?>
-<a href='javascript:onClick=Confirm("<?=$URL["delete"]?>");'><?=$Row[name]?></a>
+<a href='javascript:onClick=Confirm("<?=$URL["delete"]?>");'><?=$Row['name']?></a>
 <?@=$hide['/anonymous_writing']//무명씨의 글 끝//?>
 
 </td>
 <td class="wRepl" valign="top">
-&nbsp;<?=$Row[comment]?> <span class="wRdate"><?=$Row[w_mon]?>/<?=$Row[w_day]?></span>
+&nbsp;<?=$Row['comment']?> <span class="wRdate"><?=$Row['w_mon']?>/<?=$Row['w_day']?></span>
 </td>
 </tr>
 

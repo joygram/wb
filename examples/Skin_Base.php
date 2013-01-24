@@ -175,8 +175,8 @@ class Skin_Base
 /*
 //list skin TEST
 //set Row
-$Row[name] = "아폴로 나이스" ;
-$Row[uid] = 100 ;
+$Row['name'] = "아폴로 나이스" ;
+$Row['uid'] = 100 ;
 
 $skin = new Skin_Base("list") ;
 $skin->set_globals('$__SERVER, $__GET, $__POST, $__COOKIE, $__FILES, $__ENV, $__SESSION, $conf') ; //이 함수는 반드시 '(홑따옴표)를 써주도록 한다.

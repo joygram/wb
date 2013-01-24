@@ -23,7 +23,7 @@
 	{
 		case "news":
 			$target_dir = "$C_base[dir]/counter/skin/__global/news" ;
-			$Row[title] = "최근게시물" ;
+			$Row['title'] = "최근게시물" ;
 			break ;
 		case "category":
 			$target_dir = "$C_base[dir]/counter/skin/__global/category" ;

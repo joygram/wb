@@ -128,9 +128,9 @@ WhiteBoard 1.1.1 2001/4/11
 	include("$C_base[dir]/admin/bsd_license.$lang") ;
 
 		//인덱스에만 존재하는 자료는 URL로 부터 받는다.
-	$Row[subject] = stripslashes($subject) ;  
-	$Row[type] = $type ; 
-	$Row[board_title] = "$C_board_title" ;	
+	$Row['subject'] = stripslashes($subject) ;  
+	$Row['type'] = $type ; 
+	$Row['board_title'] = "$C_board_title" ;	
 	if( empty($C_board_title) )
 	{
 		$hide[board_title_start] = "<!--\n" ;
@@ -152,7 +152,7 @@ WhiteBoard 1.1.1 2001/4/11
 
 		// category list 2001/12/09
 	$URL['list'] = "$C_base[url]/member/list.php?data=$C_data" ;
-	//$Row[category_list] = category_list($C_data, $URL['list']) ;
+	//$Row['category_list'] = category_list($C_data, $URL['list']) ;
 
 	$URL = make_url($C_data, $Row, "member") ;
 	///////////////////////////////////
@@ -160,25 +160,25 @@ WhiteBoard 1.1.1 2001/4/11
 	///////////////////////////////////
 	if($C_cookie_use == "1")
 	{
-		$Row[name] = "" ;
-		$Row[email] = "" ;
-		$Row[homepage] = "" ;
+		$Row['name'] = "" ;
+		$Row['email'] = "" ;
+		$Row['homepage'] = "" ;
 
 		$cw_name  = $HTTP_COOKIE_VARS[cw_name] ;
 		$cw_email = $HTTP_COOKIE_VARS[cw_email] ;
 		$cw_home  = $HTTP_COOKIE_VARS[cw_home] ;
 
-		$Row[cookie_name]     = stripslashes($cw_name) ;
-		$Row[cookie_email]    = stripslashes($cw_email) ;
-		$Row[cookie_homepage] = stripslashes($cw_home) ;
+		$Row['cookie_name']     = stripslashes($cw_name) ;
+		$Row['cookie_email']    = stripslashes($cw_email) ;
+		$Row['cookie_homepage'] = stripslashes($cw_home) ;
 	}
 		//이전버젼 호환성 위해서.
-	$Row[name] = $Row[cookie_name] ;
-	$Row[email] = $Row[cookie_email] ;
-	$Row[homepage] = $Row[cookie_homepage] ;
+	$Row['name'] = $Row['cookie_name'] ;
+	$Row['email'] = $Row['cookie_email'] ;
+	$Row['homepage'] = $Row['cookie_homepage'] ;
 
 	$C_table_size = empty($C_table_size)?500:$C_table_size ; 
-	$Row[table_size] = $C_table_size ;
+	$Row['table_size'] = $C_table_size ;
 	$hide = make_comment($C_data, $Row, NOT_USE, "member") ;
 
 
@@ -242,19 +242,19 @@ WhiteBoard 1.1.1 2001/4/11
 		$board_id = ".".$tmp[1] ;
 		$Row = $dbi->row_fetch_array(0, $board_group, $board_id, "member") ;
 
-		$Row[type] = $type ;
-		$Row[tot_page] = $tot_page ;
-		$Row[cur_page] = $cur_page ;
-		$Row[filter_type] = $filter_type ;
-		$Row[alias] = $auth->alias() ;
+		$Row['type'] = $type ;
+		$Row['tot_page'] = $tot_page ;
+		$Row['cur_page'] = $cur_page ;
+		$Row['filter_type'] = $filter_type ;
+		$Row['alias'] = $auth->alias() ;
 			//2.
 		$URL = make_url($C_data, $Row, "member") ;
 		if( $URL[no_img] == "1" )
 		{
 			if(@file_exists($URL[attach_filename])) 
 				$size = GetImageSize($URL[attach_filename]) ;
-			$Row[img_width] = $size[0] ;
-			$Row[img_height] = $size[1] ;
+			$Row['img_width'] = $size[0] ;
+			$Row['img_height'] = $size[1] ;
 		}
 		if( $URL[no_img2] == "1" )
 		{
@@ -297,7 +297,7 @@ WhiteBoard 1.1.1 2001/4/11
 
 		// category list 2001/12/09
 	$URL['list'] = "$C_base[url]/member/list.php?data=$C_data" ;
-	//$Row[category_list] = category_list($C_data, $URL['list']) ;
+	//$Row['category_list'] = category_list($C_data, $URL['list']) ;
 
 	$URL = make_url($C_data, $Row, "member") ;
 		// use first reply_url 
@@ -308,22 +308,22 @@ WhiteBoard 1.1.1 2001/4/11
 		//쿠키처리
 	if($C_cookie_use == "1")
 	{
-		$Row[name] = "" ;
-		$Row[email] = "" ;
-		$Row[homepage] = "" ;
+		$Row['name'] = "" ;
+		$Row['email'] = "" ;
+		$Row['homepage'] = "" ;
 
 		$cw_name  = $HTTP_COOKIE_VARS[cw_name] ;
 		$cw_email = $HTTP_COOKIE_VARS[cw_email] ;
 		$cw_home  = $HTTP_COOKIE_VARS[cw_home] ;
 
-		$Row[cookie_name]     = stripslashes($cw_name) ;
-		$Row[cookie_email]    = stripslashes($cw_email) ;
-		$Row[cookie_homepage] = stripslashes($cw_home) ;
+		$Row['cookie_name']     = stripslashes($cw_name) ;
+		$Row['cookie_email']    = stripslashes($cw_email) ;
+		$Row['cookie_homepage'] = stripslashes($cw_home) ;
 	}
 		//이전버젼 호환성 위해서.
-	$Row[name]     = $Row[cookie_name] ;
-	$Row[email]    = $Row[cookie_email] ;
-	$Row[homepage] = $Row[cookie_homepage] ;
+	$Row['name']     = $Row['cookie_name'] ;
+	$Row['email']    = $Row['cookie_email'] ;
+	$Row['homepage'] = $Row['cookie_homepage'] ;
 
 		// cat footer
 	if( @file_exists("$C_skindir/cat_footer") )

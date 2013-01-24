@@ -1,36 +1,36 @@
-<!-- list $Row[no] start -->						
+<!-- list $Row['no'] start -->						
 
 <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
 <tr>
  
 <td width="24" align="center" height="22" class="wTah7" norwap>
-<?=$Row[no]?>
+<?=$Row['no']?>
 </td>
 
 <td class="wDefault">
 <?@=$hide['cat_perm']?><a href='<?=$CAT_URL?>'><?@=$hide['/cat_perm']?>
-<?@=$hide['category']?><?=$Row[category_name]?>::<?@=$hide['/category']?> <?=$Row[subject]?>
+<?@=$hide['category']?><?=$Row['category_name']?>::<?@=$hide['/category']?> <?=$Row['subject']?>
 <?@=$hide['cat_perm']?></a><?@=$hide['/cat_perm']?>
 
 <?@=$hide['nQuestion']?>
 <?@=$hide['/nQuestion']?>
 <font class="wTah7">
 <?@=$hide['nReply']?>
-(<?=$Row[nReply]?>)
+(<?=$Row['nReply']?>)
 <?@=$hide['/nReply']?>
 </font>
 </td>
 
 <td width="78" align="center" class="wDefault"> 
-<?@=$hide['avatar']?><img src="<?=$URL[avatar]?>" border="0"><?@=$hide['/avatar']?><?=$Row[name]?>
+<?@=$hide['avatar']?><img src="<?=$URL[avatar]?>" border="0"><?@=$hide['/avatar']?><?=$Row['name']?>
 </td>
 
 <td width="60" align="center" class="wTah7"> 
-<?=$Row[w_year]?>-<?=$Row[w_mon]?>-<?=$Row[w_day]?>
+<?=$Row['w_year']?>-<?=$Row['w_mon']?>-<?=$Row['w_day']?>
 </td>
 
 <td width="20" align="center" class="wTah7"> 
-<?=$Row[cnt_view]?>
+<?=$Row['cnt_view']?>
 </td>
 </tr>
 
@@ -40,4 +40,4 @@
 
 </table>
 
-<!-- list $Row[no] end -->
+<!-- list $Row['no'] end -->

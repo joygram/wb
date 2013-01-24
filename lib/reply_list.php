@@ -102,17 +102,17 @@ else return ;
 			{
 				if($conf[url2link_use] == "1") 
 				{
-					$Row[comment] = url2link( $Row[comment] ) ;
+					$Row['comment'] = url2link( $Row['comment'] ) ;
 				}
-				$Row[is_main_writing] = 0 ;
-				$Row[cur_page] = $cur_page ;
-				$Row[tot_page] = $tot_page ;
+				$Row['is_main_writing'] = 0 ;
+				$Row['cur_page'] = $cur_page ;
+				$Row['tot_page'] = $tot_page ;
 				$URL = make_url($_data, $Row) ;
 				if( $URL[no_img] == "1" )
 				{
 					$size = @GetImageSize($URL[attach_filename]) ;
-					$Row[img_width] = $size[0] ;
-					$Row[img_height] = $size[1] ;
+					$Row['img_width'] = $size[0] ;
+					$Row['img_height'] = $size[1] ;
 				}
 				if( $URL[no_img2] == "1" )
 				{
@@ -122,17 +122,17 @@ else return ;
 				}
 				
 			//reply 에서 <br /> 태그에 대한 문제로 수정
-			//	$Row[comment] = nl2br($Row[comment]) ;
-				if($Row[br_use] == "no")
+			//	$Row['comment'] = nl2br($Row[comment]) ;
+				if($Row['br_use'] == "no")
 				{				
 				}
 				else
 				{
-					if( $Row[html_use] == HTML_NOTUSE || $Row[br_use] != "no" ) 
+					if( $Row['html_use'] == HTML_NOTUSE || $Row['br_use'] != "no" ) 
 					{				
-						$Row[comment] = nl2br($Row[comment]) ;
-						$Row[comment] = str_replace("  ", "&nbsp;&nbsp;", $Row[comment]) ;
-						$Row[comment] = str_replace("\t", "&nbsp;&nbsp;&nbsp;&nbsp;", $Row[comment]) ;
+						$Row['comment'] = nl2br($Row[comment]) ;
+						$Row['comment'] = str_replace("  ", "&nbsp;&nbsp;", $Row[comment]) ;
+						$Row['comment'] = str_replace("\t", "&nbsp;&nbsp;&nbsp;&nbsp;", $Row[comment]) ;
 					}
 				}
 			//reply 에서 <br /> 태그에 대한 문제로 삽입
@@ -147,7 +147,7 @@ else return ;
 			{
 				if( $_debug ) echo("2-1<br>\n") ;
 		
-				$reply_list .= "<br>".$Row[name]." … ".$Row[comment] ;
+				$reply_list .= "<br>".$Row[name]." … ".$Row['comment'] ;
 			}
 		} // end of while 
 

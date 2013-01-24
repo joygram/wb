@@ -21,7 +21,8 @@ else return ;
 		require_once("$C_base[dir]/lib/config.php") ;
 		$read_config = "read_{$wb_prg}_config" ;
 		$conf = $read_config($_data) ;
-		//backword compatibility
+
+        //backword compatibility
 		$C_skin = $conf[skin] ;
 		$C_data = $_data ;
 		$LIST_PHP = $conf[list_php] ;
@@ -35,12 +36,9 @@ else return ;
 		$LIST_URL .= !empty($Row[cur_page])?"&cur_page=$Row[cur_page]":"" ;
 		$LIST_URL .= !empty($Row[filter_type])?"&filter_type=$Row[filter_type]":"" ;
 
-		//$CAT_URL = "$C_base[url]/$wb_prg/$CAT_PHP?data=$_data&board_group=$Row[board_group]&cur_page=$Row[cur_page]&tot_page=$Row[tot_page]&type=$Row[type]&count_pos=4&cnt_download=$Row[cnt3]&cnt_download2=$Row[cnt2]&subject=".urlencode($Row[subject])."&filter_type=$Row[filter_type]" ;
 		$CAT_URL = "$C_base[url]/$wb_prg/$CAT_PHP?data=$_data&board_group=$Row[board_group]" ;
 		$CAT_URL .= !empty($Row[cur_page])?"&cur_page=$Row[cur_page]":"" ;
 		$CAT_URL .= !empty($Row[filter_type])?"&filter_type=$Row[filter_type]":"" ;
-		//$CAT_URL .= !empty($Row[type])?"&type=$Row[type]":"" ;
-		//&cnt_download=$Row[cnt3]&cnt_download2=$Row[cnt2]
 
 		$WRITE_URL = "$C_base[url]/$wb_prg/$WRITE_PHP?data=$_data" ;
 
@@ -48,7 +46,6 @@ else return ;
 		$EDIT_URL .= "&to=$to" ;
 		$EDIT_URL .= !empty($Row[cur_page])?"&cur_page=$Row[cur_page]":"" ;
 		$EDIT_URL .= !empty($Row[is_main_writing])?"&main_writing=$Row[is_main_writing]":"" ;
-		//$EDIT_URL .= "&type=$Row[type]";
 		$EDIT_URL .= !empty($Row[filter_type])?"&filter_type=$Row[filter_type]":"" ;
 		$REPLY_URL = "$C_base[url]/$wb_prg/$WRITE_PHP?data=$_data&mode=reply_form&board_group=$Row[board_group]&board_id=$Row[board_id]" ;
 		$REPLY_URL .= !empty($Row[cur_page])?"&cur_page=$Row[cur_page]":"" ;

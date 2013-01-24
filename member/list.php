@@ -124,18 +124,18 @@ WhiteBoard 1.1.1       2001/4/11
 	///////////////////////////////////
 	$checked[$field] = "checked" ;
 	$selected[$field] = "selected" ;
-	$Row[field] = $field ;
+	$Row['field'] = $field ;
 
 	$page_bar = wb_page_bar( $C_data, $cur_page, $tot_page, $key, $field, $mode, "member" ) ;
 
 		//글쓰기는 한페이지전체에 적용이 되고 
 		//나머지는 글 하나에 적용되므로 이곳에서 적용
 	$hide = make_comment($C_data, $Row, NOT_USE, "member") ;
-	$Row[board_title] = "$C_board_title" ;	
+	$Row['board_title'] = "$C_board_title" ;	
 	$URL = make_url($C_data, $Row, "member") ;
 	$URL['list'] = "$C_base[url]/member/list.php?data=$C_data" ;
 		// category list 2001/12/09
-	//$Row[category_list] = category_list($C_data, $URL['list']) ;
+	//$Row['category_list'] = category_list($C_data, $URL['list']) ;
 
 	/////////////////////////////////////
 	// 꼬리말 처리 

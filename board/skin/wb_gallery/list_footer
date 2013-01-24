@@ -106,11 +106,11 @@
 			<td class="wVer7"> 
 				
 			<!--이미지로 처리하기 위해서 필요한 것 여기서 부터 -->
-			<input type=hidden name=field value='<?=$Row[field]?>'>
+			<input type=hidden name=field value='<?=$Row['field']?>'>
 			<a href="javascript:OnOff('name')" onfocus='this.blur()'><img src=skin/<?=$C_skin?>/images/chk_on.gif border=0 name=chk_name>Name</a> 
 			<a href="javascript:OnOff('subject')" onfocus='this.blur()'><img src=skin/<?=$C_skin?>/images/chk_off.gif border=0 name=chk_subject>Subject</a> 
 			<a href="javascript:OnOff('comment')" onfocus='this.blur()'><img src=skin/<?=$C_skin?>/images/chk_off.gif border=0 name=chk_comment>Comment</a>
-			<script language='javascript'>OnOff('<?=$Row[field]?>'); </script>
+			<script language='javascript'>OnOff('<?=$Row['field']?>'); </script>
 			<!--이미지로 처리하기 위해서 필요한 것 여기까지-->
 
 			<input type=text name=key size=8 maxlength=10 value='<?=$key?>' class=wSearch>

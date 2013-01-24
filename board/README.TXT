@@ -92,7 +92,7 @@ list.html에서 다음 부분을 찾아서 2줄을 추가하면 된다.
        <?=$reply_hide_start?>
         <form action='<?=$WRITE_URL?>' name='reply_frm' method=post>
         <input type=hidden name=mode value='reply' >
-        <input type=hidden name=board_group value='<?=$Row[board_group]?>' >
+        <input type=hidden name=board_group value='<?=$Row['board_group']?>' >
 
         <!-- 현재 페이지를 유지하기 위해 아래 2줄을 추가한다. -->
         <input type=hidden name=tot_page value='<?=$tot_page?>'>
@@ -105,13 +105,13 @@ list.html에서 다음 부분을 찾아서 2줄을 추가하면 된다.
 1] 1.4.x 버전인 경우 
   1) 1.4.x 스킨에 들어있는reply_list.html 스킨디렉토리에 복사합니다.
   2) list.html 파일에 아래 줄을 추가 합니다.
-     추가내용: <?=$Row[reply_list]?>
+     추가내용: <?=$Row['reply_list']?>
  
 2] 1.3.x 이전 버전인 경우 
   1) 1.3.0 스킨에 들어있는reply_list.html 스킨디렉토리에 복사합니다.
      직접 만들경우 reply_list.html파일의 내용은list.html파일과 같은 방법으로 제작하면 됩니다.
   2) list.html 파일에 아래 줄을 추가합니다.
-     추가해줄 내용: <? reply_list( $C_data, $Row[board_group] ;?> 
+     추가해줄 내용: <? reply_list( $C_data, $Row['board_group'] ;?> 
 
 
   list.html파일의 일부
@@ -120,8 +120,8 @@ list.html에서 다음 부분을 찾아서 2줄을 추가하면 된다.
     <tr>
         <td width=10 height=159 background=skin/<?=$C_skin?>/images/4.gif></td> 
         <td width=260 height=159>
-            <div id="<?=$Row[board_group]?>">
-            <?=$Row[comment]?>
+            <div id="<?=$Row['board_group']?>">
+            <?=$Row['comment']?>
             <br>
 			<!-- 댓글 기능을 위해 새로 추가한 내용 -->
 			<?=$Row[reply_list?>

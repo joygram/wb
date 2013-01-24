@@ -23,7 +23,7 @@
 </td>
 <td bgcolor="#F7F5F5" class="wDefault"><b>:</b>
 <?@=$hide['email']?><a href="javascript:window_open('<?=$URL['sendmail']?>',300,250,'');"><?@=$hide['/email']?>
-<?@=$hide['avatar']?><img src="<?=$URL[avatar]?>" border="0"><?@=$hide['/avatar']?><?=$Row[name]?>
+<?@=$hide['avatar']?><img src="<?=$URL[avatar]?>" border="0"><?@=$hide['/avatar']?><?=$Row['name']?>
 <?@=$hide['email']?></a><?@=$hide['/email']?>
 </td>
 </tr>
@@ -34,7 +34,7 @@
 &nbsp;&nbsp;&nbsp;<b>Homepage</b>
 </td>
 <td class="wVer7" align="left" bgcolor="#F7F5F5"><b class="wDefault">: </b>
-<a href='<?=$Row[homepage]?>' target='_blank'><?=$Row[homepage]?></a>
+<a href='<?=$Row['homepage']?>' target='_blank'><?=$Row['homepage']?></a>
 </td>
 </tr>
 <?@=$hide['/home']?>
@@ -45,7 +45,7 @@
 &nbsp;&nbsp;&nbsp;<b>Link</b>
 </td>
 <td class="wVer7" align="left" bgcolor="#F7F5F5"><b class="wDefault">: </b>
-<a href='<?=$Row[link]?>' target="_blank"><?=$Row[link]?></a>
+<a href='<?=$Row['link']?>' target="_blank"><?=$Row['link']?></a>
 </td>
 </tr>
 <?@=$hide['/link']?>
@@ -56,7 +56,7 @@
 &nbsp;&nbsp;&nbsp;<b>Image</b>
 </td>
 <td class="wVer7" align="left" bgcolor="#F7F5F5"><b class="wDefault">: </b>
-<a href='<?=$URL["img"]?>' target="_blank"><?=$Row[InputFile_name]?></a> (<?=$Row[cnt_download]?>)
+<a href='<?=$URL["img"]?>' target="_blank"><?=$Row['InputFile_name']?></a> (<?=$Row['cnt_download']?>)
 </td>
 </tr>
 <?@=$hide['/attach']?>
@@ -78,7 +78,7 @@
 </td>
 
 <td class="wDefault" align="left" bgcolor="#F7F5F5">
-<b>: <?=$Row[subject]?></b>
+<b>: <?=$Row['subject']?></b>
 </td>
 </tr>
 
@@ -94,7 +94,7 @@
 <tr align="center">
 <td width='100%' align='center'>
 <br>
-<a href="javascript:void(0);"><img src="<?=$URL["img"]?>" border=0 width="<?=$Row[img_width]?>" height="<?=$Row[img_height]?>" onClick="open_win_resize('<?=$URL["img"]?>','scrollbars=no,resizable=no,width=<?=$Row[org_img_width]?>,height=<?=$Row[org_img_height]?>', <?=$Row[org_img_width]+30?>, <?=$Row[org_img_height]+50?>);"></a>
+<a href="javascript:void(0);"><img src="<?=$URL["img"]?>" border=0 width="<?=$Row['img_width']?>" height="<?=$Row['img_height']?>" onClick="open_win_resize('<?=$URL["img"]?>','scrollbars=no,resizable=no,width=<?=$Row['org_img_width']?>,height=<?=$Row['org_img_height']?>', <?=$Row['org_img_width']+30?>, <?=$Row['org_img_height']+50?>);"></a>
 <br>
 <br><br>
 </td>
@@ -104,10 +104,10 @@
 <tr>
 <td width="80%" height=22 class="wDefault">
 <br>
-<?=$Row[comment]?>
+<?=$Row['comment']?>
 </td>
 <td width="20%" height=22  align="right" class="wTah7" valign="bottom" nowrap> 
-<?=$Row[w_date]?>
+<?=$Row['w_date']?>
 </td> 
 </tr>
 

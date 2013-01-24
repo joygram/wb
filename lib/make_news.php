@@ -110,36 +110,36 @@ else return ;
 				echo("make_news:row is -1<br>") ;
 				break ; //파일을 끝까지 읽었을 경우
 			}
-			//if( $mode == "find" && $Row[name] != $key )
+			//if( $mode == "find" && $Row['name'] != $key )
 			//{
 			//	$line_end++ ; // 끝나는 것 무시
 			//	continue ; //찾기일 경우 이름이 같지 않으면 통과
 			//}
 			if( !empty($conf[news_subject_max]) )
 			{
-				$Row[subject] = cutting($Row[subject], $conf[news_subject_max]) ;
+				$Row['subject'] = cutting($Row[subject], $conf[news_subject_max]) ;
 				//이전 제목의 길이가 다르면 ...을 붙여주자.
 				if( strlen($Row[subject]) >= $conf[news_subject_max] )
 				{
-					$Row[subject] .= "..." ;
+					$Row['subject'] .= "..." ;
 				}
 			}
 			if( !empty($conf[news_char_max]) )
 			{
-				$Row[comment] = cutting($Row[comment], $conf[news_char_max]) ;
+				$Row['comment'] = cutting($Row[comment], $conf[news_char_max]) ;
 			}
 			// correct this.
-			$Row[comment] = nl2br($Row[comment]) ;
-			$Row[status] = $status ;
-			$Row[is_main_writing] = 1 ;
-			//$Row[cur_page] = $cur_page ;
-			//$Row[tot_page] = $tot_page ;
+			$Row['comment'] = nl2br($Row[comment]) ;
+			$Row['status'] = $status ;
+			$Row['is_main_writing'] = 1 ;
+			//$Row['cur_page'] = $cur_page ;
+			//$Row['tot_page'] = $tot_page ;
 			$URL = make_url($_data, $Row) ;
 			if( $URL[no_img] == "1" )
 			{
 				$size = GetImageSize($URL[attach_filename]) ;
-				$Row[img_width] = $size[0] ;
-				$Row[img_height] = $size[1] ;
+				$Row['img_width'] = $size[0] ;
+				$Row['img_height'] = $size[1] ;
 			}
 			if( $URL[no_img2] == "1" )
 			{
@@ -147,7 +147,7 @@ else return ;
 				$Row[img2_width] = $size[0] ;
 				$Row[img2_height] = $size[1] ;
 			}
-			$Row[data] = $_data ;
+			$Row['data'] = $_data ;
 			$hide = make_comment($_data, $Row) ;
 			// ob_start가 제대로 적용이 안되어서 루프내로 이동 2002/05/15
 			ob_start() ; //출력을 문자열로 하기

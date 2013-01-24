@@ -5,15 +5,15 @@
 
 <tr>
 <td width="38" align="center"> 
-<div ><?=$Row[no]?>
+<div ><?=$Row['no']?>
 </td>
 
 <td width="146" height="20" align="left">
-<?=$Row[board]?>
+<?=$Row['board']?>
 </td>
 
 <td width="160" align="center">
-<?@=$hide['author_email']?><a href='mailto:<?=$Row[author_email]?>'><?@=$hide['/author_email']?><?=$Row[author]?><?@=$hide['author_email']?></a><?@=$hide['/author_email']?>
+<?@=$hide['author_email']?><a href='mailto:<?=$Row['author_email']?>'><?@=$hide['/author_email']?><?=$Row['author']?><?@=$hide['author_email']?></a><?@=$hide['/author_email']?>
 <?@=$hide['author_url']?> / <a href='<?=$AUTHOR_URL?>' target="_blank"><?=_L_HOME?></a> <?@=$hide['/author_url']?>
 </td>
 

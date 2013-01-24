@@ -20,9 +20,9 @@ function save_system_ini($system_conf, $ini)
 	$C_lang = empty($C_lang)?"kr":$C_lang ;
 
 	// empty일 수 없음.
-	$C_base_url = empty($ini[base_url])?$C_base_url:$ini[base_url] ;	
-	$C_base_dir = empty($ini[base_dir])?$C_base_dir:$ini[base_dir] ;
-	$C_lang     = empty($ini[lang])?$C_lang:$ini[lang];
+	$C_base_url = empty($ini['base_url'])?$C_base_url:$ini['base_url'] ;	
+	$C_base_dir = empty($ini['base_dir'])?$C_base_dir:$ini['base_dir'] ;
+	$C_lang     = empty($ini['lang'])?$C_lang:$ini['lang'];
 	$C_theme    = empty($C_theme)?"white":$C_theme;
 
 	// empty일 수 없음.
@@ -32,22 +32,22 @@ function save_system_ini($system_conf, $ini)
 	$C_member_db_type = empty($C_member_db_type)?"old_type":$C_member_db_type ;	
 
 	// empty일 수 없음.
-	$C_db_name   = empty($ini[db_name])?$C_db_name:$ini[db_name] ;      
-	$C_db_uid    = empty($ini[db_uid])?$C_db_name:$ini[db_uid] ;
-	$C_db_passwd = empty($ini[db_passwd])?$C_db_passwd:$ini[db_passwd] ;
+	$C_db_name   = empty($ini['db_name'])?$C_db_name:$ini['db_name'] ;      
+	$C_db_uid    = empty($ini['db_uid'])?$C_db_name:$ini['db_uid'] ;
+	$C_db_passwd = empty($ini['db_passwd'])?$C_db_passwd:$ini['db_passwd'] ;
 
 	// empty일 수 있음. 아래의 경우 외부에서 결과를 받아서 갱신 해야 한다.
-	$C_use_board   = $ini[use_board] ;	
-	$C_use_counter = $ini[use_counter] ;
-	$C_use_member  = $ini[use_member] ;	
-	$C_use_mail    = $ini[use_mail] ;	
+	$C_use_board   = $ini['use_board'] ;	
+	$C_use_counter = $ini['use_counter'] ;
+	$C_use_member  = $ini['use_member'] ;	
+	$C_use_mail    = $ini['use_mail'] ;	
 
 	// emtpy일 수 없음. 
-	$C_language    = empty($ini[language])?$C_language:$ini[language] ;	
-	$C_timezone    = empty($ini[timezone])?$C_timezone:$ini[timezone] ;	
+	$C_language    = empty($ini['language'])?$C_language:$ini['language'] ;	
+	$C_timezone    = empty($ini['timezone'])?$C_timezone:$ini['timezone'] ;	
 
 	// version 2.6에서 spam기능에 새로 추가된 것이므로 이전버젼의 설정의 경우 empty일 수 있음.
-	$C_uniq_num = empty($ini[uniq_num])?$C_uniq_num:$ini[uniq_num] ;
+	$C_uniq_num = empty($ini['uniq_num'])?$C_uniq_num:$ini['uniq_num'] ;
 
 	include_once("$C_base_dir/lib/io.php") ;
 	$fd = wb_fopen($system_conf, "w") ;

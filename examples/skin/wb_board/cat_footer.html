@@ -7,31 +7,31 @@
 	<form action='<?=$WRITE_PHP?>' name='reply' method=post>
 	<input type=hidden name=data value='<?=$data?>' >
 	<input type=hidden name=mode value='reply' >
-	<input type=hidden name=board_group value='<?=$Row[board_group]?>' >
-	<input type=hidden name=main_board_id  value='<?=$Row[main_board_id]?>' >
+	<input type=hidden name=board_group value='<?=$Row['board_group']?>' >
+	<input type=hidden name=main_board_id  value='<?=$Row['main_board_id']?>' >
 	<table border=0 cellpadding=0 cellspacing=0 width="100%" align="right">
 	<tr align="right"> 
 	<td class=wTah7>
 
 	<?@=$hide['admin']//관리자 권한//?>
-	<font class='wDefault'><?=$Row[alias]?> : </font>
-	<input type=hidden name=name value='<?=$Row[alias]?>'>
+	<font class='wDefault'><?=$Row['alias']?> : </font>
+	<input type=hidden name=name value='<?=$Row['alias']?>'>
 	<?@=$hide['/admin']//관리자 권한 끝//?>
 
 	<?@=$hide['member']//회원권한//?>
-	<font class='wDefault'><?=$Row[alias]?> : </font>
-	<input type=hidden name=name value='<?=$Row[alias]?>'>
+	<font class='wDefault'><?=$Row['alias']?> : </font>
+	<input type=hidden name=name value='<?=$Row['alias']?>'>
 	<?@=$hide['/member']//회원권한 끝//?>
 
 	<?@=$hide['anonymous']//무명씨권한//?>
 	Name:
-	<input type=text name=name value='<?=$Row[cookie_name]?>' size=10 maxlength=10 class=wSearch>
+	<input type=text name=name value='<?=$Row['cookie_name']?>' size=10 maxlength=10 class=wSearch>
 	Pass:
 	<input type=password name=password size=5 maxlength=20 class=wSearch >
 	Comment:
 	<?@=$hide['/anonymous']//무명씨권한 끝//?>
 	<input type=text   name=comment size=30 maxlength=100 class=wSearch>
-	<input type=hidden name="spam_check" value="<?=$Row[spam_check]?>">
+	<input type=hidden name="spam_check" value="<?=$Row['spam_check']?>">
 	<input type=submit value=Save class=wButton>
 	</td>
 	</tr>

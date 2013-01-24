@@ -1,11 +1,11 @@
 <table border=0 cellpadding=0 cellspacing=2 width=100% align="center" >
 <tr>
 <td align=left width="43%" nowrap class="wCat">
-<?=$Row[category_list]?>
+<?=$Row['category_list']?>
 </td>
 
 <td align=right class="wVer7" width="57%">
-total <?=$Row[nTotal]?> page <?=$Row[cur_page]?> / <?=$Row[tot_page]?>
+total <?=$Row['nTotal']?> page <?=$Row['cur_page']?> / <?=$Row['tot_page']?>
 &nbsp;&nbsp;
 <?@=$hide['login']?>
 <a href='<?=$URL[login]?>'>Login</a>

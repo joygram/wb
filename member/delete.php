@@ -101,11 +101,11 @@ WhiteBoard 1.1.1: 2001/4/11
 	{
 		// 2.1.2 이하 버젼은 모두 anonymous글이므로
 			//암호화 되어 있으면 
-		if( strlen($Row[password]) > 15 || $Row[encode_type] == "1" )
+		if( strlen($Row[password]) > 15 || $Row['encode_type'] == "1" )
 		{
-			$Row[password] = wb_decrypt($Row[password], $Row[name]) ;
+			$Row['password'] = wb_decrypt($Row[password], $Row[name]) ;
 		}
-		$check_data[passwd] = $Row[password]  ;
+		$check_data[passwd] = $Row['password']  ;
 		if($C_debug) echo("$PHP_SELF:check_data[passwd][$check_data[passwd]]<br>") ;
 	}
 	else 

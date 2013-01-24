@@ -1,37 +1,37 @@
 <!-- plug-in start-->
 <?php 
-	if($Row[h_grad_year] == 1949) $Row[h_grad_year]=1948 ; // 1회가 1949년6월임. 
-	$Row[grad_no] = ($Row[h_grad_year]-1948); 
-	$Row[name] = $Row[lastname].$Row[firstname] ;
+	if($Row['h_grad_year'] == 1949) $Row[h_grad_year]=1948 ; // 1회가 1949년6월임. 
+	$Row['grad_no'] = ($Row[h_grad_year]-1948); 
+	$Row['name'] = $Row[lastname].$Row['firstname'] ;
 ?>
 <!-- plug-in end -->
 
 
-<!-- list $Row[no] start -->						
+<!-- list $Row['no'] start -->						
 
 <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
 <tr>
  
 <td width="24" align="center" height="22" class="wTah7" norwap>
-<?=$Row[no]?>
+<?=$Row['no']?>
 </td>
 
 <td class="wDefault" width='34'>
-<?=$Row[grad_no]?>회
+<?=$Row['grad_no']?>회
 </td>
 
 <td class="wDefault" align='left' width='60' nowrap>
-<?=$Row[uname]?>
+<?=$Row['uname']?>
 </td>
 
 <td class="wDefault" align='left' width='50'>
 <?@=$hide['admin']//관리자 권한//?>
 <?@=$hide['cat_perm']?><a href='<?=$CAT_URL?>'><?@=$hide['/cat_perm']?>
-<?=$Row[name]?>
+<?=$Row['name']?>
 <?@=$hide['cat_perm']?></a><?@=$hide['/cat_perm']?>
 
 <td class="wDefault" width='100' nowrap>
-<?=$Row[mobilephone]?>
+<?=$Row['mobilephone']?>
 </td>
 
 <?@=$hide['/admin']?>
@@ -39,11 +39,11 @@
 
 <?@=$hide['member']//회원권한//?>
 <?@=$hide['cat_perm']?><a href='<?=$CAT_URL?>'><?@=$hide['/cat_perm']?>
-<?=$Row[name]?>
+<?=$Row['name']?>
 <?@=$hide['cat_perm']?></a><?@=$hide['/cat_perm']?>
 
 <td class="wDefault" width='100' nowrap>
-<?=$Row[mobilephone]?>
+<?=$Row['mobilephone']?>
 </td>
 
 <?@=$hide['/member']?>
@@ -51,30 +51,30 @@
 
 <?@=$hide['anonymous']//무명씨 권한//?>
 <?@=$hide['cat_perm']?><a href='<?=$CAT_URL?>'><?@=$hide['/cat_perm']?>
-<?=$Row[name]?>
+<?=$Row['name']?>
 <?@=$hide['cat_perm']?></a><?@=$hide['/cat_perm']?>
 <?@=$hide['/anonymous']?>
 </td>
 
 <td class="wDefault" align='left' nowrap width='150'>
-<?@=$hide[company_homepage]?><a href='<?=$Row[company_homepage]?>' target='_blank'><?@=$hide['/company_homepage']?><?=$Row[company_name]?><?@=$hide['company_homepage']?></a><?@=$hide['/company_homepage']?>
+<?@=$hide['company_homepage']?><a href='<?=$Row['company_homepage']?>' target='_blank'><?@=$hide['/company_homepage']?><?=$Row['company_name']?><?@=$hide['company_homepage']?></a><?@=$hide['/company_homepage']?>
 </td>
 
 <td class="wDefault" nowrap>
 <?@=$hide['member']//회원권한//?>
 <?@=$hide['email']?>
-<a href='mailto:<?=$Row[email]?>'>메일</a>
+<a href='mailto:<?=$Row['email']?>'>메일</a>
 <?@=$hide['/email']?>
 <?@=$hide['/member']//회원권한//?>
 </td>
 
 
 <td width="60" align="center" class="wTah7"> 
-<?=$Row[w_year]?><?=$Row[w_mon]?><?=$Row[w_day]?>
+<?=$Row['w_year']?><?=$Row['w_mon']?><?=$Row['w_day']?>
 </td>
 
 <td width="20" align="center" class="wTah7"> 
-<?=$Row[cnt_view]?>
+<?=$Row['cnt_view']?>
 </td>
 </tr>
 
@@ -84,4 +84,4 @@
 
 </table>
 
-<!-- list $Row[no] end -->
+<!-- list $Row['no'] end -->

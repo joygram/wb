@@ -293,8 +293,8 @@ Copyright (c) 2001-2005, WhiteBBS.net, All rights reserved.
 			$name = htmlspecialchars($name) ; 
 		}
 
-		$Row[cur_page] = $cur_page ;
-		$Row[tot_page] = $tot_page ;
+		$Row['cur_page'] = $cur_page ;
+		$Row['tot_page'] = $tot_page ;
 
 		//글내용과 정보 저장
 		$head = array("") ;
@@ -455,15 +455,15 @@ Copyright (c) 2001-2005, WhiteBBS.net, All rights reserved.
 		$dbi = new db_member($data, "member", $mode, $filter_type, $key, $field, $C_base[member_db_type], "2", $C_base[dir] ) ;
 		$Row = $dbi->row_fetch_array(0, $board_group, $board_id) ;
 		
-		if( $Row[uid] == __ANONYMOUS ) //anonymous가 쓴글이면...
+		if( $Row['uid'] == __ANONYMOUS ) //anonymous가 쓴글이면...
 		{
 			// 2.1.2 이하 버젼은 모두 anonymous글이므로
 				//암호화 되어 있으면 
-			if( strlen($Row[password]) > 15 || $Row[encode_type] == "1" )
+			if( strlen($Row[password]) > 15 || $Row['encode_type'] == "1" )
 			{
-				$Row[password] = wb_decrypt($Row[password], $Row[name]) ;
+				$Row['password'] = wb_decrypt($Row[password], $Row[name]) ;
 			}
-			$check_data[passwd] = $Row[password]  ;
+			$check_data[passwd] = $Row['password']  ;
 		}
 		else // member가 쓴글이면
 		{
@@ -476,13 +476,13 @@ Copyright (c) 2001-2005, WhiteBBS.net, All rights reserved.
 		$sess = $auth->member_info() ;
 
 			//1.
-		$Row[subject] = stripslashes($subject) ;  
-		$Row[subject] = str_replace('"', "&quot;", $Row[subject]) ;
-		$Row[type] = $type ;
+		$Row['subject'] = stripslashes($subject) ;  
+		$Row['subject'] = str_replace('"', "&quot;", $Row[subject]) ;
+		$Row['type'] = $type ;
 		$Row['html_use_checked'] = ($Row['html_use']==HTML_NOTUSE)?"":"checked" ;
 		$Row['br_use_checked'] = $Row['br_use']?"checked":"" ;
-		$Row[is_main_writing] = $main_writing ;
-		//$Row[category_select] = category_select($data,$Row[type]) ;
+		$Row['is_main_writing'] = $main_writing ;
+		//$Row['category_select'] = category_select($data,$Row[type]) ;
 
 			//수정이며 관리자의 경우에는 alias를 사용하므로. 2002/04/28
 			//원래글의 아이디를 넣어주어야 한다.	
@@ -502,7 +502,7 @@ Copyright (c) 2001-2005, WhiteBBS.net, All rights reserved.
 
 				//무명씨 글인 경우 암호를 제외한 모든 내용을 수정할 수 있다.
 				//암호를 reset시킬 경우도 있으니까.. 저장시에만 skip할 수 있도록..
-			if($Row[uid] == __ANONYMOUS) 
+			if($Row['uid'] == __ANONYMOUS) 
 			{
 				$hide['password'] = "<!--\n" ;
 				$hide['/password'] = "-->\n" ;
@@ -567,7 +567,7 @@ Copyright (c) 2001-2005, WhiteBBS.net, All rights reserved.
 	echo("<!--$my_version-->\n") ;
 
 	$C_table_size = empty($C_table_size)?500:$C_table_size ; 
-	$Row[table_size] = $C_table_size ;
+	$Row['table_size'] = $C_table_size ;
 
 		//HEADER 대소문자 구분없이 읽기 v 1.3.0 
 		// 각모드에 맞는 header가 있으면 그 헤더를 이용

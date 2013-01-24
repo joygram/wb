@@ -8,13 +8,13 @@
 	<input type=hidden name=mode value='<?=$mode?>' >
 	<input type=hidden name=board_group value='<?=$board_group?>' >
 	<input type=hidden name=board_id    value='<?=$board_id?>'    >
-	<input type=hidden name=w_date      value='<?=$Row[w_date]?>' >
-	<input type=hidden name=name_org    value='<?=$Row[name]?>'   >
+	<input type=hidden name=w_date      value='<?=$Row['w_date']?>' >
+	<input type=hidden name=name_org    value='<?=$Row['name']?>'   >
 	<input type=hidden name=data        value='<?=$data?>'   >
 	<input type=hidden name=tot_page value='<?=$tot_page?>'>
 	<input type=hidden name=cur_page value='<?=$cur_page?>'>
-	<input type=hidden name='to' value="<?=$Row[to]?>">
-	<input type=hidden name="spam_check" value="<?=$Row[spam_check]?>">
+	<input type=hidden name='to' value="<?=$Row['to']?>">
+	<input type=hidden name="spam_check" value="<?=$Row['spam_check']?>">
 	<!-- 여기 까지 -->
 	
 	<tr>
@@ -28,7 +28,7 @@
 	Subject
 	</td>
 	<td height=18 > 
-	<input type=text name='subject' size=40 maxlength=50 class=wForm value='<?=$Row[subject]?>' >
+	<input type=text name='subject' size=40 maxlength=50 class=wForm value='<?=$Row['subject']?>' >
 	</td>
 	</tr>
 	
@@ -45,7 +45,7 @@
 	
 	<tr> 
 	<td colspan="2"> 
-	<textarea name=comment cols=49 rows=12 class=wForm><?=$Row[comment]?></textarea>
+	<textarea name=comment cols=49 rows=12 class=wForm><?=$Row['comment']?></textarea>
 	</td>
 	</tr>
 	
@@ -54,7 +54,7 @@
 	<tr> 
 	<td height=18 width=60 align=center valign="bottom" class="wVer7">Image</td>
 	<td height=18  class="wVer7" align="right"> 
-	<?=$Row[InputFile_name]?>&nbsp;&nbsp;
+	<?=$Row['InputFile_name']?>&nbsp;&nbsp;
 	<?@=$hide['attach']?>Del <input class='wDefault' type='checkbox' name='remove_attach1'><?@=$hide['/attach']?><br>
 	<input name='InputFile' type='file' size='25' class=wForm></td>
 	</tr>

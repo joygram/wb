@@ -23,6 +23,14 @@ $cont = file("$C_base[dir]/release_no") ;
 $installed_release_no = chop($cont[0]) ;
 $installed_ver = chop($cont[1]) ;
 
+$upgrade = isset($__GET['upgrade'])?$__GET['upgrade']:"";
+$cmd = isset($__GET['cmd'])?$__GET['cmd']:"";
+
+foreach($__POST as $key => $value)
+{
+    echo($key . "::" . $value);
+}
+
 //2002/11/01
 $URL = array("") ;
 
@@ -57,39 +65,39 @@ if( file_exists("$C_base[dir]/system.ini.php") )
 	include("$C_base[dir]/system.ini.php") ; 
 }
 
-switch($__GET["cmd"])
+switch($cmd)
 {
 	case "next" :
-		$ini[db_type]   = $db_type ;
-		$ini[db_uid]    = $db_uid ;
-		$ini[db_passwd] = $db_passwd ;
-		$ini[db_name]   = $db_name ;
+		$ini['db_type']   = $__POST['db_type'] ;
+		$ini['db_uid']    = $__POST['db_uid'] ;
+		$ini['db_passwd'] = $__POST['db_passwd'] ;
+		$ini['db_name']   = $__POST['db_name'] ;
 
-		$ini[use_board]   = $C_use_board ;
-		$ini[use_counter] = $C_use_counter ;
-		$ini[use_member]  =	$C_use_member ;
-		$ini[use_mail]    = $C_use_mail ; 
+		$ini['use_board']   = $C_use_board ;
+		$ini['use_counter'] = $C_use_counter ;
+		$ini['use_member']  =	$C_use_member ;
+		$ini['use_mail']    = $C_use_mail ; 
 		save_system_ini("$C_base[dir]/system.ini.php", $ini) ;
 
 		$url = "admin.php?upgrade=$upgrade" ;	
-		echo("<script>document.location.href='$url';</script>") ;
+		//echo("<script>document.location.href='$url';</script>") ;
 		exit ;
 		break ;
 
 	case "save" :
-		$ini[db_type]   = $db_type ;
-		$ini[db_uid]    = $db_uid ;
-		$ini[db_passwd] = $db_passwd ;
-		$ini[db_name]   = $db_name ;
+		$ini['db_type']   = $__POST['db_type'] ;
+		$ini['db_uid']    = $__POST['db_uid'] ;
+		$ini['db_passwd'] = $__POST['db_passwd'] ;
+		$ini['db_name']   = $__POST['db_name'] ;
 
-		$ini[use_board]   = $C_use_board ;
-		$ini[use_counter] = $C_use_counter ;
-		$ini[use_member]  =	$C_use_member ;
-		$ini[use_mail]    = $C_use_mail ; 
+		$ini['use_board']   = $C_use_board ;
+		$ini['use_counter'] = $C_use_counter ;
+		$ini['use_member']  =	$C_use_member ;
+		$ini['use_mail']    = $C_use_mail ; 
 		save_system_ini("$C_base[dir]/system.ini.php", $ini) ;
 
 		$url = "db.php?upgrade=$upgrade" ;	
-		echo("<script>document.location.href='$url';</script>") ;
+		//echo("<script>document.location.href='$url';</script>") ;
 		exit ;
 		break ;
 
@@ -99,32 +107,36 @@ switch($__GET["cmd"])
 
 include("./html/db_header.html") ;
 
-$Row[title] = "" ;
-$Row[func]  = "" ;
+$Row['title'] = " " ;
+$Row['func']  = " " ;
+
+$Row['db_uid'] = "-";
+$Row['db_name'] = "-";
+$Row['db_passwd'] = "-";
 
 $selected['pgsql'] 	  = ($C_db_type == "pgsql")?"selected":"" ;
 $selected['mysql']    = ($C_db_type == "mysql")?"selected":"" ;
 $selected['old_type'] = ($C_db_type == "old_type")?"selected":"" ; 
 
 //현재 사용하고 있는 DB타입을 확인하여 기존의 정보를 보여주도록
-$Row[title] = _L_DATABASE_SELECTION ; 
-$Row[func]  = "<select class='wForm' name='db_type' onChange='ToggleSetting(document.main_form);'>
+$Row['title'] = _L_DATABASE_SELECTION ; 
+$Row['func']  = "<select class='wForm' name='db_type' onChange='ToggleSetting(document.main_form);'>
 		<option value='old_type' ${selected['old_type']} >"._L_FILESYSTEM."</option>
-		<option value='pgsql' ${selected['pgsql']}>PostgreSQL</option>
 		<option value='mysql' ${selected['mysql']}>MySQL</option>
+		<option value='pgsql' ${selected['pgsql']}>PostgreSQL</option>
 		</select>" ;
 include("./html/db_list.html") ;
 
-$Row[title] = _L_DBID ; 
-$Row[func] = "<input class='wForm' type='text' name='db_uid' value='$Row[db_uid]'>" ;
+$Row['title'] = _L_DBID ; 
+$Row['func'] = "<input class='wForm' type='text' name='db_uid' value='$Row[db_uid]'>" ;
 include("./html/db_list.html") ;
 
-$Row[title] = _L_DBPASSWORD ; 
-$Row[func] = "<input class='wForm' type='password' name='db_passwd' value='$Row[db_uid]'>" ;
+$Row['title'] = _L_DBPASSWORD ; 
+$Row['func'] = "<input class='wForm' type='password' name='db_passwd' value='$Row[db_passwd]'>" ;
 include("./html/db_list.html") ;
 
-$Row[title] = _L_DBNAME ; 
-$Row[func] = "<input class='wForm' type='text' name='db_name' value='$Row[db_name]'>" ;
+$Row['title'] = _L_DBNAME ; 
+$Row['func'] = "<input class='wForm' type='text' name='db_name' value='$Row[db_name]'>" ;
 include("./html/db_list.html") ;
 
 echo("<script>

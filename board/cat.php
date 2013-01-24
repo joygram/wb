@@ -155,7 +155,7 @@ class cat
 	$lang = "kr" ;
 	include("$C_base[dir]/admin/bsd_license.$lang") ;
 
-	$Row[board_title] = "$conf[board_title]" ;	
+	$Row['board_title'] = "$conf[board_title]" ;	
 	if( empty($conf[board_title]) )
 	{
 		$hide[board_title_start] = "<!--\n" ;
@@ -177,34 +177,34 @@ class cat
 	}
 		// category list 2001/12/09
 	$URL['list'] = "$C_base[url]/board/$conf[list_php]?data=$_data" ;
-	$Row[category_list] = category_list($_data, $URL['list']) ;
+	$Row['category_list'] = category_list($_data, $URL['list']) ;
 
 	$URL = make_url($_data, $Row, "board", $conf[cat_php]) ;
 
 	if($conf[cookie_use] == "1")
 	{
-		$Row[name] = "" ;
-		$Row[email] = "" ;
-		$Row[homepage] = "" ;
+		$Row['name'] = "" ;
+		$Row['email'] = "" ;
+		$Row['homepage'] = "" ;
 
 		$cw_name  = $HTTP_COOKIE_VARS[cw_name] ;
 		$cw_email = $HTTP_COOKIE_VARS[cw_email] ;
 		$cw_home  = $HTTP_COOKIE_VARS[cw_home] ;
 
-		$Row[cookie_name]     = stripslashes($cw_name) ;
-		$Row[cookie_email]    = stripslashes($cw_email) ;
-		$Row[cookie_homepage] = stripslashes($cw_home) ;
+		$Row['cookie_name']     = stripslashes($cw_name) ;
+		$Row['cookie_email']    = stripslashes($cw_email) ;
+		$Row['cookie_homepage'] = stripslashes($cw_home) ;
 	}
 	//이전버젼 호환성 위해서.
-	$Row[name] = $Row[cookie_name] ;
-	$Row[email] = $Row[cookie_email] ;
-	$Row[homepage] = $Row[cookie_homepage] ;
+	$Row['name'] = $Row['cookie_name'] ;
+	$Row['email'] = $Row['cookie_email'] ;
+	$Row['homepage'] = $Row['cookie_homepage'] ;
 
 	$conf[table_size] = empty($conf[table_size])?500:$conf[table_size] ; 
-	$Row[table_size] = $conf[table_size] ;
+	$Row['table_size'] = $conf[table_size] ;
 
 	$conf[table_align] = !isset($conf[table_align])?"center":$conf[table_align] ;
-	$Row[table_align] = $conf[table_align];
+	$Row['table_align'] = $conf[table_align];
 
 	$hide = make_comment($_data, $Row) ;
 
@@ -223,7 +223,7 @@ class cat
     	}
 	}
 
-	$Row[spam_check] = base64_encode("$spam_check|$timestamp") ;
+	$Row['spam_check'] = base64_encode("$spam_check|$timestamp") ;
 	///////////////////////////////////
 	// header 처리
 	///////////////////////////////////
@@ -264,7 +264,7 @@ class cat
 		$board_id = ".".$tmp[1] ;
 		$Row = $dbi->row_fetch_array(0, $board_group, $board_id) ;
 
-		if( $Row[secret] )
+		if( $Row['secret'] )
 		{
 			//퍼미션검사하고..
 			//redirect가 되는가?
@@ -280,7 +280,7 @@ class cat
 			else 
 				$auth->auth_mode( "check_secret" );			
 
-			$check_data[passwd] = $Row[secret_passwd]  ;
+			$check_data[passwd] = $Row['secret_passwd']  ;
 			$auth->perm($conf[auth_user], $conf[auth_group], $conf[auth_perm], $check_data) ;
 		}
 
@@ -293,12 +293,12 @@ class cat
 			{
 				// use br의 구현 2002/05/15
 				if($_debug) echo("cat:Row[br_use][$Row[br_use]]<br>") ;
-				if($Row[br_use] == "no")
+				if($Row['br_use'] == "no")
 				{
 				}
 				else
 				{
-					if( $Row[html_use] == HTML_NOTUSE || $Row[br_use] != "no" ) 
+					if( $Row['html_use'] == HTML_NOTUSE || $Row['br_use'] != "no" ) 
 					{
 						$cmt_token["cont"][$i] = nl2br($cmt_token["cont"][$i]) ;
 						$cmt_token["cont"][$i] = clear_br($cmt_token["cont"][$i]) ;  //table 사용시 <br />에 의한 공백 제거
@@ -307,7 +307,7 @@ class cat
 					}
 				}
 				//자동으로 링크 만들기 옵션선택시 
-				if($conf[url2link_use] == "1" && $Row[html_use] == HTML_NOTUSE ) 
+				if($conf[url2link_use] == "1" && $Row['html_use'] == HTML_NOTUSE ) 
 				{
 					$cmt_token["cont"][$i] = url2link( $cmt_token["cont"][$i] ) ;
 				}
@@ -319,25 +319,25 @@ class cat
 			}
 			$tmp_comment .= $cmt_token["cont"][$i] ;
 		}
-		$Row[comment] = $tmp_comment ;
+		$Row['comment'] = $tmp_comment ;
 		
 		//이전 버젼 스킨에서 카운트의 위치를 바꿔서 사용한 것이 있어서 호환성 유지를 위해...
-		$Row[is_main_writing] = $main_writing ;
-		$Row[tot_page] = $tot_page ;
-		$Row[cur_page] = $cur_page ;
-		$Row[filter_type] = $filter_type ;
-		$Row[cnt3] = $Row[cnt_download] ;
+		$Row['is_main_writing'] = $main_writing ;
+		$Row['tot_page'] = $tot_page ;
+		$Row['cur_page'] = $cur_page ;
+		$Row['filter_type'] = $filter_type ;
+		$Row[cnt3] = $Row['cnt_download'] ;
 		$Row[cnt2] = $Row[cnt_download2] ;
-		$Row[alias] = $auth->alias() ;
+		$Row['alias'] = $auth->alias() ;
 		if($conf[cookie_use] == "1")
 		{
 			$cw_name  = $HTTP_COOKIE_VARS[cw_name] ;
 			$cw_email = $HTTP_COOKIE_VARS[cw_email] ;
 			$cw_home  = $HTTP_COOKIE_VARS[cw_home] ;
 
-			$Row[cookie_name]     = stripslashes($cw_name) ;
-			$Row[cookie_email]    = stripslashes($cw_email) ;
-			$Row[cookie_homepage] = stripslashes($cw_home) ;
+			$Row['cookie_name']     = stripslashes($cw_name) ;
+			$Row['cookie_email']    = stripslashes($cw_email) ;
+			$Row['cookie_homepage'] = stripslashes($cw_home) ;
 		}
 
 		$hide = make_comment($_data, $Row, $i) ;
@@ -346,8 +346,8 @@ class cat
 		if( $URL[no_img] == "1" )
 		{
 			$size = GetImageSize($URL[attach_filename]) ;
-			$Row[img_width] = $size[0] ;
-			$Row[img_height] = $size[1] ;
+			$Row['img_width'] = $size[0] ;
+			$Row['img_height'] = $size[1] ;
 		}
 		if( $URL[no_img2] == "1" )
 		{
@@ -362,7 +362,7 @@ class cat
 			$first_reply_url = $URL[reply] ;
 
 			$main_board_id = $board_id ; 
-			$Row[main_board_id] = $main_board_id ;
+			$Row['main_board_id'] = $main_board_id ;
 
 			$plug[cat] = include_plugin("cat", $_plugindir, $conf) ;
 			if(file_exists("$_skindir/$sess_name/cat.html"))
@@ -375,7 +375,7 @@ class cat
 		}
 		else
 		{
-			$Row[main_board_id] = $main_board_id ;
+			$Row['main_board_id'] = $main_board_id ;
 			$plug[reply_list] = include_plugin("reply_list", $_plugindir, $conf) ;
 			if($_debug) echo("include REPLY_LIST.html<br>") ;
 			if( @file_exists("$_skindir/$sess_name/reply_list.html") )
@@ -395,41 +395,41 @@ class cat
 
 	// category list 2001/12/09
 	$URL['list'] = "$C_base[url]/board/$conf[list_php]?data=$_data" ;
-	$Row[category_list] = category_list($_data, $URL['list']) ;
+	$Row['category_list'] = category_list($_data, $URL['list']) ;
 
 	$URL = make_url($_data, $Row, "board", $conf[cat_php]) ;
 	// use first reply_url 
 	$URL[reply] = $first_reply_url ;
 
-	$Row[spam_check] = base64_encode("$spam_check|$timestamp") ;
+	$Row['spam_check'] = base64_encode("$spam_check|$timestamp") ;
 	/////////////////////////////////////
 	// footer 처리 부분 
 	/////////////////////////////////////
 	//쿠키처리
 	if($conf[cookie_use] == "1")
 	{
-		$Row[name] = "" ;
-		$Row[email] = "" ;
-		$Row[homepage] = "" ;
+		$Row['name'] = "" ;
+		$Row['email'] = "" ;
+		$Row['homepage'] = "" ;
 
 		$cw_name  = $HTTP_COOKIE_VARS[cw_name] ;
 		$cw_email = $HTTP_COOKIE_VARS[cw_email] ;
 		$cw_home  = $HTTP_COOKIE_VARS[cw_home] ;
 
-		$Row[cookie_name]     = stripslashes($cw_name) ;
-		$Row[cookie_email]    = stripslashes($cw_email) ;
-		$Row[cookie_homepage] = stripslashes($cw_home) ;
+		$Row['cookie_name']     = stripslashes($cw_name) ;
+		$Row['cookie_email']    = stripslashes($cw_email) ;
+		$Row['cookie_homepage'] = stripslashes($cw_home) ;
 	}
 	//이전버젼 호환성 위해서.
-	$Row[name]     = $Row[cookie_name] ;
-	$Row[email]    = $Row[cookie_email] ;
-	$Row[homepage] = $Row[cookie_homepage] ;
+	$Row['name']     = $Row['cookie_name'] ;
+	$Row['email']    = $Row['cookie_email'] ;
+	$Row['homepage'] = $Row['cookie_homepage'] ;
 
 	//2002/06/17
 	if( ! $auth->is_anonymous() )
 	{
-		$Row[email] = $auth->email() ;
-		$Row[member_info] = $auth->member_info() ;
+		$Row['email'] = $auth->email() ;
+		$Row['member_info'] = $auth->member_info() ;
 		if($_debug) echo("write:".print_r($W_SES) ) ;
 	}
 

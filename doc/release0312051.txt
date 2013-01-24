@@ -30,30 +30,30 @@
 			<input type=hidden name=board_id     value='<?=$board_id?>' >
 			<input type=hidden name=file         value='<?=$file?>' >
 			<input type=hidden name=data         value='<?=$data?>' >
-			<input type=hidden name=name_org     value='<?=$Row[name]?>'>
-			<input type=hidden name=subject_org  value='<?=$Row[subject]?>' >
-			<input type=hidden name=writing_type value='<?=$Row[writing_type]?>' >
+			<input type=hidden name=name_org     value='<?=$Row['name']?>'>
+			<input type=hidden name=subject_org  value='<?=$Row['subject']?>' >
+			<input type=hidden name=writing_type value='<?=$Row['writing_type']?>' >
 			<input type=hidden name=main_writing value='<?=$main_writing?>' >
 			<input type=hidden name=tot_page value='<?=$tot_page?>'>
 			<input type=hidden name=cur_page value='<?=$cur_page?>'>
 
-			<input type=hidden name=passwd_exist value="<?=$Row[passwd_exist]?>" >
-			<input type=hidden name='to' value="<?=$Row[to]?>">
+			<input type=hidden name=passwd_exist value="<?=$Row['passwd_exist']?>" >
+			<input type=hidden name='to' value="<?=$Row['to']?>">
 
 			--> 새로 추가하는 부분
 
-			<input type=hidden name="spam_check" value="<?=$Row[spam_check]?>">
+			<input type=hidden name="spam_check" value="<?=$Row['spam_check']?>">
 
 			cat_footer에 짧은 답글을 이용하는 경우에도 함께 추가해주도록 한다.
 			짧은 답글부분을 저장하는 단추 부근에 넣어준 경우이다. (wb_board/cat_footer참조)
 			<input type=text   name=comment size=30 maxlength=100 class=wSearch>
-			<input type=hidden name="spam_check" value="<?=$Row[spam_check]?>
+			<input type=hidden name="spam_check" value="<?=$Row['spam_check']?>
 			<input type=submit value=Save class=wButton>
 
 	보드 첨부 파일 삭제기능 추가
 		스킨 수정사항 
 		write.html 스킨 파일에 다음의 첨부파일에 따라 추가 하도록 한다.
-		<?=$Row[InputFile_name]?> 변수가 있는곳에 추가하도록 한다. 
+		<?=$Row['InputFile_name']?> 변수가 있는곳에 추가하도록 한다. 
 
 		<?@=$hide['attach']?>Remove <input class='wDefault' type='checkbox' name='remove_attach1'><?@=$hide['/attach']?>
 		<?@=$hide['attach2']?>Remove <input class='wDefault' type='checkbox' name='remove_attach2'><?@=$hide['/attach2']?>
@@ -62,7 +62,7 @@
 		<tr> 
 		<td width="50" class="wVer7">Attach #1</td>
 		<td width="350">
-		<?=$Row[InputFile_name]?>
+		<?=$Row['InputFile_name']?>
 		&nbsp;&nbsp;<?@=$hide['attach']?>Remove <input class='wDefault' type='checkbox' name='remove_attach1'><?@=$hide['/attach']?>
 		<input name='InputFile' type='file' size='35' class=wForm></td>
 		</tr>

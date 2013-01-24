@@ -271,7 +271,7 @@ class Writer
 
 		//$M_conf[table_size] = empty($C_table_size)?500:$C_table_size ;  
 		//$C_table_size = empty($C_table_size)?500:$C_table_size ; 
-		//$M_Row[table_size] = $C_table_size ;
+		//$M_$Row['table_size'] = $C_table_size ;
 
 		
 		//$M_row[]

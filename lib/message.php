@@ -16,7 +16,7 @@ else return ;
 			$message = sprintf($message, $code) ;
 		}
 
-		$Row[theme_url] = "$C_base[url]/theme/$C_theme" ;
+		$Row['theme_url'] = "$C_base[url]/theme/$C_theme" ;
 		if( @file_exists("$C_base[dir]/theme/$C_theme/message.html") )
 		{
 			include("$C_base[dir]/theme/$C_theme/message.html") ;
@@ -47,7 +47,7 @@ else return ;
 		$script = urlencode($GLOBALS[PHP_SELF]) ;
 		$hostname = urlencode($GLOBALS[SERVER_NAME]) ;
 
-		$Row[theme_url] = "$C_base[url]/theme/$C_theme" ;
+		$Row['theme_url'] = "$C_base[url]/theme/$C_theme" ;
 		
 		$msg_file = "$C_base[dir]/theme/$C_theme/message_abort.html" ;
 		if( @file_exists($msg_file) )

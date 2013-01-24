@@ -20,6 +20,10 @@ global $__SERVER, $__GET, $__POST, $__COOKIE, $__FILES, $__ENV, $__SESSION ;
 
 if($_debug) echo("installed_ver[$installed_ver]<br>") ;
 
+$upgrade = isset($__GET['upgrade'])?$__GET['upgrade']:"";
+$cmd = isset($__GET['cmd'])?$__GET['cmd']:"";
+
+
 //2002/11/01
 $URL = array("") ;
 
@@ -57,7 +61,7 @@ if( file_exists("$C_base[dir]/member/admin.php") )
 	$Row['avatar'] = $C_admin_avatar ;
 }
 
-switch($__GET['cmd'])
+switch($cmd)
 {
 	case "next" :
 		if( empty($passwd) )
@@ -162,43 +166,43 @@ switch($__GET['cmd'])
 
 include("./html/admin_header.html") ;
 
-$Row[title] = "" ; $Row[func] = "" ;
+$Row['title'] = "" ; $Row['func'] = "" ;
 
-$Row[title] = _L_ID ;
-$Row[func] = "<input class='wForm' type='text' name='uid' value='$Row[uid]'>" ;
+$Row['title'] = _L_ID ;
+$Row['func'] = "<input class='wForm' type='text' name='uid' value='$Row[uid]'>" ;
 include("./html/admin_list.html") ;
 
-$Row[title] = _L_PASSWORD ; 
-$Row[func] = "<input class='wForm' type='password' name='passwd' value=''>" ;
+$Row['title'] = _L_PASSWORD ; 
+$Row['func'] = "<input class='wForm' type='password' name='passwd' value=''>" ;
 include("./html/admin_list.html") ;
 
-$Row[title] = _L_PASSWORD_RETRY ; 
-$Row[func] = "<input class='wForm' type='password' name='passwd_retry' value=''>" ;
+$Row['title'] = _L_PASSWORD_RETRY ; 
+$Row['func'] = "<input class='wForm' type='password' name='passwd_retry' value=''>" ;
 include("./html/admin_list.html") ;
 
-$Row[title] = _L_ALIAS ; 
-$Row[func] = "<input class='wForm' type='text' name='alias' value='$Row[alias]'>" ;
+$Row['title'] = _L_ALIAS ; 
+$Row['func'] = "<input class='wForm' type='text' name='alias' value='$Row[alias]'>" ;
 include("./html/admin_list.html") ;
 
-$Row[title] = _L_EMAIL ; 
-$Row[func] = "<input class='wForm' type='text' name='email' value='$Row[email]'>" ;
+$Row['title'] = _L_EMAIL ; 
+$Row['func'] = "<input class='wForm' type='text' name='email' value='$Row[email]'>" ;
 include("./html/admin_list.html") ;
 
-$Row[title] = _L_HOMEPAGE ; 
-$Row[func] = "<input class='wForm' type='text' name='homepage' value='$Row[homepage]'>" ;
+$Row['title'] = _L_HOMEPAGE ; 
+$Row['func'] = "<input class='wForm' type='text' name='homepage' value='$Row[homepage]'>" ;
 include("./html/admin_list.html") ;
 
-$Row[title] = _L_ADMINIMAGE ; 
-$Row[func] = "<input class='wForm' type='file' name='InputFile'>" ;
+$Row['title'] = _L_ADMINIMAGE ; 
+$Row['func'] = "<input class='wForm' type='file' name='InputFile'>" ;
 if(!empty($C_admin_avatar))
 {
-	$Row[func] .= "<br><input class='wDefault' type='checkbox' name='remove_image'>"._L_REMOVE_ADMINIMAGE."" ;
+	$Row['func'] .= "<br><input class='wDefault' type='checkbox' name='remove_image'>"._L_REMOVE_ADMINIMAGE."" ;
 }
 
 if( file_exists("$C_base[dir]/member/avatar_1") )
 {
-	$Row[func] .= " <img src='$C_base[url]/member/avatar_1'><br>" ;
-	$Row[func] .= "$C_admin_avatar" ;
+	$Row['func'] .= " <img src='$C_base[url]/member/avatar_1'><br>" ;
+	$Row['func'] .= "$C_admin_avatar" ;
 }
 include("./html/admin_list.html") ;
 

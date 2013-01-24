@@ -273,8 +273,8 @@ if($_debug) echo "param : [$param]<br>";
 	$message = "$select_subject"; 
 
 	$_debug =0;
-	$Row[func] = "" ;
-	$Row[func] .= "<select name=target_data class='wForm'>\n" ;
+	$Row['func'] = "" ;
+	$Row['func'] .= "<select name=target_data class='wForm'>\n" ;
 	$flist = new file_list("$C_base[dir]/board/data", 1) ;
 	$flist->read("*", 0) ;
 	while( ($file_name = $flist->next()) )
@@ -292,9 +292,9 @@ if($_debug) echo "param : [$param]<br>";
 		{
 			$selected = "selected" ;
 		}
-		$Row[func] .= "<option value='$file_name' $selected>$file_name</option>\n" ;
+		$Row['func'] .= "<option value='$file_name' $selected>$file_name</option>\n" ;
 	}
-	$Row[func] .= "</select>\n" ;	
+	$Row['func'] .= "</select>\n" ;	
 
  }
 else if($mode == "delete")
@@ -543,7 +543,7 @@ BODY
     <td class ="line" width="100" colspan="3"></td>	
   </tr>
   <tr> 
-    <td colspan="2" class ="wDefault"><?=$Row[func]?> 게시판으로 </td>
+    <td colspan="2" class ="wDefault"><?=$Row['func']?> 게시판으로 </td>
     <td align="center">
 		<input type=button value='복 사' class=wForm onclick="copy_selected()">
 	</td>

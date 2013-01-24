@@ -5,26 +5,26 @@
 
 <?@=$hide['admin_writing']//관리자의 글//?>
 <?@=$hide['email']?><a href="javascript:window_open('<?=$URL['sendmail']?>',300,250,'');"><?@=$hide['/email']?>
-<img src="./skin/<?=$C_skin?>/images/admin.gif" border="0"><?=$Row[name]?>
+<img src="./skin/<?=$C_skin?>/images/admin.gif" border="0"><?=$Row['name']?>
 <?@=$hide['email']?></a><?@=$hide['/email']?>
 <?@=$hide['/admin_writing']//관리자의 글 끝//?>
 
 <?@=$hide['member_writing']//회원의 글//?>
 <?@=$hide['email']?><a href="javascript:window_open('<?=$URL['sendmail']?>',300,250,'');"><?@=$hide['/email']?>
-<img src="./skin/<?=$C_skin?>/images/admin.gif" border="0"><?=$Row[name]?>
+<img src="./skin/<?=$C_skin?>/images/admin.gif" border="0"><?=$Row['name']?>
 <?@=$hide['email']?></a><?@=$hide['/email']?>
 <?@=$hide['/member_writing']//회원의 글 끝//?>
 
 <?@=$hide['anonymous_writing']//무명씨의 글//?>
 <?@=$hide['email']?><a href="javascript:window_open('<?=$URL['sendmail']?>',300,250,'');"><?@=$hide['/email']?>
-<?=$Row[name]?>
+<?=$Row['name']?>
 <?@=$hide['email']?></a><?@=$hide['/email']?>
 <?@=$hide['/anonymous_writing']//무명씨의 글 끝//?>
 
 <span class="wVer7">
-<?@=$hide[home_start]?>
-<a href='<?=$Row[homepage]?>' target='_blank'>Home </a>
-<?@=$hide[home_end]?>
+<?@=$hide['home_start']?>
+<a href='<?=$Row['homepage']?>' target='_blank'>Home </a>
+<?@=$hide['home_end']?>
 
 </span>
 </td>
@@ -40,11 +40,11 @@
 <tr>
 
 <td width="80%" height=22 class="wRepl">
-<?=$Row[comment]?>
+<?=$Row['comment']?>
 </td>
 
 <td width="20%" height=22 align="right" class="wTah7" valign="bottom"> 
-<?=$Row[w_date]?>
+<?=$Row['w_date']?>
 </td>
 
 </tr>

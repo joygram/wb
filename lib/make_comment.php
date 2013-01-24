@@ -44,7 +44,7 @@ else return ;
 			$bg_exist_end = "" ;
 		}
 
-		if(empty($Row[homepage]) || $Row[homepage] == "http://") 
+		if(empty($Row[homepage]) || $Row['homepage'] == "http://") 
 		{
 			$home_exist_start = "<!--\n" ;
 			$home_exist_end   = "-->\n" ;
@@ -88,7 +88,7 @@ else return ;
 			$attach2_exist_end   = "" ;
 		}
 
-		if(empty($Row[link]) || $Row[link] == "http://") 
+		if(empty($Row[link]) || $Row['link'] == "http://") 
 		{
 			$link_exist_start = "<!--\n" ;
 			$link_exist_end = "-->\n" ;
@@ -110,7 +110,7 @@ else return ;
 			$reply_hide_end   = "" ;
 		}
 
-		if( $Row[nReply] > 0 )
+		if( $Row['nReply'] > 0 )
 		{
 			$nReply_start = "" ;
 			$nReply_end = "" ;
@@ -133,7 +133,7 @@ else return ;
 			$board_title_end = "" ;
 		}
 
-		$type = $Row[type] ;
+		$type = $Row['type'] ;
 		if( empty($conf[category_name][$type]) )
 		{
 			$category_name_start = "<!--\n" ;
@@ -239,7 +239,7 @@ else return ;
 		$hide['/*reply_writing'] = "/*\n" ;
 		$hide['reply_writing*/'] = "*/\n" ;
 
-		if( $Row[is_main_writing] == "1" )
+		if( $Row['is_main_writing'] == "1" )
 		{
 			if($_debug) echo("main comment <br>") ;
 			//¿À·¡µÆÀ½.
@@ -343,13 +343,13 @@ else return ;
 		$hide['anonymous_writing'] = "<noframes>\n" ;
 		$hide['/anonymous_writing'] = "</noframes>\n" ;
 
-		if($Row[uid] == __ANONYMOUS )
+		if($Row['uid'] == __ANONYMOUS )
 		{
 			if($_debug) echo("anonymous writing.<br>") ;
 			$hide['anonymous_writing'] = "" ;
 			$hide['/anonymous_writing'] = "" ;
 		}
-		else if($Row[uid] == __ROOT || ($Row[user] == $conf[auth_user]) && !empty($Row[user]) ) 
+		else if($Row['uid'] == __ROOT || ($Row['user'] == $conf[auth_user]) && !empty($Row[user]) ) 
 		{
 			if($_debug) echo("root writing<br>") ;
 			$hide['admin_writing'] = "" ;
@@ -377,8 +377,8 @@ else return ;
 		}
 		else
 		{
-			$Row[alias] = $auth->alias() ;
-			$Row[user]  = $auth->user() ;
+			$Row['alias'] = $auth->alias() ;
+			$Row['user']  = $auth->user() ;
 			$hide['logout'] = "" ;
 			$hide['/logout'] = "" ;
 		}
@@ -429,7 +429,7 @@ else return ;
 		{
 			$hide['admin'] = "" ;
 			$hide['/admin'] = "" ;
-			$Row[alias] = $auth->alias() ;
+			$Row['alias'] = $auth->alias() ;
 
 			$hide['cat_perm'] = "" ;
 			$hide['/cat_perm'] = "" ;
@@ -447,7 +447,7 @@ else return ;
 		{
 			$hide['admin'] = "" ;
 			$hide['/admin'] = "" ;
-			$Row[alias] = $auth->alias() ;
+			$Row['alias'] = $auth->alias() ;
 
 			if(($conf[auth_cat_perm] & "4000")=="4000")
 			{
@@ -477,7 +477,7 @@ else return ;
 		{
 			$hide['member'] = "" ;
 			$hide['/member'] = "" ;
-			$Row[alias] = $auth->alias() ;
+			$Row['alias'] = $auth->alias() ;
 
 			if(($conf[auth_cat_perm] & "0040")=="0040")
 			{
@@ -503,7 +503,7 @@ else return ;
 			///////////////////////////////////	
 			if(($conf[auth_perm] & "0010")=="0010")
 			{
-				if($Row[uid] == __ANONYMOUS||$Row[uid] == $auth->uid())
+				if($Row['uid'] == __ANONYMOUS||$Row['uid'] == $auth->uid())
 				{
 					$hide['exec_perm'] = "" ;
 					$hide['/exec_perm'] = "" ;
@@ -544,7 +544,7 @@ else return ;
 			///////////////////////////////////	
 			if(($conf[auth_perm] & "0001")=="0001")
 			{
-				if($Row[uid] == __ANONYMOUS)
+				if($Row['uid'] == __ANONYMOUS)
 				{
 					$hide['exec_perm'] = "" ;
 					$hide['/exec_perm'] = "" ;

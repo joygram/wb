@@ -155,13 +155,13 @@ whiteboard 2.4.0
 		로그인 사용자의 별명만 저장되고 
 		기타 부수적인 정보 email, user_id등이 저장되지 않는다. 
 
-	수정에서 처리하는 내용. Row[user] is
+	수정에서 처리하는 내용. $Row['user'] is
 						관리자						회원				무명씨
 		관리자글		제목, 내용 수정				수정불가			수정불가
 		회원글			제목, 내용 수정				제목,내용수정		수정불가
 		무명씨 글		전 내용 수정(암호빼고)		수정불가			전 내용 수정
 		
-	글쓸때, 답글쓸때는 Row[user] = !anonymous
+	글쓸때, 답글쓸때는 $Row['user'] = !anonymous
 	로그인상태 변수 찍기
 	
 *)비회원글과 회원글을 구분할 수 있도록 처리 <b>태그
@@ -181,7 +181,7 @@ whiteboard 2.4.0
 *)write.php패치 올림
 	2002/04/03 open_basedir restrict일경우 문제 해결
 *)비회원글과 회원글을 구분할 수 있도록 처리 
-	<?@=$hide[anonymous_write]?>
+	<?@=$hide['anonymous_write']?>
 	<?@=$hide['/anonymous_write']?>
 	2002/03/28, 2002/04/06
 	<?@=$hide[anonymous_writing?>
@@ -291,8 +291,8 @@ html태그를 관리자 도구에서 지정할 때 사용할 태그를 지정하게 하던 것을 사용하지
 대소문자 구분없이 검사하도록 함. 
 
 [스킨변수] 
-보드제목:<?=$Row[board_title]?> 
-제목없으면 감추기: <?@=$hide[board_title_start]?> <?@=$hide[board_title_end]?>
+보드제목:<?=$Row['board_title']?> 
+제목없으면 감추기: <?@=$hide['board_title_start']?> <?@=$hide['board_title_end']?>
 
 
 whiteboard 2.0 pre
@@ -326,10 +326,10 @@ whiteboard 2.0 pre
 	- 주석변수 추가 
 		# $hide[email_start], $hide[email_end] ...
 	- 조회 관련 변수 추가 / 개선
-		# 홈링크 카운트 : $Row[cnt_homepage] <= $Row[cnt] 
-		# 첨부1 다운로드 카운트 : $Row[cnt_download] <= $Row[cnt3]
+		# 홈링크 카운트 : $Row['cnt_homepage'] <= $Row['cnt'] 
+		# 첨부1 다운로드 카운트 : $Row['cnt_download'] <= $Row[cnt3]
 		# 첨부2 다운로드 카운트 : $Row[cnt_download2] <= $Row[cnt2] 
-		# 내용 조회 카운트 : $Row[cnt_view] 
+		# 내용 조회 카운트 : $Row['cnt_view'] 
 	- 날짜변수 세분화 
 		# $Row[w_year], $Row[w_year2]...
 	- 이미지뷰 링크 변수 추가 
@@ -353,7 +353,7 @@ whiteboard 1.4.0 pre
 2. 최근 게시물 표시 가능(news.html이 있을 경우). 
 3. 글쓰기 폼이 리스트 폼과 같이 나올 수 있는 기능(list_header가 있을 경우). 
 4. 에러 메시지 처리 보완. 
-5. 제목을 넣을 수 있도록 처리( 폼에서 subject를 추가하고, <?=$Row[subject]?>로
+5. 제목을 넣을 수 있도록 처리( 폼에서 subject를 추가하고, <?=$Row['subject']?>로
 사용). 
 6. 링크와 첨부파일2개까지 올릴 수 있도록 처리(pds스킨 참조).
 7. 다운로드 카운트 추가.
@@ -362,7 +362,7 @@ whiteboard 1.4.0 pre
 10. 스킨에서 불필요한 confirm.html, confirm_admin.html을 제거함. (스킨
 디렉토리에서 지우셔도 됩니다.)
 11. 답글 목록을 위해서 <? reply_list($data, $board_group);?>의 PHP코드가
-들어갔던 것을 <?=$Row[reply_list]?>로 대치.
+들어갔던 것을 <?=$Row['reply_list']?>로 대치.
 12. 글을 삭제하는 경우 답글과 첨부파일까지 모두 삭제 
 13. 외부 머리말과 꼬리말이 잘 적용되지 않던 문제 수정
 14. txt라이센스 기능 추가(<?=$license2?>사용)

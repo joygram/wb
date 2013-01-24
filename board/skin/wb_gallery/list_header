@@ -3,7 +3,7 @@
   <tr>
 	<td>
 	<div align="right" class="wVer7">
-		<?=$Row[category_list]?>
+		<?=$Row['category_list']?>
 	  </div>
 	</td>
   </tr>

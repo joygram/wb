@@ -23,6 +23,9 @@ $cont = file("$C_base[dir]/release_no") ;
 $installed_release_no = chop($cont[0]) ;
 $installed_ver = chop($cont[1]) ;
 
+$upgrade = isset($__GET['upgrade'])?$__GET['upgrade']:"";
+$cmd = isset($__GET['cmd'])?$__GET['cmd']:"";
+
 //2002/11/01 2000/xp에서 호환성때문에..
 $URL = array("") ;
 
@@ -54,15 +57,15 @@ if( file_exists("$C_base[dir]/system.ini.php") )
 	include("$C_base[dir]/system.ini.php") ; 
 }
 
-switch($__GET["cmd"])
+switch($cmd)
 {
 	case "next" :
-		$ini[timezone]   = $timezone ;
+		$ini['timezone']   = $timezone ;
 
-		$ini[use_board]   = $C_use_board ;
-		$ini[use_counter] = $C_use_counter ;
-		$ini[use_member]  =	$C_use_member ;
-		$ini[use_mail]    = $C_use_mail ; 
+		$ini['use_board']   = $C_use_board ;
+		$ini['use_counter'] = $C_use_counter ;
+		$ini['use_member']  =	$C_use_member ;
+		$ini['use_mail']    = $C_use_mail ; 
 
 		save_system_ini("$C_base[dir]/system.ini.php", $ini) ;
 		$url = "program.php?upgrade=$upgrade" ; 
@@ -71,12 +74,12 @@ switch($__GET["cmd"])
 		break ;
 
 	case "save" :
-		$ini[timezone]   = $timezone ;
+		$ini['timezone']   = $timezone ;
 
-		$ini[use_board]   = $C_use_board ;
-		$ini[use_counter] = $C_use_counter ;
-		$ini[use_member]  =	$C_use_member ;
-		$ini[use_mail]    = $C_use_mail ; 
+		$ini['use_board']   = $C_use_board ;
+		$ini['use_counter'] = $C_use_counter ;
+		$ini['use_member']  =	$C_use_member ;
+		$ini['use_mail']    = $C_use_mail ; 
 
 		save_system_ini("$C_base[dir]/system.ini.php", $ini) ;
 		$url = "timezone.php?upgrade=$upgrade" ; 
@@ -90,8 +93,8 @@ switch($__GET["cmd"])
 
 include("./html/timezone_header.html") ;
 
-$Row[title] = "" ;
-$Row[func]  = "" ;
+$Row['title'] = "" ;
+$Row['func']  = "" ;
 
 $C_timezone = empty($C_timezone)?" 9,Seoul":$C_timezone ;
 $tmp = explode(',',$C_timezone) ;
@@ -100,8 +103,8 @@ $selected['name']  = $tmp[1] ;
 $tmp = "" ;
 
 //현재 사용하고 있는 DB타입을 확인하여 기존의 정보를 보여주도록
-$Row[title] = _L_CITY_SELECT ;
-$Row[func]  = "<select name='timezone' size='1' onChange='ToggleSetting(document.main_form);'>
+$Row['title'] = _L_CITY_SELECT ;
+$Row['func']  = "<select name='timezone' size='1' onChange='ToggleSetting(document.main_form);'>
 	<option value='$selected[value]' selected >$selected[name]
     <option value='none'>------------
 	<option value=' 1,Amsterdam'>Amsterdam

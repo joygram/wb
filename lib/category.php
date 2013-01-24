@@ -75,7 +75,7 @@ else return ;
 				}
 				else
 				{
-					$Row[category_name] = $conf[category_name][$i] ;
+					$Row['category_name'] = $conf[category_name][$i] ;
 					include("$_skindir/category_select.html") ;
 				}
 			}
@@ -162,12 +162,12 @@ else return ;
 				}
 				else
 				{
-					$Row[category_selected] = "" ;
+					$Row['category_selected'] = "" ;
 					$URL['list'] = "$LIST_URL&filter_type=$i" ;
 					$URL['list'] .= !empty($br_use)?"&br_use=$br_use":"" ;
-					$Row[category_name] = $conf[category_name][$i] ;
+					$Row['category_name'] = $conf[category_name][$i] ;
 					if( $filter_type == $i )
-						$Row[category_selected] = "selected" ;
+						$Row['category_selected'] = "selected" ;
 					include("$_skindir/category_list.html") ;
 				}
 			}

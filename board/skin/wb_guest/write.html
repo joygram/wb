@@ -6,12 +6,12 @@
 	<input type=hidden name=board_group value='<?=$board_group?>' >
 	<input type=hidden name=board_id    value='<?=$board_id?>'    >
 	<input type=hidden name=data        value='<?=$data?>'    >
-	<input type=hidden name=w_date      value='<?=$Row[w_date]?>' >
-	<input type=hidden name=name_org    value='<?=$Row[name]?>'   >
+	<input type=hidden name=w_date      value='<?=$Row['w_date']?>' >
+	<input type=hidden name=name_org    value='<?=$Row['name']?>'   >
 	<input type=hidden name=tot_page value='<?=$tot_page?>'>
 	<input type=hidden name=cur_page value='<?=$cur_page?>'>
 	<input type=hidden name='to' value='<?=$LIST_PHP?>' >
-	<input type=hidden name="spam_check" value="<?=$Row[spam_check]?>">
+	<input type=hidden name="spam_check" value="<?=$Row['spam_check']?>">
 	<!-- 여기 까지 -->
  
 	<table border="0" cellspacing="0" cellpadding="1" class="wVer7" align="center">
@@ -26,8 +26,8 @@
 	<?@=$hide['admin']?>
 	<tr> 
 	<td colspan="2" class="wVer7">
-	<span class="wDefault"><?=$Row[alias]?></span>
-	<input type=hidden name=name value='<?=$Row[alias]?>' >
+	<span class="wDefault"><?=$Row['alias']?></span>
+	<input type=hidden name=name value='<?=$Row['alias']?>' >
 	</td>
 	</tr>
 	<?@=$hide['/admin']?>
@@ -37,8 +37,8 @@
 	<?@=$hide['member']?>
 	<tr> 
 	<td colspan="2" class="wVer7">
-	<span class="wDefault"><?=$Row[alias]?></span>
-	<input type=hidden name=name value='<?=$Row[alias]?>' >
+	<span class="wDefault"><?=$Row['alias']?></span>
+	<input type=hidden name=name value='<?=$Row['alias']?>' >
 	</td>
 	</tr>
 	<?@=$hide['/member']?>
@@ -48,16 +48,16 @@
 	<tr> 
 	<td colspan="2">
 	<b>N</b>ame&nbsp;
-	<input type=text name=name size=14 maxlength=10 class=wForm value='<?=$Row[name]?>' >&nbsp;
+	<input type=text name=name size=14 maxlength=10 class=wForm value='<?=$Row['name']?>' >&nbsp;
 	<b>M</b>ail&nbsp;
-	<input type=text name=email size=19 maxlength=50 class=wForm value='<?=$Row[email]?>' >
+	<input type=text name=email size=19 maxlength=50 class=wForm value='<?=$Row['email']?>' >
 	</td>
 	</tr>
 	
 	<tr> 
 	<td colspan="2">
 	<b>H</b>ome&nbsp;
-	<input type=text name=homepage size=23 maxlength=50 class=wForm value='<?=$Row[homepage]?>' >&nbsp;
+	<input type=text name=homepage size=23 maxlength=50 class=wForm value='<?=$Row['homepage']?>' >&nbsp;
 	<b>P</b>ass&nbsp;
 	<input type=password name=password size=10 maxlength=15 class=wForm >
 	<br><br>
@@ -68,7 +68,7 @@
 	
 	<tr>
     <td align="center">
-	<textarea name=comment cols=46 rows=7 class=wOver><?=$Row[comment]?></textarea>
+	<textarea name=comment cols=46 rows=7 class=wOver><?=$Row['comment']?></textarea>
 	</td>
 	</tr>
 

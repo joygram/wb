@@ -69,7 +69,7 @@ switch($cmd)
 	case "next" :
 
 		$C_base = get_base(1) ;
-		$ini['language']  = $language ;
+		$ini['language']  = $__GET['language'] ;
 		$ini['base_dir']  = $C_base['dir'] ; 
 
 		$ini['use_board']   = $C_use_board ;
@@ -85,7 +85,7 @@ switch($cmd)
 
 	case "save" :
 		$C_base = get_base(1) ;
-		$ini['language']  = $language ;
+		$ini['language']  = $__GET['language'] ;
 		$ini['base_dir']  = $C_base['dir'] ; 
 
 		$ini['use_board']   = $C_use_board ;

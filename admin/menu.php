@@ -25,62 +25,62 @@
 	$tree_idx = 0 ;
 	$menu_num = 1 ;
 	$parent_idx = 0 ;
-	$Row[title] = _L_SYSTEM_SETUP ;
-	$Row[url] = "" ;
-	$Row[url_target] = "mainFrame" ;
-	$Row[func] = "<script>Tree[$tree_idx] ='$menu_num|$parent_idx|$Row[title]|$Row[url]|$Row[url_target]';</script>" ;
+	$Row['title'] = _L_SYSTEM_SETUP ;
+	$Row['url'] = "" ;
+	$Row['url_target'] = "mainFrame" ;
+	$Row['func'] = "<script>Tree[$tree_idx] ='$menu_num|$parent_idx|$Row[title]|$Row[url]|$Row[url_target]';</script>" ;
 	include("./html/menu_list.html") ;
 	$parent_idx = $menu_num ;
 
 	$tree_idx++ ;
 	$menu_num++ ;
-	$Row[title] = _L_LANGUAGE ;
-	$Row[url] = "setup/language.php" ;
-	$Row[url_target] = "mainFrame" ;
-	$Row[func] = "<script>Tree[$tree_idx] ='$menu_num|$parent_idx|$Row[title]|$Row[url]|$Row[url_target]';</script>" ;
+	$Row['title'] = _L_LANGUAGE ;
+	$Row['url'] = "setup/language.php" ;
+	$Row['url_target'] = "mainFrame" ;
+	$Row['func'] = "<script>Tree[$tree_idx] ='$menu_num|$parent_idx|$Row[title]|$Row[url]|$Row[url_target]';</script>" ;
 	include("./html/menu_list.html") ;
 
 	$tree_idx++ ;
 	$menu_num++ ;
-	$Row[title] = "DB" ;
-	$Row[title] = _L_DATABASE ;
-	$Row[url] = "setup/db.php" ;
-	$Row[url_target] = "mainFrame" ;
-	$Row[func] = "<script>Tree[$tree_idx] ='$menu_num|$parent_idx|$Row[title]|$Row[url]|$Row[url_target]';</script>" ;
+	$Row['title'] = "DB" ;
+	$Row['title'] = _L_DATABASE ;
+	$Row['url'] = "setup/db.php" ;
+	$Row['url_target'] = "mainFrame" ;
+	$Row['func'] = "<script>Tree[$tree_idx] ='$menu_num|$parent_idx|$Row[title]|$Row[url]|$Row[url_target]';</script>" ;
 	include("./html/menu_list.html") ;
 
 	$tree_idx++ ;
 	$menu_num++ ;
-	$Row[title] = _L_ADMIN ;
-	$Row[url] = "setup/admin.php" ;
-	$Row[url_target] = "mainFrame" ;
-	$Row[func] = "<script>Tree[$tree_idx] ='$menu_num|$parent_idx|$Row[title]|$Row[url]|$Row[url_target]';</script>" ;
+	$Row['title'] = _L_ADMIN ;
+	$Row['url'] = "setup/admin.php" ;
+	$Row['url_target'] = "mainFrame" ;
+	$Row['func'] = "<script>Tree[$tree_idx] ='$menu_num|$parent_idx|$Row[title]|$Row[url]|$Row[url_target]';</script>" ;
 	include("./html/menu_list.html") ;
 
 	$tree_idx++ ;
 	$menu_num++ ;
-	$Row[title] = _L_TIMEZONE ; 
-	$Row[url] = "setup/timezone.php" ;
-	$Row[url_target] = "mainFrame" ;
-	$Row[func] = "<script>Tree[$tree_idx] ='$menu_num|$parent_idx|$Row[title]|$Row[url]|$Row[url_target]';</script>" ;
+	$Row['title'] = _L_TIMEZONE ; 
+	$Row['url'] = "setup/timezone.php" ;
+	$Row['url_target'] = "mainFrame" ;
+	$Row['func'] = "<script>Tree[$tree_idx] ='$menu_num|$parent_idx|$Row[title]|$Row[url]|$Row[url_target]';</script>" ;
 	include("./html/menu_list.html") ;
 
 	$tree_idx++ ;
 	$menu_num++ ;
-	$Row[title] = _L_PROGRAM ;
-	$Row[url] = "setup/program.php" ;
-	$Row[url_target] = "mainFrame" ;
-	$Row[func] = "<script>Tree[$tree_idx] ='$menu_num|$parent_idx|$Row[title]|$Row[url]|$Row[url_target]';</script>" ;
+	$Row['title'] = _L_PROGRAM ;
+	$Row['url'] = "setup/program.php" ;
+	$Row['url_target'] = "mainFrame" ;
+	$Row['func'] = "<script>Tree[$tree_idx] ='$menu_num|$parent_idx|$Row[title]|$Row[url]|$Row[url_target]';</script>" ;
 	include("./html/menu_list.html") ;
 
 	/*
 	$tree_idx++ ;
 	$menu_num++ ;
-	$Row[title] = "테마" ;
-	$Row[title] = "_L_THEME" ;
-	$Row[url] = "setup/theme.php" ;
-	$Row[url_target] = "mainFrame" ;
-	$Row[func] = "<script>Tree[$tree_idx] ='$menu_num|$parent_idx|$Row[title]|$Row[url]|$Row[url_target]';</script>" ;
+	$Row['title'] = "테마" ;
+	$Row['title'] = "_L_THEME" ;
+	$Row['url'] = "setup/theme.php" ;
+	$Row['url_target'] = "mainFrame" ;
+	$Row['func'] = "<script>Tree[$tree_idx] ='$menu_num|$parent_idx|$Row[title]|$Row[url]|$Row[url_target]';</script>" ;
 	include("./html/menu_list.html") ;	
 	*/
 
@@ -91,35 +91,35 @@
 		$tree_idx++ ;
 		$menu_num++ ;
 		$parent_idx = 0 ;
-		$Row[title] = _L_BOARD ;
-		$Row[url] = "" ;
-		$Row[url_target] = "mainFrame" ;
-		$Row[func] = "<script>Tree[$tree_idx] ='$menu_num|$parent_idx|$Row[title]|$Row[url]|$Row[url_target]';</script>" ;
+		$Row['title'] = _L_BOARD ;
+		$Row['url'] = "" ;
+		$Row['url_target'] = "mainFrame" ;
+		$Row['func'] = "<script>Tree[$tree_idx] ='$menu_num|$parent_idx|$Row[title]|$Row[url]|$Row[url_target]';</script>" ;
 		include("./html/menu_list.html") ;
 		$parent_idx = $menu_num ; 
 
 		$tree_idx++ ;
 		$menu_num++ ;
-		$Row[title] = _L_BOARD ;
-		$Row[url] = "board/board.php" ;
-		$Row[url_target] = "mainFrame" ;
-		$Row[func] = "<script>Tree[$tree_idx] ='$menu_num|$parent_idx|$Row[title]|$Row[url]|$Row[url_target]';</script>" ;
+		$Row['title'] = _L_BOARD ;
+		$Row['url'] = "board/board.php" ;
+		$Row['url_target'] = "mainFrame" ;
+		$Row['func'] = "<script>Tree[$tree_idx] ='$menu_num|$parent_idx|$Row[title]|$Row[url]|$Row[url_target]';</script>" ;
 		include("./html/menu_list.html") ;
 
 		$tree_idx++ ;
 		$menu_num++ ;
-		$Row[title] = _L_SKIN ;
-		$Row[url] = "board/skin.php" ;
-		$Row[url_target] = "mainFrame" ;
-		$Row[func] = "<script>Tree[$tree_idx] ='$menu_num|$parent_idx|$Row[title]|$Row[url]|$Row[url_target]';</script>" ;
+		$Row['title'] = _L_SKIN ;
+		$Row['url'] = "board/skin.php" ;
+		$Row['url_target'] = "mainFrame" ;
+		$Row['func'] = "<script>Tree[$tree_idx] ='$menu_num|$parent_idx|$Row[title]|$Row[url]|$Row[url_target]';</script>" ;
 		include("./html/menu_list.html") ;
 
 		$tree_idx++ ;
 		$menu_num++ ;
-		$Row[title] = _L_PARTSKIN ;
-		$Row[url] = "" ;
-		$Row[url_target] = "mainFrame" ;
-		$Row[func] = "<script>Tree[$tree_idx] ='$menu_num|$parent_idx|$Row[title]|$Row[url]|$Row[url_target]';</script>" ;
+		$Row['title'] = _L_PARTSKIN ;
+		$Row['url'] = "" ;
+		$Row['url_target'] = "mainFrame" ;
+		$Row['func'] = "<script>Tree[$tree_idx] ='$menu_num|$parent_idx|$Row[title]|$Row[url]|$Row[url_target]';</script>" ;
 		include("./html/menu_list.html") ;
 		//부분스킨의 하위메뉴로 갔다가 사촌메뉴를 사용할 수 있으므로 저장한다. 
 		$prev_parent_idx = $parent_idx ; 
@@ -127,26 +127,26 @@
 
 		$tree_idx++ ;
 		$menu_num++ ;
-		$Row[title] = _L_LATEST ;
-		$Row[url] = "board/skin.php?part=news" ;
-		$Row[url_target] = "mainFrame" ;
-		$Row[func] = "<script>Tree[$tree_idx] ='$menu_num|$parent_idx|$Row[title]|$Row[url]|$Row[url_target]';</script>" ;
+		$Row['title'] = _L_LATEST ;
+		$Row['url'] = "board/skin.php?part=news" ;
+		$Row['url_target'] = "mainFrame" ;
+		$Row['func'] = "<script>Tree[$tree_idx] ='$menu_num|$parent_idx|$Row[title]|$Row[url]|$Row[url_target]';</script>" ;
 		include("./html/menu_list.html") ;
 
 		$tree_idx++ ;
 		$menu_num++ ;
-		$Row[title] = _L_CATEGORY ;
-		$Row[url] = "board/skin.php?part=category" ;
-		$Row[url_target] = "mainFrame" ;
-		$Row[func] = "<script>Tree[$tree_idx] ='$menu_num|$parent_idx|$Row[title]|$Row[url]|$Row[url_target]';</script>" ;
+		$Row['title'] = _L_CATEGORY ;
+		$Row['url'] = "board/skin.php?part=category" ;
+		$Row['url_target'] = "mainFrame" ;
+		$Row['func'] = "<script>Tree[$tree_idx] ='$menu_num|$parent_idx|$Row[title]|$Row[url]|$Row[url_target]';</script>" ;
 		include("./html/menu_list.html") ;
 
 		$tree_idx++ ;
 		$menu_num++ ;
-		$Row[title] = _L_PAGEBAR ;
-		$Row[url] = "board/skin.php?part=pagebar" ;
-		$Row[url_target] = "mainFrame" ;
-		$Row[func] = "<script>Tree[$tree_idx] ='$menu_num|$parent_idx|$Row[title]|$Row[url]|$Row[url_target]';</script>" ;
+		$Row['title'] = _L_PAGEBAR ;
+		$Row['url'] = "board/skin.php?part=pagebar" ;
+		$Row['url_target'] = "mainFrame" ;
+		$Row['func'] = "<script>Tree[$tree_idx] ='$menu_num|$parent_idx|$Row[title]|$Row[url]|$Row[url_target]';</script>" ;
 		include("./html/menu_list.html") ;
 
 		//이 아래로 사촌메뉴를 사용하기위한 준비. 
@@ -154,45 +154,45 @@
 
 		$tree_idx++ ;
 		$menu_num++ ;
-		$Row[title] = _L_GLOBALSETUP ;
-		$Row[url] = "board/config_open.php?conf_name=__global.conf.php" ;
-		$Row[url_target] = "mainFrame" ;
-		$Row[func] = "<script>Tree[$tree_idx] ='$menu_num|$parent_idx|$Row[title]|$Row[url]|$Row[url_target]';</script>" ;
+		$Row['title'] = _L_GLOBALSETUP ;
+		$Row['url'] = "board/config_open.php?conf_name=__global.conf.php" ;
+		$Row['url_target'] = "mainFrame" ;
+		$Row['func'] = "<script>Tree[$tree_idx] ='$menu_num|$parent_idx|$Row[title]|$Row[url]|$Row[url_target]';</script>" ;
 		include("./html/menu_list.html") ;
 
 		$tree_idx++ ;
 		$menu_num++ ;
-		$Row[title] = _L_PLUGIN ;
-		$Row[url] = "board/plugin.php" ;
-		$Row[url_target] = "mainFrame" ;
-		$Row[func] = "<script>Tree[$tree_idx] ='$menu_num|$parent_idx|$Row[title]|$Row[url]|$Row[url_target]';</script>" ;
+		$Row['title'] = _L_PLUGIN ;
+		$Row['url'] = "board/plugin.php" ;
+		$Row['url_target'] = "mainFrame" ;
+		$Row['func'] = "<script>Tree[$tree_idx] ='$menu_num|$parent_idx|$Row[title]|$Row[url]|$Row[url_target]';</script>" ;
 		include("./html/menu_list.html") ;
 	}
 
 	if($C_use_member == "on") 
 	{
-		$Row[title] = _L_MEMBER ;
-		$Row[func] = "" ;
+		$Row['title'] = _L_MEMBER ;
+		$Row['func'] = "" ;
 		$URL['list'] = "" ; 
 		include("./html/menu_title.html") ;	
 		//////////////////////////////////////
-		$Row[title] = "" ;
-		$Row[func] = "회원 목록" ;	
+		$Row['title'] = "" ;
+		$Row['func'] = "회원 목록" ;	
 		$URL['list'] = "member/member.php" ; 
 		include("./html/menu_list.html") ;
 
-		$Row[title] = "" ;
-		$Row[func] = "그룹 관리" ;	
+		$Row['title'] = "" ;
+		$Row['func'] = "그룹 관리" ;	
 		$URL['list'] = "member/group.php" ; 
 		include("./html/menu_list.html") ;
 
-		$Row[title] = "" ;
-		$Row[func] = "스킨 관리" ;	
+		$Row['title'] = "" ;
+		$Row['func'] = "스킨 관리" ;	
 		$URL['list'] = "member/open_config.php?conf_name=__global.conf.php" ; 
 		include("./html/menu_list.html") ;
 
-		$Row[title] = "" ;
-		$Row[func] = "플러그인 관리" ;	
+		$Row['title'] = "" ;
+		$Row['func'] = "플러그인 관리" ;	
 		$URL['list'] = "member/open_config.php?conf_name=__global.conf.php" ; 
 		include("./html/menu_list.html") ;
 	}
@@ -202,36 +202,36 @@
 		$tree_idx++ ;
 		$menu_num++ ;
 		$parent_idx = 0 ;
-		$Row[title] = _L_COUNTER ;
-		$Row[url] = "" ;
-		$Row[url_target] = "mainFrame" ;
-		$Row[func] = "<script>Tree[$tree_idx] ='$menu_num|$parent_idx|$Row[title]|$Row[url]|$Row[url_target]';</script>" ;
+		$Row['title'] = _L_COUNTER ;
+		$Row['url'] = "" ;
+		$Row['url_target'] = "mainFrame" ;
+		$Row['func'] = "<script>Tree[$tree_idx] ='$menu_num|$parent_idx|$Row[title]|$Row[url]|$Row[url_target]';</script>" ;
 		include("./html/menu_list.html") ;
 		$parent_idx = $menu_num ; 
 
 		//////////////////////////////////////
 		$tree_idx++ ;
 		$menu_num++ ;
-		$Row[title] = _L_COUNTER ;
-		$Row[url] = "counter/counter.php" ;
-		$Row[url_target] = "mainFrame" ;
-		$Row[func] = "<script>Tree[$tree_idx] ='$menu_num|$parent_idx|$Row[title]|$Row[url]|$Row[url_target]';</script>" ;
+		$Row['title'] = _L_COUNTER ;
+		$Row['url'] = "counter/counter.php" ;
+		$Row['url_target'] = "mainFrame" ;
+		$Row['func'] = "<script>Tree[$tree_idx] ='$menu_num|$parent_idx|$Row[title]|$Row[url]|$Row[url_target]';</script>" ;
 		include("./html/menu_list.html") ;
 
 		$tree_idx++ ;
 		$menu_num++ ;
-		$Row[title] = _L_SKIN ;
-		$Row[url] = "counter/skin.php" ;
-		$Row[url_target] = "mainFrame" ;
-		$Row[func] = "<script>Tree[$tree_idx] ='$menu_num|$parent_idx|$Row[title]|$Row[url]|$Row[url_target]';</script>" ;
+		$Row['title'] = _L_SKIN ;
+		$Row['url'] = "counter/skin.php" ;
+		$Row['url_target'] = "mainFrame" ;
+		$Row['func'] = "<script>Tree[$tree_idx] ='$menu_num|$parent_idx|$Row[title]|$Row[url]|$Row[url_target]';</script>" ;
 		include("./html/menu_list.html") ;
 
 		$tree_idx++ ;
 		$menu_num++ ;
-		$Row[title] = _L_GLOBALSETUP ;
-		$Row[url] = "counter/config_open.php?conf_name=__global.conf.php" ;
-		$Row[url_target] = "mainFrame" ;
-		$Row[func] = "<script>Tree[$tree_idx] ='$menu_num|$parent_idx|$Row[title]|$Row[url]|$Row[url_target]';</script>" ;
+		$Row['title'] = _L_GLOBALSETUP ;
+		$Row['url'] = "counter/config_open.php?conf_name=__global.conf.php" ;
+		$Row['url_target'] = "mainFrame" ;
+		$Row['func'] = "<script>Tree[$tree_idx] ='$menu_num|$parent_idx|$Row[title]|$Row[url]|$Row[url_target]';</script>" ;
 		include("./html/menu_list.html") ;
 
 	}

@@ -94,5 +94,5 @@ http://홈페이지주소/white/setup.php
      ==> <?if(@file_exists("white/board/data/my_board/news.txt"))include("white/board/data/my_board/news.txt");?>
 
   *) 스킨에서 sendmail의 링크 수정
-  sendmail.php?to=<?=$Row[email]?>을	
+  sendmail.php?to=<?=$Row['email']?>을	
   $URL['sendmail']로 바꾸어준다.

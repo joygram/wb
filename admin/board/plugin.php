@@ -18,7 +18,7 @@
 	{
 		case "news":
 			$target_dir = "$C_base[dir]/board/plugin/__global/news" ;
-			$Row[title] = _L_LATEST ;
+			$Row['title'] = _L_LATEST ;
 			break ;
 		case "category":
 			$target_dir = "$C_base[dir]/board/plugin/__global/category" ;
@@ -33,7 +33,7 @@
 			$title = _L_BOARD ;
 			break ;
 	}
-	$Row[title] = $title." "._L_PLUGIN_MANAGE ;
+	$Row['title'] = $title." "._L_PLUGIN_MANAGE ;
 	include("./html/plugin_header.html") ;
 	if ($_debug) echo("target_dir[$target_dir]<br>") ;	
 
@@ -73,11 +73,11 @@
 
 		$i++ ;
 		$board = explode(".", $file_name) ;
-		$Row[no] = $nTotal-$i+1 ;
-		$Row[board] = $board[0] ;
+		$Row['no'] = $nTotal-$i+1 ;
+		$Row['board'] = $board[0] ;
 
-		$Row[cnt] = $cnt ;
-		$Row[setup] = "read_config.php?data=$file_name" ;
+		$Row['cnt'] = $cnt ;
+		$Row['setup'] = "read_config.php?data=$file_name" ;
 
 		//$PREVIEW_URL = "$C_base[url]/board/list.php?data=$board[0]" ; 
 		$PREVIEW_URL = "#" ;
@@ -92,8 +92,8 @@
 		$tmp = str_replace(">", "&gt;", $tmp) ;
 		$tmp_arr = explode("|", $tmp) ;
 
-		$Row[author]       = $tmp_arr[0] ;
-		$Row[author_email] = $tmp_arr[1] ;
+		$Row['author']       = $tmp_arr[0] ;
+		$Row['author_email'] = $tmp_arr[1] ;
 		$AUTHOR_URL        = $tmp_arr[2] ;
 
 		$hide['author_url'] = "" ;
@@ -139,7 +139,7 @@
 		include("./html/plugin_list.html") ;
 	}
 
-	$Row[title] = $title ;
-	$Row[part] = $part ;
+	$Row['title'] = $title ;
+	$Row['part'] = $part ;
 	include("./html/plugin_footer.html") ;
 ?>

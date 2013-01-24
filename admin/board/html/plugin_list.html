@@ -5,17 +5,17 @@
 
 <tr>
 <td width="38" align="center"> 
-<div ><?=$Row[no]?>
+<div ><?=$Row['no']?>
 </td>
 
 <td width="100" height="20" align="left">
-<?=$Row[board]?>
+<?=$Row['board']?>
 </td>
 
 <td width='160'  align="center" nowrap>
-<?=$Row[author]?> 
+<?=$Row['author']?> 
 <?@=$hide['author_url']?>/ <a href='<?=$AUTHOR_URL?>' target="_blank"><?=_L_HOME?></a> <?@=$hide['/author_url']?>
-<?@=$hide['author_email']?>/ <a href='mailto:<?=$Row[author_email]?>'><?=_L_EMAIL?></a><?@=$hide['/author_email']?>
+<?@=$hide['author_email']?>/ <a href='mailto:<?=$Row['author_email']?>'><?=_L_EMAIL?></a><?@=$hide['/author_email']?>
 </td>
 
 <td width="98" align="center">

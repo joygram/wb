@@ -5,15 +5,15 @@
 <input type=hidden name=board_id     value='<?=$board_id?>' >
 <input type=hidden name=file         value='<?=$file?>' >
 <input type=hidden name=data         value='<?=$data?>' >
-<input type=hidden name=name_org     value='<?=$Row[name]?>'>
-<input type=hidden name=subject_org  value='<?=$Row[subject]?>' >
-<input type=hidden name=writing_type value='<?=$Row[writing_type]?>' >
+<input type=hidden name=name_org     value='<?=$Row['name']?>'>
+<input type=hidden name=subject_org  value='<?=$Row['subject']?>' >
+<input type=hidden name=writing_type value='<?=$Row['writing_type']?>' >
 <input type=hidden name=main_writing value='<?=$main_writing?>' >
 <input type=hidden name=tot_page value='<?=$tot_page?>'>
 <input type=hidden name=cur_page value='<?=$cur_page?>'>
 
-<input type=hidden name=passwd_exist value="<?=$Row[passwd_exist]?>" >
-<input type=hidden name='to' value="<?=$Row[to]?>">
+<input type=hidden name=passwd_exist value="<?=$Row['passwd_exist']?>" >
+<input type=hidden name='to' value="<?=$Row['to']?>">
 
 
 <!-- 여기 까지 -->
@@ -30,7 +30,7 @@
 <td width="50" class="wVer7">Name</td>
 <td width="350" class="wDefault">
 <?=$spam_check_form?>
-<input type=text name=<?=$wb_name?>  size=50 maxlength=15 class=wForm value='<?=$Row[name]?>' >
+<input type=text name=<?=$wb_name?>  size=50 maxlength=15 class=wForm value='<?=$Row['name']?>' >
 </td>
 </tr>
 
@@ -44,14 +44,14 @@
 <tr> 
 <td width="50" class="wVer7">Home</td>
 <td width="350">
-<input type=text name=homepage size=50 maxlength=100 class=wForm value='<?=$Row[homepage]?>' >
+<input type=text name=homepage size=50 maxlength=100 class=wForm value='<?=$Row['homepage']?>' >
 </td>
 </tr>
 
 <tr> 
 <td width="50" class="wVer7">E-mail</td>
 <td width="350" class="wDefault">
-<input type=text name=email size=50 maxlength=50 class=wForm value='<?=$Row[email]?>' >
+<input type=text name=email size=50 maxlength=50 class=wForm value='<?=$Row['email']?>' >
 </td>
 </tr>
 
@@ -60,15 +60,15 @@
 <td width="350" class="wVer7">
 
 <?@=$hide['html_use']?>
-<input type=checkbox name="html_use" <?=$Row[html_use_checked]?>> Use Html
+<input type=checkbox name="html_use" <?=$Row['html_use_checked']?>> Use Html
 <input type="hidden" name="special_html_use" value="1">
 <?@=$hide['/html_use']?>
 
-<input type=checkbox name="br_use" <?=$Row[br_use_checked]?>> Use BR 
+<input type=checkbox name="br_use" <?=$Row['br_use_checked']?>> Use BR 
 <input type="hidden" name="special_br_use" value="1">
 
 <?@=$hide['main_writing']?>
-<input type=checkbox name="mail_reply" <?=$Row[mail_reply_checked]?>><font class="wDefault">답변 메일로 받기</font>
+<input type=checkbox name="mail_reply" <?=$Row['mail_reply_checked']?>><font class="wDefault">답변 메일로 받기</font>
 <input type="hidden" name="special_mail_reply" value="1">
 </td>
 </tr>
@@ -76,7 +76,7 @@
 <tr> 
 <td width="50" class="wDefault">비밀글</td>
 <td width="350" class="wDefault" >
-	<input type=checkbox name="secret" <?=$Row[secret_checked]?>>
+	<input type=checkbox name="secret" <?=$Row['secret_checked']?>>
 	<input type=password name=secret_passwd size=20 maxlength=20 class=wForm >
 </td>
 </tr>
@@ -88,7 +88,7 @@
 Category
 </td>
 <td class="wVer7" width="300">
-<?=$Row[category_select]?>
+<?=$Row['category_select']?>
 </td>
 </tr>
 <?@=$hide['/category_select']?>
@@ -97,22 +97,22 @@ Category
 <tr> 
 <td width="50" class="wVer7">Subject</td>
 <td width="350">
-<input type=text name='subject' size=50 maxlength=50 class=wForm value='<?=$Row[subject]?>' >
+<input type=text name='subject' size=50 maxlength=50 class=wForm value='<?=$Row['subject']?>' >
 </td>
 </tr>
 <?@=$hide['/main_writing']?>
 
 <tr> 
 <td width="400" colspan="2">
-<textarea name=comment cols=56 rows=15 class=wOver><?=$Row[comment]?></textarea>
+<textarea name=comment cols=56 rows=15 class=wOver><?=$Row['comment']?></textarea>
 </td>
 </tr>
 
-<?@=$hide[main_writing]?>
+<?@=$hide['main_writing']?>
 <tr> 
 <td width="50" class="wVer7" nowrap>Att #1</td>
 <td width="350">
-<?=$Row[InputFile_name]?>
+<?=$Row['InputFile_name']?>
 <?@=$hide['attach']?>&nbsp;&nbsp;Remove <input class='wDefault' type='checkbox' name='remove_attach1'><?@=$hide['/attach']?>
 <input name='InputFile' type='file' size='35' class=wForm></td>
 </tr>
@@ -129,7 +129,7 @@ Category
 <tr bgcolor="#FFFFFF"> 
 <td width="50" class="wVer7">Link</td>
 <td width="350">
-<input type="text" name="link" size=50 maxlength=100 class='wForm' value='<?=$Row[link]?>'>
+<input type="text" name="link" size=50 maxlength=100 class='wForm' value='<?=$Row['link']?>'>
 </td>
 </tr>
 </tr>

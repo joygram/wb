@@ -44,8 +44,8 @@
 		}
 	
 		$board = explode(".", $file_name) ;
-		$Row[no] = $nTotal-$i ;
-		$Row[board] = $board[0] ;
+		$Row['no'] = $nTotal-$i ;
+		$Row['board'] = $board[0] ;
 		$i++ ;
 
 		$idx_filename = file_exists("$C_base[dir]/board/data/$board[0]/data.idx")?"data.idx":"data.idx.php" ;
@@ -58,8 +58,8 @@
 		{
 			$cnt = 0 ;
 		}
-		$Row[cnt] = $cnt ;
-		$Row[setup] = "read_config.php?data=$file_name" ;
+		$Row['cnt'] = $cnt ;
+		$Row['setup'] = "read_config.php?data=$file_name" ;
 
 		$PREVIEW_URL = "$C_base[url]/board/list.php?data=$board[0]" ; 
 		$DEL_URL    = "javascript:onClick=Confirm(\"board_del.php?data=$board[0]\",\"$board[0]\",\"del\"); " ;

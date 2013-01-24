@@ -1,8 +1,8 @@
-<table cellpadding="0" cellspacing="2" width="<?=$Row[table_size] ?>" align="<?=$Row[table_align]?>" border="0">
+<table cellpadding="0" cellspacing="2" width="<?=$Row['table_size'] ?>" align="<?=$Row['table_align']?>" border="0">
 <?@=$hide['board_title']?>
 <tr>
 <td class="wDefault">
-<?=$Row[board_title] ?>
+<?=$Row['board_title'] ?>
 </td>
 </tr>
 <?@=$hide['/board_title']?>

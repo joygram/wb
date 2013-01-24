@@ -14,7 +14,7 @@ A:hover {text-decoration:none; color:#CCCCCC}
 <table border=0 width="100%" cellspacing="0" cellpadding="0">
 <tr>
 <td>
-<a href='<?=$URL["list"]?>' class="nDefault">보드:<?=$Row[data]?></a>
+<a href='<?=$URL["list"]?>' class="nDefault">보드:<?=$Row['data']?></a>
 </td>
 <tr>
 

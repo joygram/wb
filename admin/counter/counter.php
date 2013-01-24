@@ -40,12 +40,12 @@
 		}
 
 		$board = explode(".", $file_name) ;
-		$Row[no] = $nTotal-$i ;
-		$Row[board] = $board[0] ;
+		$Row['no'] = $nTotal-$i ;
+		$Row['board'] = $board[0] ;
 		$i++ ;
 
 		$idx_filename = file_exists("$C_base[dir]/counter/data/$board[0]/data.idx")?"data.idx":"data.idx.php" ;
-		$Row[setup] = "read_config.php?data=$file_name" ;
+		$Row['setup'] = "read_config.php?data=$file_name" ;
 
 		$PREVIEW_URL = "$C_base[url]/counter/counter.php?data=$board[0]" ; 
 		$STAT_URL = "$C_base[url]/admin/counter/stat.php?data=$board[0]&dock=yes" ; 

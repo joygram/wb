@@ -23,7 +23,7 @@
 	{
 		case "news":
 			$target_dir = "$C_base[dir]/board/skin/__global/news" ;
-			$Row[title] = _L_LATEST ;
+			$Row['title'] = _L_LATEST ;
 			break ;
 		case "category":
 			$target_dir = "$C_base[dir]/board/skin/__global/category" ;

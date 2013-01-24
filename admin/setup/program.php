@@ -17,6 +17,9 @@ $cont = file("$C_base[dir]/release_no") ;
 $installed_release_no = chop($cont[0]) ;
 $installed_ver = chop($cont[1]) ;
 
+$upgrade = isset($__GET['upgrade'])?$__GET['upgrade']:"";
+$cmd = isset($__GET['cmd'])?$__GET['cmd']:"";
+
 //2002/11/01 2000/xp에서 호환성때문에..
 $URL = array("") ;
 
@@ -51,19 +54,19 @@ $check_cnt = 0 ;
 if( file_exists("$C_base[dir]/system.ini.php") )
 {
 	include("$C_base[dir]/system.ini.php") ;
-	$checked[board]   = ($C_use_board=="on")?"checked":"" ;
-	$checked[counter] = ($C_use_counter=="on")?"checked":"" ;
-	$checked[member]  = ($C_use_member=="on")?"checked":"" ;
-	$checked[mail]    = ($C_use_mail=="on")?"checked":"" ;
+	$checked['board']   = ($C_use_board=="on")?"checked":"" ;
+	$checked['counter'] = ($C_use_counter=="on")?"checked":"" ;
+	$checked['member']  = ($C_use_member=="on")?"checked":"" ;
+	$checked['mail']    = ($C_use_mail=="on")?"checked":"" ;
 }
 
-switch($__GET["cmd"])
+switch($cmd)
 {
 	case "next" :
-		$ini[use_board]   = $use_board ;
-		$ini[use_counter] = $use_counter ;
-		$ini[use_member]  = $use_member ;
-		$ini[use_mail]    = $use_mail ;
+		$ini['use_board']   = $use_board ;
+		$ini['use_counter'] = $use_counter ;
+		$ini['use_member']  = $use_member ;
+		$ini['use_mail']    = $use_mail ;
 
 		save_system_ini("$C_base[dir]/system.ini.php", $ini) ;
 
@@ -81,10 +84,10 @@ switch($__GET["cmd"])
 		break ;
 
 	case "save" :
-		$ini[use_board]   = $use_board ;
-		$ini[use_counter] = $use_counter ;
-		$ini[use_member]  = $use_member ;
-		$ini[use_mail]    = $use_mail ;
+		$ini['use_board']   = $use_board ;
+		$ini['use_counter'] = $use_counter ;
+		$ini['use_member']  = $use_member ;
+		$ini['use_mail']    = $use_mail ;
 		save_system_ini("$C_base[dir]/system.ini.php", $ini) ;
 
 		$url = "program.php?upgrade=$upgrade" ;
@@ -114,26 +117,26 @@ echo("<script>
 
 include("./html/program_header.html") ;
 
-$Row[title] = "" ;
-$Row[func] = "" ;
+$Row['title'] = "" ;
+$Row['func'] = "" ;
 
-$Row[title] = _L_BOARD ; 
-$Row[func] = "<input type='checkbox' name='use_board' ${checked['board']} >" ; 
+$Row['title'] = _L_BOARD ; 
+$Row['func'] = "<input type='checkbox' name='use_board' ${checked['board']} >" ; 
 include("./html/program_list.html") ;
 
 
-$Row[title] = _L_MEMBER ; 
-$Row[func] = "<input type='checkbox' name='use_member' ${checked['member']} disabled >" ; 
+$Row['title'] = _L_MEMBER ; 
+$Row['func'] = "<input type='checkbox' name='use_member' ${checked['member']} disabled >" ; 
 include("./html/program_list.html") ;
 
 
-$Row[title] = _L_COUNTER ; 
-$Row[func] = "<input type='checkbox' name='use_counter' ${checked['counter']} >" ; 
+$Row['title'] = _L_COUNTER ; 
+$Row['func'] = "<input type='checkbox' name='use_counter' ${checked['counter']} >" ; 
 include("./html/program_list.html") ;
 
 
-$Row[title] = _L_MAILER ;
-$Row[func] = "<input type='checkbox' name='use_mail' ${checked['mail']} disabled >" ; 
+$Row['title'] = _L_MAILER ;
+$Row['func'] = "<input type='checkbox' name='use_mail' ${checked['mail']} disabled >" ; 
 include("./html/program_list.html") ;
 
 include("./html/program_footer.html") ;

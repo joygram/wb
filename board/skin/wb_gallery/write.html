@@ -6,9 +6,9 @@
 <input type=hidden name=board_group value='<?=$board_group?>' >
 <input type=hidden name=board_id    value='<?=$board_id?>'    >
 <input type=hidden name=data        value='<?=$data?>'    >
-<input type=hidden name=w_date      value='<?=$Row[w_date]?>' >
-<input type=hidden name=subject_org    value='<?=$Row[subject]?>'   >
-<input type=hidden name="spam_check" value="<?=$Row[spam_check]?>">
+<input type=hidden name=w_date      value='<?=$Row['w_date']?>' >
+<input type=hidden name=subject_org    value='<?=$Row['subject']?>'   >
+<input type=hidden name="spam_check" value="<?=$Row['spam_check']?>">
 <!-- 여기 까지 -->
 
 <tr align="right">
@@ -27,8 +27,8 @@
 	<tr> 
 	<td>Name&nbsp;</td>
 	<td class="wDefault">
-	<?=$Row[alias]?>
-	<input type=hidden name=name value='<?=$Row[alias]?>' >
+	<?=$Row['alias']?>
+	<input type=hidden name=name value='<?=$Row['alias']?>' >
 	</td>
 	</tr>
 	<?@=$hide['/admin']?>
@@ -40,8 +40,8 @@
 	<tr> 
 	<td>Name&nbsp;</td>
 	<td>
-	<?=$Row[alias]?>
-	<input type=hidden name=name value='<?=$Row[alias]?>' >
+	<?=$Row['alias']?>
+	<input type=hidden name=name value='<?=$Row['alias']?>' >
 	</td>
 	</tr>
 	<?@=$hide['/member']?>
@@ -52,7 +52,7 @@
 	<tr> 
 	<td>Name&nbsp;</td>
 	<td>
-	<input type=text name=name value='<?=$Row[name]?>'size=40 maxlength=10 class=wForm>
+	<input type=text name=name value='<?=$Row['name']?>'size=40 maxlength=10 class=wForm>
 	</td>
 	</tr>
 	
@@ -68,14 +68,14 @@
 	<tr>
 	<td>E-mail&nbsp;</td>
 	<td>
-	<input type=text name=email size=40 maxlength=50 class=wForm value='<?=$Row[email]?>' >
+	<input type=text name=email size=40 maxlength=50 class=wForm value='<?=$Row['email']?>' >
 	</td>
 	</tr>
 
 	<tr>
 	<td>Url&nbsp;</td>
 	<td>
-	<input type=text name=homepage size=40 maxlength=100 class=wForm value='<?=$Row[homepage]?>' >
+	<input type=text name=homepage size=40 maxlength=100 class=wForm value='<?=$Row['homepage']?>' >
 	</td>
 	</tr>
 	<?@=$hide['/anonymous']//무명씨글쓰기 끝?>
@@ -83,30 +83,30 @@
 	<tr>
 	<td>Subject&nbsp;</td>
 	<td>
-	<input type=text name=subject size=40 maxlength=20 class=wForm value='<?=$Row[subject]?>' >
+	<input type=text name=subject size=40 maxlength=20 class=wForm value='<?=$Row['subject']?>' >
 	</td>
 	</tr>
 	
-	<?@=$hide[category_select_start]?>
+	<?@=$hide['category_select_start']?>
 	<tr> 
 	<td class="wVer7"> 
 	Categoary
 	</td>
 	<td class="wVer7">
-	<?=$Row[category_select]?>
+	<?=$Row['category_select']?>
 	</td>
 	</tr>
-	<?@=$hide[category_select_end]?>
+	<?@=$hide['category_select_end']?>
 
 	<tr>
-	<td colspan="2"><textarea name=comment cols=47 rows=15 class=wOver><?=$Row[comment]?></textarea>
+	<td colspan="2"><textarea name=comment cols=47 rows=15 class=wOver><?=$Row['comment']?></textarea>
 	</td>
 	</tr>
 
 	<tr>
 	<td valign="bottom">Image&nbsp;</td>
 	<td align="right">&nbsp;
-	<?=$Row[InputFile_name]?>&nbsp;&nbsp;
+	<?=$Row['InputFile_name']?>&nbsp;&nbsp;
 	<?@=$hide['attach']?>Del <input class='wDefault' type='checkbox' name='remove_attach1'><?@=$hide['/attach']?><br>
 	<input name='InputFile' type='file' size='25' class=wForm>
 	</td>

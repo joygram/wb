@@ -210,8 +210,8 @@
 
 			$i++ ;
 			$board = explode(".", $file_name) ;
-			$Row[no] = $nTotal-$i+1 ;
-			$Row[board] = $board[0] ;
+			$Row['no'] = $nTotal-$i+1 ;
+			$Row['board'] = $board[0] ;
 			$_datadir = "$C_base[dir]/board/data/$board[0]" ;
 
 				//2002/03/24 데이터 교정 링크 추가

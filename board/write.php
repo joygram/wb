@@ -273,7 +273,7 @@ Copyright (c) 2001-2004, WhiteBBs.net, All rights reserved.
 	$release = get_release($C_base) ;
 
 	$URL = make_url($_data, $Row) ;
-	$Row[board_title] = "$conf[board_title]" ;	
+	$Row['board_title'] = "$conf[board_title]" ;	
 	if( empty($conf[board_title]) )
 	{
 		$hide[board_title_start] = "<!--\n" ;
@@ -514,8 +514,8 @@ Copyright (c) 2001-2004, WhiteBBs.net, All rights reserved.
 
 			@make_news($_data, $Row) ;
 		}
-		$Row[cur_page] = $cur_page ;
-		$Row[tot_page] = $tot_page ;
+		$Row['cur_page'] = $cur_page ;
+		$Row['tot_page'] = $tot_page ;
 
 		err_msg(_L_SAVE_COMPLETE) ;
 		$url="$C_base[url]/board/$conf[list_php]?data=$_data&cur_page=$cur_page&tot_page=$tot_page" ;
@@ -916,13 +916,13 @@ Copyright (c) 2001-2004, WhiteBBs.net, All rights reserved.
 				</td></tr></table>" ;
 
 			/* recipients */
-			$mailto  = "$Row[name] <$Row[email]>" ;
+			$mailto  = "$Row['name'] <$Row[email]>" ;
 			$subject = "RE: $Row[subject]" ; 
 			$message  = $style ;	
 			//$message .= $copyright."<br>" ; 
 			$message .= "■ $name 님의 답변 ■<br>" ;
 			$message .= nl2br($comment)."<p>" ;
-			$message .= "■ $Row[name] 님의 질문 ■<br>";
+			$message .= "■ $Row['name'] 님의 질문 ■<br>";
 			$message .= nl2br($Row[comment]);
 			$message .= $copyright ; 
 
@@ -981,22 +981,22 @@ Copyright (c) 2001-2004, WhiteBBs.net, All rights reserved.
 		$mode = "update" ;
 		$dbi = new db_board($_data, "index", $mode, $filter_type, $key, $field, "file", "2", $C_base[dir] ) ;
 		$Row = $dbi->row_fetch_array(0, $board_group, $board_id) ;
-		if( $Row[uid] == __ANONYMOUS ) //anonymous가 쓴글이면...
+		if( $Row['uid'] == __ANONYMOUS ) //anonymous가 쓴글이면...
 		{
 			if($_debug) echo("anonymous writing<br>") ;
 			// 2.1.2 이하 버젼은 모두 anonymous글이므로
 			//암호화 되어 있으면 
-			if( strlen($Row[password]) > 15 || $Row[encode_type] == "1" )
+			if( strlen($Row[password]) > 15 || $Row['encode_type'] == "1" )
 			{
-				$Row[password] = wb_decrypt($Row[password], $Row[name]) ;
+				$Row['password'] = wb_decrypt($Row[password], $Row[name]) ;
 			}
-			$check_data[passwd] = $Row[password]  ;
-			$Row[passwd_exist] = !empty($Row[password])?"1":"" ;	
+			$check_data[passwd] = $Row['password']  ;
+			$Row['passwd_exist'] = !empty($Row[password])?"1":"" ;	
 		}
 		else // member가 쓴글이면
 		{
 			// 2002/10/22 스킨에서 비밀번호 2.5용으로 수정을 안했을 경우 비밀번호 입력 여부 안묻도록
-			$Row[passwd_exist] = 1 ;
+			$Row['passwd_exist'] = 1 ;
 			// member관리와 연동준비 2002/02/17
 		}
 
@@ -1017,14 +1017,14 @@ Copyright (c) 2001-2004, WhiteBBs.net, All rights reserved.
 		if($_debug) echo("sess_name[$sess_name]<br>") ;
 
 		//1.
-		//$Row[subject] = stripslashes($subject) ;  
-		//$Row[subject] = str_replace('"', "&quot;", $Row[subject]) ;
-		//$Row[type] = $type ;
+		//$Row['subject'] = stripslashes($subject) ;  
+		//$Row['subject'] = str_replace('"', "&quot;", $Row[subject]) ;
+		//$Row['type'] = $type ;
 		$Row['html_use_checked'] = ($Row['html_use']==HTML_NOTUSE)?"":"checked" ;
 		$Row['br_use_checked'] = ($Row['br_use']=="yes")?"checked":"" ;
-		$Row[is_main_writing] = $main_writing ;
-		$Row[category_select] = category_select($_data,$Row[type]) ;
-		$Row[to] = $to ;
+		$Row['is_main_writing'] = $main_writing ;
+		$Row['category_select'] = category_select($_data,$Row[type]) ;
+		$Row['to'] = $to ;
 		$Row['mail_reply_checked'] = ($Row['mail_reply']=="on")?"checked":"" ;
 		if($_debug) echo("Row[mail_reply][$Row[mail_reply]]<br>") ;
 
@@ -1047,7 +1047,7 @@ Copyright (c) 2001-2004, WhiteBBs.net, All rights reserved.
 
 			//무명씨 글인 경우 암호를 제외한 모든 내용을 수정할 수 있다.
 			//암호를 reset시킬 경우도 있으니까.. 저장시에만 skip할 수 있도록..
-			if($Row[uid] == __ANONYMOUS) 
+			if($Row['uid'] == __ANONYMOUS) 
 			{
 				$hide['password'] = "<!--\n" ;
 				$hide['/password'] = "-->\n" ;
@@ -1082,10 +1082,10 @@ Copyright (c) 2001-2004, WhiteBBs.net, All rights reserved.
 
 
 		$conf[table_size] = empty($conf[table_size])?500:$conf[table_size] ; 
-		$Row[table_size] = $conf[table_size] ;
+		$Row['table_size'] = $conf[table_size] ;
 
 		$conf[table_align] = !isset($conf[table_align])?"center":$conf[table_align] ;
-		$Row[table_align] = $conf[table_align];
+		$Row['table_align'] = $conf[table_align];
 		///////////////////////////////////
 		// 폼 삽입
 		///////////////////////////////////
@@ -1203,17 +1203,17 @@ Copyright (c) 2001-2004, WhiteBBs.net, All rights reserved.
 			if($conf[url2link_use] == "1") 
 			{
 				//자동으로 링크 만들기 옵션선택시 1.2.2
-				$Row[comment] = url2link( $Row[comment] ) ;
+				$Row['comment'] = url2link( $Row['comment'] ) ;
 			}
 			//처음쓴글 보게하려고... 
 			// 2002/04/06 $Row[main_writing]은 오래됐음.
-			$Row[main_writing] = nl2br($Row[comment]) ;
-			$Row[main_comment] = $Row[main_writing] ; 
-			$Row[comment] = "" ;			
+			$Row['main_writing'] = nl2br($Row[comment]) ;
+			$Row['main_comment'] = $Row['main_writing'] ; 
+			$Row['comment'] = "" ;			
 		}		
 		$Row['br_use_checked'] = "checked" ;
 		// 답글이고 reply폼이 따로 있으면 그것을 띄워준다.
-		$Row[is_main_writing] = 0 ;
+		$Row['is_main_writing'] = 0 ;
 
 		/////// [스팸 처리]를 위한 변수 삽입  2004.09.25 by 체리토마토		
 		if (($conf[spam_check_use] =="1")&&($sess_name == ""))		
@@ -1255,10 +1255,10 @@ Copyright (c) 2001-2004, WhiteBBs.net, All rights reserved.
 
 
 		$conf[table_size] = empty($conf[table_size])?500:$conf[table_size] ; 
-		$Row[table_size] = $conf[table_size] ;
+		$Row['table_size'] = $conf[table_size] ;
 
 		$conf[table_align] = !isset($conf[table_align])?"center":$conf[table_align] ;
-		$Row[table_align] = $conf[table_align];
+		$Row['table_align'] = $conf[table_align];
 		///////////////////////////////////
 		// 폼 삽입
 		///////////////////////////////////
@@ -1293,20 +1293,20 @@ Copyright (c) 2001-2004, WhiteBBs.net, All rights reserved.
 		if($conf[cookie_use] == "1")
 		{
 			//한번 사용한 변수 이기 때문에 clear시킴.
-			$Row[name] = "" ;
-			$Row[email] = "" ;
-			$Row[homepage] = "" ;
+			$Row['name'] = "" ;
+			$Row['email'] = "" ;
+			$Row['homepage'] = "" ;
 
 			$cw_name  = $HTTP_COOKIE_VARS[cw_name] ;
 			$cw_email = $HTTP_COOKIE_VARS[cw_email] ;
 			$cw_home  = $HTTP_COOKIE_VARS[cw_home] ;
-			$Row[name]  = $cw_name ;
-			$Row[email] = $cw_email ;
-			$Row[homepage]  = $cw_home ;
+			$Row['name']  = $cw_name ;
+			$Row['email'] = $cw_email ;
+			$Row['homepage']  = $cw_home ;
 			/*
-			$Row[name] = empty($cw_name)?$Row[name]:stripslashes($cw_name) ;
-			$Row[email] = empty($cw_email)?$Row[email]:stripslashes($cw_email) ;
-			$Row[homepage] = empty($cw_home)?$Row[homepage]:stripslashes($cw_home) ;
+			$Row['name'] = empty($cw_name)?$Row[name]:stripslashes($cw_name) ;
+			$Row['email'] = empty($cw_email)?$Row[email]:stripslashes($cw_email) ;
+			$Row['homepage'] = empty($cw_home)?$Row[homepage]:stripslashes($cw_home) ;
 			*/
 		}
 
@@ -1390,9 +1390,9 @@ Copyright (c) 2001-2004, WhiteBBs.net, All rights reserved.
 		else $wb_name = "name";
 		//////////////////////////////////////////////////	
 		
-		$Row[notice_check] = notice_check($_data,$Row[status]) ;
-		$Row[category_select] = category_select($_data,$Row[type]) ;
-		$Row[is_main_writing] = "1" ;
+		$Row['notice_check'] = notice_check($_data,$Row[status]) ;
+		$Row['category_select'] = category_select($_data,$Row[type]) ;
+		$Row['is_main_writing'] = "1" ;
 		if( ! $auth->is_anonymous() )
 		{
 			$Row['alias']    = $auth->alias() ;
@@ -1400,9 +1400,9 @@ Copyright (c) 2001-2004, WhiteBBs.net, All rights reserved.
 			$Row['homepage'] = $auth->homepage() ;
 		}
 	
-		$Row[homepage] = "" ;
-		$Row[link] = "" ;
-		$Row[is_main_writing] = 1 ;
+		$Row['homepage'] = "" ;
+		$Row['link'] = "" ;
+		$Row['is_main_writing'] = 1 ;
 		$Row['br_use_checked'] = "checked" ;
 
 		if($conf[cookie_use] == "1")
@@ -1411,15 +1411,15 @@ Copyright (c) 2001-2004, WhiteBBs.net, All rights reserved.
 			$cw_email = $HTTP_COOKIE_VARS[cw_email] ;
 			$cw_home  = $HTTP_COOKIE_VARS[cw_home] ;
 
-			$Row[name] = empty($cw_name)?$Row[name]:stripslashes($cw_name) ;
-			$Row[email] = empty($cw_email)?$Row[email]:stripslashes($cw_email) ;
-			$Row[homepage] = empty($cw_home)?$Row[homepage]:stripslashes($cw_home) ;
+			$Row['name'] = empty($cw_name)?$Row[name]:stripslashes($cw_name) ;
+			$Row['email'] = empty($cw_email)?$Row[email]:stripslashes($cw_email) ;
+			$Row['homepage'] = empty($cw_home)?$Row[homepage]:stripslashes($cw_home) ;
 		}
 
 		if( !$auth->is_anonymous() )
 		{
-			$Row[email] = $auth->email() ;
-			$Row[member_info] = $auth->member_info() ;
+			$Row['email'] = $auth->email() ;
+			$Row['member_info'] = $auth->member_info() ;
 			if($_debug) echo("write:".print_r($W_SES) ) ;
 		}
 			//2.
@@ -1444,10 +1444,10 @@ Copyright (c) 2001-2004, WhiteBBs.net, All rights reserved.
 		}
 		echo("<!--VER: $release[1] $release[0]-->\n") ;
 		$conf[table_size] = empty($conf[table_size])?500:$conf[table_size] ; 
-		$Row[table_size] = $conf[table_size] ;
+		$Row['table_size'] = $conf[table_size] ;
 
 		$conf[table_align] = !isset($conf[table_align])?"center":$conf[table_align] ;
-		$Row[table_align] = $conf[table_align];
+		$Row['table_align'] = $conf[table_align];
 
 		//edit, write_form이 들어가는 곳에 img_box를 넣어보자.
 		include("../lib/imagebox.php") ;
@@ -1455,11 +1455,11 @@ Copyright (c) 2001-2004, WhiteBBs.net, All rights reserved.
 		// imgbox변수복구 위해 추가 2004/10/06 by apollo
 		// make_form_recover() ;
 		/* 이부분에서의 변수 처리로 write 에서 쿠키 적용이 안됨
-		$Row[comment] = $comment ;
-		$Row[name] = $name ;
-		$Row[subject] = $subject ;
-		$Row[homepage] = $homepage ;
-		$Row[to] = $to ;
+		$Row['comment'] = $comment ;
+		$Row['name'] = $name ;
+		$Row['subject'] = $subject ;
+		$Row['homepage'] = $homepage ;
+		$Row['to'] = $to ;
 		//카테고리 부분 복구 없음.
 		*/
 
@@ -1496,10 +1496,10 @@ Copyright (c) 2001-2004, WhiteBBs.net, All rights reserved.
 		$plug[$write_form] = include_plugin("$write_form", $_plugindir, $conf) ;
 
 		// imgbox변수복구 위해 추가 2004/10/06 by apollo
-		$Row[html_use_checked] = ($html_use == "on")?"checked":"" ;
-		$Row[mail_reply_checked] = ($mail_reply == "on")?"checked":"";
-		$Row[br_use_checked] = "checked";  // br_use 기본 옵션을 위해 수정
-		$Row[link] = $link ;
+		$Row['html_use_checked'] = ($html_use == "on")?"checked":"" ;
+		$Row['mail_reply_checked'] = ($mail_reply == "on")?"checked":"";
+		$Row['br_use_checked'] = "checked";  // br_use 기본 옵션을 위해 수정
+		$Row['link'] = $link ;
 
 
 		//수정을 누른 위치로 돌아가기 위해서 추가

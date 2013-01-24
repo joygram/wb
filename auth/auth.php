@@ -251,7 +251,7 @@ class auth
 		} 
 
 		//$password = wb_decrypt($one_row[password], $one_row[uname]) ;
-		$password = $one_row[password] ;
+		$password = $one_$Row['password'] ;
 
 		if($this->debug) echo("check:PASSWORD[".$this->auth_data[passwd]."],password[$password]<br>") ;
 
@@ -259,16 +259,16 @@ class auth
 		if($this->auth_data[passwd] == $password)
 		{
 			if($this->debug) echo("check:password correct<br>") ;
-			$this->uid   = $one_row[uid] ;
-			$this->user  = $one_row[uname] ;
-			$this->gid   = $one_row[gid] ;
-			$this->alias = $one_row[alias] ;
-			$this->email = $one_row[email] ;
-			$this->homepage = $one_row[homepage] ;
+			$this->uid   = $one_$Row['uid'] ;
+			$this->user  = $one_$Row['uname'] ;
+			$this->gid   = $one_$Row['gid'] ;
+			$this->alias = $one_$Row['alias'] ;
+			$this->email = $one_$Row['email'] ;
+			$this->homepage = $one_$Row['homepage'] ;
 			//$this->group = search_group($this->gid) ;
 
 			//공개여부를 확인한 후 불필요한 데이터는 삭제필요
-			$one_row[password] = "" ;
+			$one_$Row['password'] = "" ;
 			$one_row[3] = "" ;
 
 			$this->member_info = $one_row ;

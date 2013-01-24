@@ -386,17 +386,17 @@ class Board extends DB_Interface
 
 		// category list 2001/12/09
 		$URL['list'] = "$C_base[url]/board/$conf[list_php]?data=".$this->board_name ;
-		$Row[category_list] = category_list($this->board_name, $URL['list']) ;
+		$Row['category_list'] = category_list($this->board_name, $URL['list']) ;
 
 		//머리말에 들어갈 변수들
-		$Row[nTotal]   = $dbi->total ; 
-		$Row[cur_page] = empty($cur_page)?1:$cur_page+1 ;
-		$Row[tot_page] = $tot_page ;
-		$Row[play_list] = $play_list ; //음악 선택곡 목록
+		$Row['nTotal']   = $dbi->total ; 
+		$Row['cur_page'] = empty($cur_page)?1:$cur_page+1 ;
+		$Row['tot_page'] = $tot_page ;
+		$Row['play_list'] = $play_list ; //음악 선택곡 목록
 
 
-		$header_row[total_count] = $this->total_count ; //Skin2.x::$Row[nTotal] 
-		//$header_row[cur_page] = $__GET
+		$header_$Row['total_count'] = $this->total_count ; //Skin2.x::$Row['nTotal'] 
+		//$header_$Row['cur_page'] = $__GET
 
 
 		return $header_row ;
@@ -447,7 +447,7 @@ class Board extends DB_Interface
 			echo("$conf[BOX_DATA_START]") ;
 
 			//array_merge($row, $this->make_additional_row($row)) ;
-			$row[no] = $this->total_count - $cnt ; //글에 대한 번호 계산
+			$Row['no'] = $this->total_count - $cnt ; //글에 대한 번호 계산
 
 
 

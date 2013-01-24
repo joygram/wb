@@ -3,9 +3,9 @@
 			<br>
 			<p align="center"><br>
 			<form action='skin_add.php' name='save_form' method='post' enctype="multipart/form-data" >
-			<span class="wDefault"><?=$Row[title]?>::새로운 스킨 </span> 
+			<span class="wDefault"><?=$Row['title']?>::새로운 스킨 </span> 
 			<input type='file' name='InputFile' class='wForm' size=40>
-			<input type='hidden' name='part' value="<?=$Row[part]?>">
+			<input type='hidden' name='part' value="<?=$Row['part']?>">
 			<input type='submit' value='  올리기  ' class='wButton' name='submit' onClick='return checkForm(this.form);'>
 			</form>
 			<br>

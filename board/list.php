@@ -69,7 +69,7 @@ Copyright (c) 2001-2004, WhiteBBs.net, All rights reserved.
 		//system.ini갱신
 		$system_conf = "{$C_base[dir]}/system.ini.php" ;
 		
-		//$ini[uniq_num] = $uniq_num ;
+		//$ini['uniq_num'] = $uniq_num ;
 		//save_system_ini($system_conf, $ini) ;  $ini 대신 $C_base 를 넘겨준다.
 		$C_base[uniq_num] = $uniq_num ;
 		save_system_ini($system_conf, $C_base) ;
@@ -201,12 +201,12 @@ Copyright (c) 2001-2004, WhiteBBs.net, All rights reserved.
 
 	// category list 2001/12/09
 	$URL['list'] = "$C_base[url]/board/$conf[list_php]?data=$_data" ;
-	$Row[category_list] = category_list($_data, $URL['list']) ;
+	$Row['category_list'] = category_list($_data, $URL['list']) ;
 	//머리말에 들어갈 변수들
-	$Row[nTotal]   = $dbi->total ; 
-	$Row[cur_page] = empty($cur_page)?1:$cur_page+1 ;
-	$Row[tot_page] = $tot_page ;
-	$Row[play_list] = $play_list ; //음악 선택곡 목록
+	$Row['nTotal']   = $dbi->total ; 
+	$Row['cur_page'] = empty($cur_page)?1:$cur_page+1 ;
+	$Row['tot_page'] = $tot_page ;
+	$Row['play_list'] = $play_list ; //음악 선택곡 목록
 
 
 	//스팸체크를 위한 값생성 : 글쓰기 시간 제한과 스팸체크값을 폼에서 넘겨 받도록 한다.
@@ -214,7 +214,7 @@ Copyright (c) 2001-2004, WhiteBBs.net, All rights reserved.
 	$write_num = "$timestamp" ;
 	$spam_check = base64_encode(encrypt($write_num, $C_base["uniq_num"])) ;
 	SetCookie('wb_spam_check', $spam_check, time()+604800, '/') ;
-	$Row[spam_check] = base64_encode("$spam_check|$timestamp") ;
+	$Row['spam_check'] = base64_encode("$spam_check|$timestamp") ;
 
 
 
@@ -250,27 +250,27 @@ Copyright (c) 2001-2004, WhiteBBs.net, All rights reserved.
 		$cw_email = $HTTP_COOKIE_VARS[cw_email] ;
 		$cw_home  = $HTTP_COOKIE_VARS[cw_home] ;
 
-		$Row[cookie_name]       = stripslashes($cw_name) ;
-		$Row[cookie_email]      = stripslashes($cw_email) ;
-		$Row[cookie_homepage]   = stripslashes($cw_home) ;
+		$Row['cookie_name']       = stripslashes($cw_name) ;
+		$Row['cookie_email']      = stripslashes($cw_email) ;
+		$Row['cookie_homepage']   = stripslashes($cw_home) ;
 
 	}
-	$Row[name]     = $Row[cookie_name] ;
-	$Row[email]    = $Row[cookie_email] ;
-	$Row[homepage] = $Row[cookie_homepage] ;
+	$Row['name']     = $Row['cookie_name'] ;
+	$Row['email']    = $Row['cookie_email'] ;
+	$Row['homepage'] = $Row['cookie_homepage'] ;
 
 	if(empty($_plugin_use))
 	{
-		$Row[board_title] = "$conf[board_title]" ;	
+		$Row['board_title'] = "$conf[board_title]" ;	
 	}
 
 	$conf[table_size] = !isset($conf[table_size])?500:$conf[table_size] ;
-	$Row[table_size]  = $conf[table_size] ;
+	$Row['table_size']  = $conf[table_size] ;
 
 	$conf[table_align] = !isset($conf[table_align])?"center":$conf[table_align] ;
-	$Row[table_align] = $conf[table_align];
+	$Row['table_align'] = $conf[table_align];
 
-	$Row[spam_check] = base64_encode("$spam_check|$timestamp") ;
+	$Row['spam_check'] = base64_encode("$spam_check|$timestamp") ;
 
 	//글쓰기는 한페이지전체에 적용이 되므로 
 	$hide = make_comment($_data, $Row) ;
@@ -318,69 +318,69 @@ Copyright (c) 2001-2004, WhiteBBs.net, All rights reserved.
 		//제목 길이 제한 적용 이동( row_fetch_array  에 들어 있는 것을 cat 에서도 적용되는 문제로 list.php 로 이동함
 		if(!empty($conf[subject_max]))
 		{
-			$Row[subject] = cutting($Row[subject], $conf[subject_max]) ;
+			$Row['subject'] = cutting($Row[subject], $conf[subject_max]) ;
 		}
 			//내용길이 제한적용 2002/01/24
 			// list에서만 적용함.
 			// 리스트에서 내용길이 제한이 있는 경우에는 태그를 막음.
 		if( !empty($conf[comment_max])) 
 		{
-			$Row[comment] = cutting($Row[comment], $conf[comment_max]) ;
-			$Row[comment] = block_tags($Row[comment],"ALL") ;
+			$Row['comment'] = cutting($Row[comment], $conf[comment_max]) ;
+			$Row['comment'] = block_tags($Row[comment],"ALL") ;
 		}
 
-		$Row[comment_raw] = $Row[comment];
+		$Row['comment_raw'] = $Row[comment];
 			// use br의 구현 2002/05/15
 		if($br_use == "no")
 		{
 		}
 		else
 		{
-			if( $Row[html_use] == HTML_NOTUSE || $Row[br_use] != "no" ) 
+			if( $Row['html_use'] == HTML_NOTUSE || $Row['br_use'] != "no" ) 
 			{
-				$Row[comment] = nl2br($Row[comment]) ;
-				$Row[comment] = str_replace("  ", "&nbsp;&nbsp;", $Row[comment]) ;
-				$Row[comment] = str_replace("\t", "&nbsp;&nbsp;&nbsp;&nbsp;", $Row[comment]) ;
+				$Row['comment'] = nl2br($Row[comment]) ;
+				$Row['comment'] = str_replace("  ", "&nbsp;&nbsp;", $Row[comment]) ;
+				$Row['comment'] = str_replace("\t", "&nbsp;&nbsp;&nbsp;&nbsp;", $Row[comment]) ;
 			}
 		}
 		//자동으로 링크 만들기 옵션선택시 
 		//html사용을 하면 주소 자동링크는 사용을 안하도록 함.
-		if($conf[url2link_use] == "1" && $Row[html_use] == HTML_NOTUSE ) 
+		if($conf[url2link_use] == "1" && $Row['html_use'] == HTML_NOTUSE ) 
 		{
-			$Row[comment] = url2link( $Row[comment] ) ;
+			$Row['comment'] = url2link( $Row['comment'] ) ;
 		}
 
-		$Row[no] = $dbi->total - $nCnt ;
+		$Row['no'] = $dbi->total - $nCnt ;
 		if(!empty($_plugin_use))
 		{
 			if($board_group == $Row[board_group])  
 			{
 				if(empty($_plugin_list_no))
 				{
-					$Row[no] = ">>" ;
+					$Row['no'] = ">>" ;
 				}
 				else
 				{
-					$Row[no] = $_plugin_list_no ;
+					$Row['no'] = $_plugin_list_no ;
 				}
 			}
 		}
-		$Row[spam_check] = base64_encode("$spam_check|$timestamp") ;
-		$Row[grad_color] = make_gradation_color($_data, $dbi->total, $conf[nCol]*$conf[nRow], "board") ;
+		$Row['spam_check'] = base64_encode("$spam_check|$timestamp") ;
+		$Row['grad_color'] = make_gradation_color($_data, $dbi->total, $conf[nCol]*$conf[nRow], "board") ;
 
-		$Row[cnt_download]  = $Row[cnt3] ;
+		$Row['cnt_download']  = $Row[cnt3] ;
 		$Row[cnt_download2] = $Row[cnt2] ;
 
-		$Row[is_main_writing] = 1 ;
-		$Row[cur_page] = $cur_page ;
-		$Row[tot_page] = $tot_page ;
-		$Row[filter_type] = $filter_type ;
-		$Row[to] = $conf[list_php] ;
+		$Row['is_main_writing'] = 1 ;
+		$Row['cur_page'] = $cur_page ;
+		$Row['tot_page'] = $tot_page ;
+		$Row['filter_type'] = $filter_type ;
+		$Row['to'] = $conf[list_php] ;
 
 
 		if(!$auth->is_anonymous())
 		{
-			$Row[alias] = $auth->alias() ;
+			$Row['alias'] = $auth->alias() ;
 		}
 			//2002/04/21 리스트 안에 폼이 들어간 경우 쿠키 처리를 위해서.
 		if($conf[cookie_use] == "1")
@@ -389,9 +389,9 @@ Copyright (c) 2001-2004, WhiteBBs.net, All rights reserved.
 			$cw_email = $HTTP_COOKIE_VARS[cw_email] ;
 			$cw_home  = $HTTP_COOKIE_VARS[cw_home] ;
 
-			$Row[cookie_name]     = stripslashes($cw_name) ;
-			$Row[cookie_email]    = stripslashes($cw_email) ;
-			$Row[cookie_homepage] = stripslashes($cw_home) ;
+			$Row['cookie_name']     = stripslashes($cw_name) ;
+			$Row['cookie_email']    = stripslashes($cw_email) ;
+			$Row['cookie_homepage'] = stripslashes($cw_home) ;
 		}
 
 		//2.
@@ -400,8 +400,8 @@ Copyright (c) 2001-2004, WhiteBBs.net, All rights reserved.
 		if( $URL[no_img] == "1" )
 		{
 			$size = GetImageSize($URL[attach_filename]) ;
-			$Row[img_width] = $size[0] ;
-			$Row[img_height] = $size[1] ;
+			$Row['img_width'] = $size[0] ;
+			$Row['img_height'] = $size[1] ;
 		}
 		if( $URL[no_img2] == "1" )
 		{
@@ -441,19 +441,19 @@ Copyright (c) 2001-2004, WhiteBBs.net, All rights reserved.
 	///////////////////////////////////
 	$checked[$field] = "checked" ;
 	$selected[$field] = "selected" ;
-	$Row[field] = $field ;
-	$Row[spam_check] = base64_encode("$spam_check|$timestamp") ;
+	$Row['field'] = $field ;
+	$Row['spam_check'] = base64_encode("$spam_check|$timestamp") ;
 
 	$page_bar = wb_page_bar( $_data, $cur_page, $tot_page, $key, $field, $mode ) ;
 
 	//글쓰기는 한페이지전체에 적용이 되고 
 	//나머지는 글 하나에 적용되므로 이곳에서 적용
 	$hide = make_comment($_data, $Row) ;
-	$Row[board_title] = "$conf[board_title]" ;	
+	$Row['board_title'] = "$conf[board_title]" ;	
 	$URL = make_url($_data, $Row, "board", $conf[list_php]) ;
 	$URL['list'] = "$C_base[url]/board/$conf[list_php]?data=$_data" ;
 	// category list 2001/12/09
-	$Row[category_list] = category_list($_data, $URL['list']) ;
+	$Row['category_list'] = category_list($_data, $URL['list']) ;
 
 	/////////////////////////////////////
 	// 꼬리말 처리 

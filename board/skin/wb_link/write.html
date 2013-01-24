@@ -5,13 +5,13 @@
 <input type=hidden name=mode value='<?=$mode?>' >
 <input type=hidden name=board_group value='<?=$board_group?>' >
 <input type=hidden name=board_id    value='<?=$board_id?>'    >
-<input type=hidden name=w_date      value='<?=$Row[w_date]?>' >
-<input type=hidden name=subject_org  value='<?=$Row[subject]?>' >
+<input type=hidden name=w_date      value='<?=$Row['w_date']?>' >
+<input type=hidden name=subject_org  value='<?=$Row['subject']?>' >
 <input type=hidden name=data        value='<?=$data?>'   >
 <input type=hidden name=tot_page value='<?=$tot_page?>'>
 <input type=hidden name=cur_page value='<?=$cur_page?>'>
 
-<input type=hidden name="spam_check" value="<?=$Row[spam_check]?>">
+<input type=hidden name="spam_check" value="<?=$Row['spam_check']?>">
 <!-- 여기 까지 -->
 <table border="0" cellspacing="0" cellpadding="0" width=100% height="90%" align="center">
 <tr>
@@ -30,7 +30,7 @@
 	</td>
 	
 	<td height=18>
-	<input type=text name=subject size=40 maxlength=30 class=wForm value='<?=$Row[subject]?>' >
+	<input type=text name=subject size=40 maxlength=30 class=wForm value='<?=$Row['subject']?>' >
 	</td>
 	</tr>
 	
@@ -50,7 +50,7 @@
 	Homepage
 	</td>
 	<td>
-	<input type=text name=homepage size=40 maxlength=50 class=wForm value='<?=$Row[homepage]?>' >
+	<input type=text name=homepage size=40 maxlength=50 class=wForm value='<?=$Row['homepage']?>' >
 	</td>
 	</tr>
 	
@@ -60,7 +60,7 @@
 	Category
 	</td>
 	<td class="wVer7">
-	<?=$Row[category_select]?>
+	<?=$Row['category_select']?>
 	</td>
 	</tr>
 	<?@=$hide['/category_select']?>
@@ -70,7 +70,7 @@
 	Comment
 	</td>
 	<td>
-	<textarea name=comment cols=39 rows=7 class=wForm><?=$Row[comment]?></textarea>
+	<textarea name=comment cols=39 rows=7 class=wForm><?=$Row['comment']?></textarea>
 	</td>
 	</tr>
 
@@ -80,7 +80,7 @@
 	</td>
 	<td class="wVer7" align="right">
 	<input name='InputFile' type='file' size='25' class='wForm'><br>
-	<?=$Row[InputFile_name]?>&nbsp;&nbsp;
+	<?=$Row['InputFile_name']?>&nbsp;&nbsp;
 	<?@=$hide['attach']?>Remove <input class='wDefault' type='checkbox' name='remove_attach1'><?@=$hide['/attach']?>
 
 	</td>

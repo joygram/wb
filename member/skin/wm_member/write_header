@@ -130,7 +130,7 @@ function checkForm(form)
 
 <tr> 
 <td width="100%" align="left">
-<b>SUBJECT <span class="wDefault">:: </b><?=$Row[subject]?></span>
+<b>SUBJECT <span class="wDefault">:: </b><?=$Row['subject']?></span>
 </td>
 </tr>
 

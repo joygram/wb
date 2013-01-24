@@ -10,7 +10,7 @@
 </tr>
 
 <tr>
-<td class='wDefault' valign="top"><?=$Row[main_writing]?>
+<td class='wDefault' valign="top"><?=$Row['main_writing']?>
 </td>
 </tr>
 

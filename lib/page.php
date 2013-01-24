@@ -95,7 +95,7 @@ else return ;
 			}
 			else
 			{
-				$Row[page] = "&lt;&lt;" ;
+				$Row['page'] = "&lt;&lt;" ;
 				include("$_skindir/pagebar_list.html") ;
 			}
  		}
@@ -126,7 +126,7 @@ else return ;
 				}
 				else
 				{
-					$Row[page] = ($i + 1) ;
+					$Row['page'] = ($i + 1) ;
 					include("$_skindir/pagebar_selected.html") ;
 				}
 			}
@@ -141,7 +141,7 @@ else return ;
 				}
 				else
 				{
-					$Row[page] = ($i + 1) ;
+					$Row['page'] = ($i + 1) ;
 					include("$_skindir/pagebar_list.html") ;
 				}
 			}
@@ -159,7 +159,7 @@ else return ;
 			}
 			else
 			{
-				$Row[page] = "&gt;&gt;" ;
+				$Row['page'] = "&gt;&gt;" ;
 				include("$_skindir/pagebar_list.html") ;
 			}
    		}
@@ -170,7 +170,7 @@ else return ;
 		}
 		else
 		{
-			$Row[page] = "&lt;&lt;" ;
+			$Row['page'] = "&lt;&lt;" ;
 			include("$_skindir/pagebar_footer") ;
 		}
 

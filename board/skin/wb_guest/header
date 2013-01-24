@@ -61,6 +61,6 @@ function checkForm(form)
 
 <body topmargin='0' leftmargin='0' marginwidth='0' marginheight='0' class="wBody">
 
-<table width=<?=$Row[table_size] ?> border=0 cellspacing=0 cellpadding=0 align='<?=$Row[table_align]?>'>
+<table width=<?=$Row['table_size'] ?> border=0 cellspacing=0 cellpadding=0 align='<?=$Row['table_align']?>'>
 <tr>
 <td>
